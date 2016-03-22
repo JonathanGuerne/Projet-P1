@@ -9,6 +9,3 @@ C:\Users\jonathan.guerne\Documents\projet p1\projet_p1\projet_p1\bin\Debug\Micro
 C:\Users\jonathan.guerne\Documents\projet p1\projet_p1\projet_p1\bin\Debug\Microsoft.Kinect.xml
 C:\Users\jonathan.guerne\Documents\projet p1\projet_p1\projet_p1\obj\Debug\projet_p1.exe
 C:\Users\jonathan.guerne\Documents\projet p1\projet_p1\projet_p1\obj\Debug\projet_p1.pdb
-C:\Users\jonathan.guerne\Documents\projet p1\Projet-P1\projet_p1\bin\Debug\projet_p1.exe.config
-C:\Users\jonathan.guerne\Documents\projet p1\Projet-P1\projet_p1\obj\Debug\projet_p1.exe
-C:\Users\jonathan.guerne\Documents\projet p1\Projet-P1\projet_p1\obj\Debug\projet_p1.pdb
