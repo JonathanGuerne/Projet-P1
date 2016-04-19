@@ -15,7 +15,6 @@ namespace projet_p1
         public Form_test_dessin()
         {
             InitializeComponent();
-
         }
     }
 }

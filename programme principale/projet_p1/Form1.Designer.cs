@@ -46,7 +46,6 @@
             this.lblPINCEupdown = new System.Windows.Forms.Label();
             this.lblPINCEopenclose = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // button1
@@ -258,20 +257,12 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "_____________________________________________________________";
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(13, 13);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(585, 503);
-            this.panel1.TabIndex = 24;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1309, 796);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPINCEopenclose);
             this.Controls.Add(this.lblPINCEupdown);
@@ -317,7 +308,6 @@
         private System.Windows.Forms.Label lblPINCEupdown;
         private System.Windows.Forms.Label lblPINCEopenclose;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
     }
 }
 
