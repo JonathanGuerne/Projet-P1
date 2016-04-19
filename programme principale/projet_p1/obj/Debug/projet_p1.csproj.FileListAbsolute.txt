@@ -21,3 +21,6 @@ C:\Users\jonathan.guerne\Documents\projet p1\Projet-P1\programme principale\proj
 C:\Users\jonathan.guerne\Documents\projet p1\Projet-P1\programme principale\projet_p1\bin\Debug\Microsoft.Kinect.dll
 C:\Users\jonathan.guerne\Documents\projet p1\Projet-P1\programme principale\projet_p1\bin\Debug\Microsoft.Kinect.xml
 C:\Users\jonathan.guerne\Documents\projet p1\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.Form_test_dessin.resources
+C:\Users\deni.gahlinge\Documents\ProjetP1\ProjetP1git\GitHub\Projet-P1\programme principale\projet_p1\bin\Debug\projet_p1.exe.config
+C:\Users\deni.gahlinge\Documents\ProjetP1\ProjetP1git\GitHub\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.exe
+C:\Users\deni.gahlinge\Documents\ProjetP1\ProjetP1git\GitHub\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.pdb

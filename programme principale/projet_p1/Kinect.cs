@@ -12,7 +12,7 @@ using System.IO;
 
 namespace projet_p1
 {
-    class Kinect
+    class Kinect    //testCommitDeniiiiiiiiiiiiiiiiiiiiii!i!i!i!i!
     {
         private KinectSensor sensor;
         public Form1 form;
