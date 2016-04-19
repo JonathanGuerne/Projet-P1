@@ -15,7 +15,7 @@ namespace projet_p1
     class Kinect
     {
         private KinectSensor sensor;
-       public Form1 form;
+        public Form1 form;
 
 
         double vGauche;

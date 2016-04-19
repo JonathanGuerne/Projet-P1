@@ -46,6 +46,7 @@
             this.lblPINCEupdown = new System.Windows.Forms.Label();
             this.lblPINCEopenclose = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // button1
@@ -116,7 +117,7 @@
             // 
             // btnGO
             // 
-            this.btnGO.Location = new System.Drawing.Point(492, 7);
+            this.btnGO.Location = new System.Drawing.Point(820, 6);
             this.btnGO.Margin = new System.Windows.Forms.Padding(4);
             this.btnGO.Name = "btnGO";
             this.btnGO.Size = new System.Drawing.Size(105, 28);
@@ -214,7 +215,7 @@
             // 
             // btnrefresh
             // 
-            this.btnrefresh.Location = new System.Drawing.Point(1024, 503);
+            this.btnrefresh.Location = new System.Drawing.Point(820, 488);
             this.btnrefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnrefresh.Name = "btnrefresh";
             this.btnrefresh.Size = new System.Drawing.Size(100, 28);
@@ -257,12 +258,20 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "_____________________________________________________________";
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(13, 13);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(585, 503);
+            this.panel1.TabIndex = 24;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1309, 796);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPINCEopenclose);
             this.Controls.Add(this.lblPINCEupdown);
@@ -308,6 +317,7 @@
         private System.Windows.Forms.Label lblPINCEupdown;
         private System.Windows.Forms.Label lblPINCEopenclose;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
