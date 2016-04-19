@@ -52,7 +52,7 @@ namespace projet_p1
                 {
                     if (refDroite == 0)     // vérifie si la reference est déjà définie ou si on doit la redéfinir (donc si on rentre dans le camp de contrôle)
                     {
-                        refDroite = p_MainDroite.Z * 100;   // redéfini la référence)
+                        refDroite = p_MainDroite.Z * 100;   // redéfini la référence
                     }
                     vDroite = refDroite - p_MainDroite.Z * 100;     // redéfini la vitesse par rapport à la référence
                     refreshBTN2(form.getBtnD(), Convert.ToInt32(vDroite * 4));
