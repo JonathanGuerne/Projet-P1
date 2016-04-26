@@ -29,7 +29,14 @@ namespace projet_p1
         int pinceOpenClose = 0;
 
 
-
+        public double getVGauche()
+        {
+            return vG;
+        }
+        public double getVDroite()
+        {
+            return vD;
+        }
 
         public void refreshAccAB(Skeleton sk)
         {

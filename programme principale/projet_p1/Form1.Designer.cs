@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.lblGAUCHE1 = new System.Windows.Forms.Label();
@@ -46,6 +47,8 @@
             this.lblPINCEupdown = new System.Windows.Forms.Label();
             this.lblPINCEopenclose = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelVitesse = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // button1
@@ -54,10 +57,9 @@
             this.button1.Enabled = false;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(700, 6);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(525, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 510);
+            this.button1.Size = new System.Drawing.Size(68, 414);
             this.button1.TabIndex = 20;
             this.button1.UseVisualStyleBackColor = false;
             // 
@@ -67,10 +69,9 @@
             this.button2.Enabled = false;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(605, 6);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(454, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 510);
+            this.button2.Size = new System.Drawing.Size(68, 414);
             this.button2.TabIndex = 19;
             this.button2.UseVisualStyleBackColor = false;
             // 
@@ -78,10 +79,9 @@
             // 
             this.lblGAUCHE1.AutoSize = true;
             this.lblGAUCHE1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGAUCHE1.Location = new System.Drawing.Point(961, 11);
-            this.lblGAUCHE1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGAUCHE1.Location = new System.Drawing.Point(721, 9);
             this.lblGAUCHE1.Name = "lblGAUCHE1";
-            this.lblGAUCHE1.Size = new System.Drawing.Size(149, 25);
+            this.lblGAUCHE1.Size = new System.Drawing.Size(121, 20);
             this.lblGAUCHE1.TabIndex = 1;
             this.lblGAUCHE1.Text = "position gauche";
             // 
@@ -92,10 +92,9 @@
             this.btnD.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
             this.btnD.FlatAppearance.BorderSize = 5;
             this.btnD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnD.Location = new System.Drawing.Point(700, 15);
-            this.btnD.Margin = new System.Windows.Forms.Padding(4);
+            this.btnD.Location = new System.Drawing.Point(525, 12);
             this.btnD.Name = "btnD";
-            this.btnD.Size = new System.Drawing.Size(91, 484);
+            this.btnD.Size = new System.Drawing.Size(68, 393);
             this.btnD.TabIndex = 7;
             this.btnD.UseVisualStyleBackColor = false;
             this.btnD.Click += new System.EventHandler(this.btnD_Click);
@@ -107,19 +106,17 @@
             this.btnG.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
             this.btnG.FlatAppearance.BorderSize = 5;
             this.btnG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnG.Location = new System.Drawing.Point(605, 15);
-            this.btnG.Margin = new System.Windows.Forms.Padding(4);
+            this.btnG.Location = new System.Drawing.Point(454, 12);
             this.btnG.Name = "btnG";
-            this.btnG.Size = new System.Drawing.Size(91, 484);
+            this.btnG.Size = new System.Drawing.Size(68, 393);
             this.btnG.TabIndex = 6;
             this.btnG.UseVisualStyleBackColor = false;
             // 
             // btnGO
             // 
-            this.btnGO.Location = new System.Drawing.Point(820, 6);
-            this.btnGO.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGO.Location = new System.Drawing.Point(615, 5);
             this.btnGO.Name = "btnGO";
-            this.btnGO.Size = new System.Drawing.Size(105, 28);
+            this.btnGO.Size = new System.Drawing.Size(79, 23);
             this.btnGO.TabIndex = 8;
             this.btnGO.Text = "GO";
             this.btnGO.UseVisualStyleBackColor = true;
@@ -128,10 +125,9 @@
             // 
             this.lblDROITE1.AutoSize = true;
             this.lblDROITE1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDROITE1.Location = new System.Drawing.Point(1131, 11);
-            this.lblDROITE1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDROITE1.Location = new System.Drawing.Point(848, 9);
             this.lblDROITE1.Name = "lblDROITE1";
-            this.lblDROITE1.Size = new System.Drawing.Size(132, 25);
+            this.lblDROITE1.Size = new System.Drawing.Size(108, 20);
             this.lblDROITE1.TabIndex = 9;
             this.lblDROITE1.Text = "position droite";
             // 
@@ -139,10 +135,9 @@
             // 
             this.lblGAUCHEref.AutoSize = true;
             this.lblGAUCHEref.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGAUCHEref.Location = new System.Drawing.Point(961, 124);
-            this.lblGAUCHEref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGAUCHEref.Location = new System.Drawing.Point(721, 101);
             this.lblGAUCHEref.Name = "lblGAUCHEref";
-            this.lblGAUCHEref.Size = new System.Drawing.Size(132, 25);
+            this.lblGAUCHEref.Size = new System.Drawing.Size(108, 20);
             this.lblGAUCHEref.TabIndex = 11;
             this.lblGAUCHEref.Text = "position droite";
             // 
@@ -150,10 +145,9 @@
             // 
             this.lblDROITEref.AutoSize = true;
             this.lblDROITEref.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDROITEref.Location = new System.Drawing.Point(1131, 124);
-            this.lblDROITEref.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDROITEref.Location = new System.Drawing.Point(848, 101);
             this.lblDROITEref.Name = "lblDROITEref";
-            this.lblDROITEref.Size = new System.Drawing.Size(149, 25);
+            this.lblDROITEref.Size = new System.Drawing.Size(121, 20);
             this.lblDROITEref.TabIndex = 10;
             this.lblDROITEref.Text = "position gauche";
             // 
@@ -161,10 +155,9 @@
             // 
             this.lblGAUCHEv.AutoSize = true;
             this.lblGAUCHEv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGAUCHEv.Location = new System.Drawing.Point(961, 197);
-            this.lblGAUCHEv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGAUCHEv.Location = new System.Drawing.Point(721, 160);
             this.lblGAUCHEv.Name = "lblGAUCHEv";
-            this.lblGAUCHEv.Size = new System.Drawing.Size(132, 25);
+            this.lblGAUCHEv.Size = new System.Drawing.Size(108, 20);
             this.lblGAUCHEv.TabIndex = 13;
             this.lblGAUCHEv.Text = "position droite";
             // 
@@ -172,10 +165,9 @@
             // 
             this.lblDROITEv.AutoSize = true;
             this.lblDROITEv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDROITEv.Location = new System.Drawing.Point(1131, 197);
-            this.lblDROITEv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDROITEv.Location = new System.Drawing.Point(848, 160);
             this.lblDROITEv.Name = "lblDROITEv";
-            this.lblDROITEv.Size = new System.Drawing.Size(149, 25);
+            this.lblDROITEv.Size = new System.Drawing.Size(121, 20);
             this.lblDROITEv.TabIndex = 12;
             this.lblDROITEv.Text = "position gauche";
             // 
@@ -183,10 +175,9 @@
             // 
             this.lblDROITEx.AutoSize = true;
             this.lblDROITEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDROITEx.Location = new System.Drawing.Point(1131, 48);
-            this.lblDROITEx.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDROITEx.Location = new System.Drawing.Point(848, 39);
             this.lblDROITEx.Name = "lblDROITEx";
-            this.lblDROITEx.Size = new System.Drawing.Size(132, 25);
+            this.lblDROITEx.Size = new System.Drawing.Size(108, 20);
             this.lblDROITEx.TabIndex = 15;
             this.lblDROITEx.Text = "position droite";
             // 
@@ -194,10 +185,9 @@
             // 
             this.lblGAUCHEx.AutoSize = true;
             this.lblGAUCHEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGAUCHEx.Location = new System.Drawing.Point(961, 48);
-            this.lblGAUCHEx.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGAUCHEx.Location = new System.Drawing.Point(721, 39);
             this.lblGAUCHEx.Name = "lblGAUCHEx";
-            this.lblGAUCHEx.Size = new System.Drawing.Size(149, 25);
+            this.lblGAUCHEx.Size = new System.Drawing.Size(121, 20);
             this.lblGAUCHEx.TabIndex = 14;
             this.lblGAUCHEx.Text = "position gauche";
             // 
@@ -205,19 +195,17 @@
             // 
             this.lblHEADx.AutoSize = true;
             this.lblHEADx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHEADx.Location = new System.Drawing.Point(1049, 84);
-            this.lblHEADx.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHEADx.Location = new System.Drawing.Point(787, 68);
             this.lblHEADx.Name = "lblHEADx";
-            this.lblHEADx.Size = new System.Drawing.Size(96, 25);
+            this.lblHEADx.Size = new System.Drawing.Size(77, 20);
             this.lblHEADx.TabIndex = 16;
             this.lblHEADx.Text = "lblHEADx";
             // 
             // btnrefresh
             // 
-            this.btnrefresh.Location = new System.Drawing.Point(820, 488);
-            this.btnrefresh.Margin = new System.Windows.Forms.Padding(4);
+            this.btnrefresh.Location = new System.Drawing.Point(615, 396);
             this.btnrefresh.Name = "btnrefresh";
-            this.btnrefresh.Size = new System.Drawing.Size(100, 28);
+            this.btnrefresh.Size = new System.Drawing.Size(75, 23);
             this.btnrefresh.TabIndex = 17;
             this.btnrefresh.Text = "refresh";
             this.btnrefresh.UseVisualStyleBackColor = true;
@@ -226,10 +214,9 @@
             // 
             this.lblPINCEupdown.AutoSize = true;
             this.lblPINCEupdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPINCEupdown.Location = new System.Drawing.Point(992, 358);
-            this.lblPINCEupdown.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPINCEupdown.Location = new System.Drawing.Point(744, 291);
             this.lblPINCEupdown.Name = "lblPINCEupdown";
-            this.lblPINCEupdown.Size = new System.Drawing.Size(42, 58);
+            this.lblPINCEupdown.Size = new System.Drawing.Size(33, 46);
             this.lblPINCEupdown.TabIndex = 21;
             this.lblPINCEupdown.Text = "-";
             // 
@@ -237,10 +224,9 @@
             // 
             this.lblPINCEopenclose.AutoSize = true;
             this.lblPINCEopenclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPINCEopenclose.Location = new System.Drawing.Point(1064, 358);
-            this.lblPINCEopenclose.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPINCEopenclose.Location = new System.Drawing.Point(798, 291);
             this.lblPINCEopenclose.Name = "lblPINCEopenclose";
-            this.lblPINCEopenclose.Size = new System.Drawing.Size(42, 58);
+            this.lblPINCEopenclose.Size = new System.Drawing.Size(33, 46);
             this.lblPINCEopenclose.TabIndex = 22;
             this.lblPINCEopenclose.Text = "-";
             // 
@@ -250,19 +236,32 @@
             this.label1.BackColor = System.Drawing.Color.Yellow;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(605, 251);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(454, 204);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 6);
+            this.label1.Size = new System.Drawing.Size(125, 5);
             this.label1.TabIndex = 23;
             this.label1.Text = "_____________________________________________________________";
             // 
+            // panelVitesse
+            // 
+            this.panelVitesse.Location = new System.Drawing.Point(5, 5);
+            this.panelVitesse.Name = "panelVitesse";
+            this.panelVitesse.Size = new System.Drawing.Size(165, 600);
+            this.panelVitesse.TabIndex = 24;
+            this.panelVitesse.Paint += new System.Windows.Forms.PaintEventHandler(this.panelVitesse_Paint);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 35;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1309, 796);
+            this.ClientSize = new System.Drawing.Size(963, 635);
+            this.Controls.Add(this.panelVitesse);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPINCEopenclose);
             this.Controls.Add(this.lblPINCEupdown);
@@ -281,7 +280,6 @@
             this.Controls.Add(this.lblGAUCHE1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "K-Driver";
             this.ResumeLayout(false);
@@ -308,6 +306,8 @@
         private System.Windows.Forms.Label lblPINCEupdown;
         private System.Windows.Forms.Label lblPINCEopenclose;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelVitesse;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
