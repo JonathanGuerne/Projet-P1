@@ -17,7 +17,9 @@ namespace projet_p1
         private KinectSensor sensor;
         public Form1 form;
 
-
+        SkeletonPoint Head;
+        SkeletonPoint RHand;
+        SkeletonPoint LHand;
         double vGauche;
         double vDroite;
         double vG = 0;
@@ -36,6 +38,18 @@ namespace projet_p1
         public double getVDroite()
         {
             return vD;
+        }
+        public SkeletonPoint getHead()
+        {
+            return Head;
+        }
+        public SkeletonPoint getLHand()
+        {
+            return LHand;
+        }
+        public SkeletonPoint getRHand()
+        {
+            return RHand;
         }
 
         public void refreshAccAB(Skeleton sk)
@@ -191,6 +205,9 @@ namespace projet_p1
                 if (skel.TrackingState == SkeletonTrackingState.Tracked)
                 {
                     refreshAccAB(skel);
+                    Head = skel.Joints[JointType.Head].Position;
+                    RHand = skel.Joints[JointType.HandRight].Position;
+                    LHand = skel.Joints[JointType.HandLeft].Position;
                     break;
                 }
             }

@@ -42,6 +42,8 @@
             this.lblPINCEopenclose = new System.Windows.Forms.Label();
             this.panelVitesse = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelKVueDessus = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // lblGAUCHE1
@@ -156,7 +158,7 @@
             // 
             // panelVitesse
             // 
-            this.panelVitesse.Location = new System.Drawing.Point(531, 9);
+            this.panelVitesse.Location = new System.Drawing.Point(448, 9);
             this.panelVitesse.Name = "panelVitesse";
             this.panelVitesse.Size = new System.Drawing.Size(165, 614);
             this.panelVitesse.TabIndex = 24;
@@ -167,12 +169,29 @@
             this.timer1.Interval = 35;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(12, 9);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(430, 298);
+            this.panel1.TabIndex = 25;
+            // 
+            // panelKVueDessus
+            // 
+            this.panelKVueDessus.Location = new System.Drawing.Point(12, 313);
+            this.panelKVueDessus.Name = "panelKVueDessus";
+            this.panelKVueDessus.Size = new System.Drawing.Size(430, 310);
+            this.panelKVueDessus.TabIndex = 26;
+            this.panelKVueDessus.Paint += new System.Windows.Forms.PaintEventHandler(this.panelKVueDessus_Paint);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(963, 635);
+            this.Controls.Add(this.panelKVueDessus);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelVitesse);
             this.Controls.Add(this.lblPINCEopenclose);
             this.Controls.Add(this.lblPINCEupdown);
@@ -187,6 +206,7 @@
             this.Controls.Add(this.lblGAUCHE1);
             this.Name = "Form1";
             this.Text = "K-Driver";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,6 +226,8 @@
         private System.Windows.Forms.Label lblPINCEopenclose;
         private System.Windows.Forms.Panel panelVitesse;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelKVueDessus;
     }
 }
 
