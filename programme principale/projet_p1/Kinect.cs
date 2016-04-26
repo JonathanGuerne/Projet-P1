@@ -62,7 +62,6 @@ namespace projet_p1
                         refDroite = p_MainDroite.Z * 100;   // redéfini la référence)
                     }
                     vDroite = refDroite - p_MainDroite.Z * 100;     // redéfini la vitesse par rapport à la référence
-                    refreshBTN2(form.getBtnD(), Convert.ToInt32(vDroite * 4));
                 }
                 else
                 {
@@ -78,7 +77,6 @@ namespace projet_p1
                         refGauche = p_MainGauche.Z * 100;
                     }
                     vGauche = refGauche - p_MainGauche.Z * 100;
-                    refreshBTN2(form.getBtnG(), Convert.ToInt32(vGauche * 4));
                 }
                 else
                 {
@@ -98,8 +96,6 @@ namespace projet_p1
                 refGauche = 0;
                 vDroite = 0;
                 vGauche = 0;
-                refreshBTN(form.getBtnG(), 0);
-                refreshBTN(form.getBtnD(), 0);
                 double MoyenneY = p_MainDroite.Y + p_MainGauche.Y;
                 double MoyenneZ = (p_MainDroite.Z + p_MainGauche.Z) / 2;
 
@@ -173,54 +169,6 @@ namespace projet_p1
                     vG = (5 * vG + vGauche) / 6;
                 }
             }
-
-            //Vitesse Max : 40
-            if (vD > 40)
-            {
-                form.getBtnD().FlatAppearance.BorderColor = Color.FromArgb(255, 0, 255, 0);
-                form.getBtnD().BackColor = Color.FromArgb(255, 192, 0, 0);
-                vD = 40;
-            }
-            else if (form.getBtnD().BackColor == Color.FromArgb(255, 192, 0, 0))
-            {
-                form.getBtnD().FlatAppearance.BorderColor = Color.Lime;
-                form.getBtnD().BackColor = Color.FromArgb(255, 0, 192, 0);
-            }
-            if (vD < -40)
-            {
-                form.getBtnD().FlatAppearance.BorderColor = Color.FromArgb(255, 0, 255, 0);
-                form.getBtnD().BackColor = Color.FromArgb(255, 192, 0, 0);
-                vD = -40;
-            }
-            else if (form.getBtnD().BackColor == Color.FromArgb(255, 192, 0, 0))
-            {
-                form.getBtnD().FlatAppearance.BorderColor = Color.Lime;
-                form.getBtnD().BackColor = Color.FromArgb(255, 0, 192, 0);
-            }
-            if (vG > 40)
-            {
-                form.getBtnG().FlatAppearance.BorderColor = Color.FromArgb(255, 0, 255, 0);
-                form.getBtnG().BackColor = Color.FromArgb(255, 192, 0, 0);
-                vG = 40;
-            }
-            else if (form.getBtnG().BackColor == Color.FromArgb(255, 192, 0, 0))
-            {
-                form.getBtnG().FlatAppearance.BorderColor = Color.Lime;
-                form.getBtnG().BackColor = Color.FromArgb(255, 0, 192, 0);
-            }
-            if (vG < -40)
-            {
-                form.getBtnG().FlatAppearance.BorderColor = Color.FromArgb(255, 0, 255, 0);
-                form.getBtnG().BackColor = Color.FromArgb(255, 192, 0, 0);
-                vG = -40;
-            }
-            else if (form.getBtnG().BackColor == Color.FromArgb(255, 192, 0, 0))
-            {
-                form.getBtnG().FlatAppearance.BorderColor = Color.Lime;
-                form.getBtnG().BackColor = Color.FromArgb(255, 0, 192, 0);
-            }
-            refreshBTN2(form.getBtnG(), Convert.ToInt32(vG * 6));
-            refreshBTN2(form.getBtnD(), Convert.ToInt32(vD * 6));
         }
 
         private void SensorSkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
@@ -263,27 +211,6 @@ namespace projet_p1
         //        refreshBTN2(btnG, 0);
         //    }
         //}
-
-        public void refreshBTN(Button Btn, int T) //rafraichit la taille des "bouttons" oui, désolé ce sont des buttons qui indiquent la vitesse ... ><
-        {
-            Btn.Height = T;
-            Btn.Top = 250 - T + 4;
-
-        }
-        public void refreshBTN2(Button Btn, int T) // idem mais avec des nombres positifs et négatifs (2ème sorte de bouttons)
-        {
-            if (T >= 0)
-            {
-                Btn.Height = T;
-                Btn.Top = 250 - T + 4;
-            }
-            if (T < 0)
-            {
-                Btn.Height = -T;
-                Btn.Top = 250 + 4;
-            }
-        }
-
         public void launch()
         {
             foreach (var potentialSensor in KinectSensor.KinectSensors)

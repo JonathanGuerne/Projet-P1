@@ -29,12 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.lblGAUCHE1 = new System.Windows.Forms.Label();
-            this.btnD = new System.Windows.Forms.Button();
-            this.btnG = new System.Windows.Forms.Button();
-            this.btnGO = new System.Windows.Forms.Button();
             this.lblDROITE1 = new System.Windows.Forms.Label();
             this.lblGAUCHEref = new System.Windows.Forms.Label();
             this.lblDROITEref = new System.Windows.Forms.Label();
@@ -43,37 +38,11 @@
             this.lblDROITEx = new System.Windows.Forms.Label();
             this.lblGAUCHEx = new System.Windows.Forms.Label();
             this.lblHEADx = new System.Windows.Forms.Label();
-            this.btnrefresh = new System.Windows.Forms.Button();
             this.lblPINCEupdown = new System.Windows.Forms.Label();
             this.lblPINCEopenclose = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelVitesse = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.Enabled = false;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(525, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 414);
-            this.button1.TabIndex = 20;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.Enabled = false;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(454, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(68, 414);
-            this.button2.TabIndex = 19;
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // lblGAUCHE1
             // 
@@ -84,42 +53,6 @@
             this.lblGAUCHE1.Size = new System.Drawing.Size(121, 20);
             this.lblGAUCHE1.TabIndex = 1;
             this.lblGAUCHE1.Text = "position gauche";
-            // 
-            // btnD
-            // 
-            this.btnD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnD.Enabled = false;
-            this.btnD.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.btnD.FlatAppearance.BorderSize = 5;
-            this.btnD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnD.Location = new System.Drawing.Point(525, 12);
-            this.btnD.Name = "btnD";
-            this.btnD.Size = new System.Drawing.Size(68, 393);
-            this.btnD.TabIndex = 7;
-            this.btnD.UseVisualStyleBackColor = false;
-            this.btnD.Click += new System.EventHandler(this.btnD_Click);
-            // 
-            // btnG
-            // 
-            this.btnG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnG.Enabled = false;
-            this.btnG.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.btnG.FlatAppearance.BorderSize = 5;
-            this.btnG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnG.Location = new System.Drawing.Point(454, 12);
-            this.btnG.Name = "btnG";
-            this.btnG.Size = new System.Drawing.Size(68, 393);
-            this.btnG.TabIndex = 6;
-            this.btnG.UseVisualStyleBackColor = false;
-            // 
-            // btnGO
-            // 
-            this.btnGO.Location = new System.Drawing.Point(615, 5);
-            this.btnGO.Name = "btnGO";
-            this.btnGO.Size = new System.Drawing.Size(79, 23);
-            this.btnGO.TabIndex = 8;
-            this.btnGO.Text = "GO";
-            this.btnGO.UseVisualStyleBackColor = true;
             // 
             // lblDROITE1
             // 
@@ -201,15 +134,6 @@
             this.lblHEADx.TabIndex = 16;
             this.lblHEADx.Text = "lblHEADx";
             // 
-            // btnrefresh
-            // 
-            this.btnrefresh.Location = new System.Drawing.Point(615, 396);
-            this.btnrefresh.Name = "btnrefresh";
-            this.btnrefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnrefresh.TabIndex = 17;
-            this.btnrefresh.Text = "refresh";
-            this.btnrefresh.UseVisualStyleBackColor = true;
-            // 
             // lblPINCEupdown
             // 
             this.lblPINCEupdown.AutoSize = true;
@@ -230,23 +154,11 @@
             this.lblPINCEopenclose.TabIndex = 22;
             this.lblPINCEopenclose.Text = "-";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Yellow;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(454, 204);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 5);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "_____________________________________________________________";
-            // 
             // panelVitesse
             // 
-            this.panelVitesse.Location = new System.Drawing.Point(5, 5);
+            this.panelVitesse.Location = new System.Drawing.Point(531, 9);
             this.panelVitesse.Name = "panelVitesse";
-            this.panelVitesse.Size = new System.Drawing.Size(165, 600);
+            this.panelVitesse.Size = new System.Drawing.Size(165, 614);
             this.panelVitesse.TabIndex = 24;
             this.panelVitesse.Paint += new System.Windows.Forms.PaintEventHandler(this.panelVitesse_Paint);
             // 
@@ -262,10 +174,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(963, 635);
             this.Controls.Add(this.panelVitesse);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPINCEopenclose);
             this.Controls.Add(this.lblPINCEupdown);
-            this.Controls.Add(this.btnrefresh);
             this.Controls.Add(this.lblHEADx);
             this.Controls.Add(this.lblDROITEx);
             this.Controls.Add(this.lblGAUCHEx);
@@ -274,12 +184,7 @@
             this.Controls.Add(this.lblGAUCHEref);
             this.Controls.Add(this.lblDROITEref);
             this.Controls.Add(this.lblDROITE1);
-            this.Controls.Add(this.btnGO);
-            this.Controls.Add(this.btnD);
-            this.Controls.Add(this.btnG);
             this.Controls.Add(this.lblGAUCHE1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
             this.Name = "Form1";
             this.Text = "K-Driver";
             this.ResumeLayout(false);
@@ -289,9 +194,6 @@
 
         #endregion
         private System.Windows.Forms.Label lblGAUCHE1;
-        private System.Windows.Forms.Button btnD;
-        private System.Windows.Forms.Button btnG;
-        private System.Windows.Forms.Button btnGO;
         private System.Windows.Forms.Label lblDROITE1;
         private System.Windows.Forms.Label lblGAUCHEref;
         private System.Windows.Forms.Label lblDROITEref;
@@ -300,12 +202,8 @@
         private System.Windows.Forms.Label lblDROITEx;
         private System.Windows.Forms.Label lblGAUCHEx;
         private System.Windows.Forms.Label lblHEADx;
-        private System.Windows.Forms.Button btnrefresh;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblPINCEupdown;
         private System.Windows.Forms.Label lblPINCEopenclose;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelVitesse;
         private System.Windows.Forms.Timer timer1;
     }

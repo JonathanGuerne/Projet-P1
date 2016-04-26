@@ -29,28 +29,6 @@ namespace projet_p1
         }
 
 
-
-        public Button getBtnD()
-        {
-            return this.btnD;
-        }
-
-        public Button getBtnG()
-        {
-            return this.btnG;
-        }
-
-
-        private void refreshBTN(Button Btn, int T) //rafraichit la taille des "bouttons" oui, désolé ce sont des buttons qui indiquent la vitesse ... ><
-        {
-            kinect.refreshBTN(Btn,T);
-
-        }
-        private void refreshBTN2(Button Btn, int T) // idem mais avec des nombres positifs et négatifs (2ème sorte de bouttons)
-        {
-            kinect.refreshBTN2(Btn, T);
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             kinect.launch();
@@ -93,24 +71,39 @@ namespace projet_p1
             g.FillPolygon(brush, points);
 
 
-            double facteur = 8;//p.Height / 20;
+            double facteur = 7;//p.Height / 20;
             
             points[0] = new Point(14, p.Height / 2);
             points[1] = new Point(14, (int)((p.Height / 2) - (kinect.getVGauche() * facteur)));
             points[2] = new Point((p.Width / 2) - 14, (int)((p.Height / 2) - (kinect.getVGauche() * facteur)));
             points[3] = new Point((p.Width / 2) - 14, p.Height / 2);
-
-            brush = new SolidBrush(Color.FromArgb(255, (int)(Math.Abs(kinect.getVGauche()) * 255) / 50, (int)((-Math.Abs(kinect.getVGauche()) * 255) / 50) + 255, 0));
-
+            if((int)(Math.Abs(kinect.getVGauche()) * 255) / 50 < 255 && (int)((-Math.Abs(kinect.getVGauche()) * 255) / 50) + 255 < 255)
+            {
+                brush = new SolidBrush(Color.FromArgb(255, (int)(Math.Abs(kinect.getVGauche()) * 255) / 50, (int)((-Math.Abs(kinect.getVGauche()) * 255) / 50) + 255,0));
+            }
+            else
+            {
+                brush = new SolidBrush(Color.FromArgb(255, 255, 0, 0));
+            }
+            
+            //brush = new SolidBrush(Color.FromArgb(255, 0, 100, 0));
             g.FillPolygon(brush, points);
 
             points[0] = new Point((p.Width / 2) + 14, p.Height / 2);
             points[1] = new Point((p.Width / 2) + 14, (int)((p.Height / 2) - (kinect.getVDroite() * facteur)));
             points[2] = new Point(p.Width - 14, (int)((p.Height / 2) - (kinect.getVDroite() * facteur)));
             points[3] = new Point(p.Width - 14, p.Height / 2);
-
-            brush = new SolidBrush(Color.FromArgb(255,(int)(Math.Abs(kinect.getVDroite())*255)/50, (int)((-Math.Abs(kinect.getVDroite()) * 255) / 50)+255,0));
-
+            if((int)(Math.Abs(kinect.getVDroite()) * 255) / 50<255 && (int)((-Math.Abs(kinect.getVDroite()) * 255) / 50) + 255<255)
+            {
+                brush = new SolidBrush(Color.FromArgb(255, (int)(Math.Abs(kinect.getVDroite()) * 255) / 50, (int)((-Math.Abs(kinect.getVDroite()) * 255) / 50) + 255,0));
+            }
+            else
+            {
+                brush = new SolidBrush(Color.FromArgb(255, 255, 0, 0));
+            }
+            
+            
+            //brush = new SolidBrush(Color.FromArgb(255, 0, 100, 0));
             g.FillPolygon(brush, points);
 
             points[0] = new Point(10, (p.Height / 2) - 2);
