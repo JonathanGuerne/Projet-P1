@@ -22,7 +22,7 @@ namespace projet_p1
         SkeletonPoint LHand;
         double vGauche;
         double vDroite;
-        double vG = 0;
+        double vG = 49;
         double vD = 0;
         double refGauche = 0;
         double refDroite = 0;
@@ -30,6 +30,11 @@ namespace projet_p1
         int pinceUpDown = 0;
         int pinceOpenClose = 0;
 
+        double MargesPinceH = 0.1;
+        double MargesPinceB = -0.6;
+        double MargesPinceC = -0.25;
+        double MargesPinceO = -0.43;
+        int largeurConduite = 30;
 
         public double getVGauche()
         {
@@ -51,6 +56,58 @@ namespace projet_p1
         {
             return RHand;
         }
+        public Boolean getModePince()
+        {
+            return modePince;
+        }
+        public int getPinceUpDown()
+        {
+            return pinceUpDown;
+        }
+        public int getPinceOpenClose()
+        {
+            return pinceOpenClose;
+        }
+        public double getMargesPinceH()
+        {
+            return MargesPinceH;
+        }
+        public void setMargesPinceH(double A1)
+        {
+            MargesPinceH = A1;
+        }
+        public double getMargesPinceB()
+        {
+            return MargesPinceB;
+        }
+        public void setMargesPinceB(double A1)
+        {
+            MargesPinceB = A1;
+        }
+        public double getMargesPinceC()
+        {
+            return MargesPinceC;
+        }
+        public void setMargesPinceC(double A1)
+        {
+            MargesPinceC = A1;
+        }
+        public double getMargesPinceO()
+        {
+            return MargesPinceO;
+        }
+        public void setMargesPinceO(double A1)
+        {
+            MargesPinceO = A1;
+        }
+        public int getLargeurConduite()
+        {
+            return largeurConduite;
+        }
+        public void setLargeurConduite(int A1)
+        {
+            largeurConduite = A1;
+        }
 
         public void refreshAccAB(Skeleton sk)
         {
@@ -69,7 +126,7 @@ namespace projet_p1
                     //refGauche = p_TETE.X * 100;
                 }
 
-                if (p_MainDroite.X * 100 < p_TETE.X * 100 + 30)          // vérifie la position d'arrête (30 cm sur les côtés) (si c'est à l'arrête, peut importe la positions l'acceleration = 0)
+                if (p_MainDroite.X * 100 < p_TETE.X * 100 + largeurConduite)          // vérifie la position d'arrête (30 cm sur les côtés) (si c'est à l'arrête, peut importe la positions l'acceleration = 0)
                 {
                     if (refDroite == 0)     // vérifie si la reference est déjà définie ou si on doit la redéfinir (donc si on rentre dans le camp de contrôle)
                     {
@@ -84,7 +141,7 @@ namespace projet_p1
                     vD = 0;
                 }
 
-                if (p_MainGauche.X * 100 > p_TETE.X * 100 - 30)
+                if (p_MainGauche.X * 100 > p_TETE.X * 100 - largeurConduite)
                 {
                     if (refGauche == 0)
                     {
@@ -114,14 +171,14 @@ namespace projet_p1
                 double MoyenneZ = (p_MainDroite.Z + p_MainGauche.Z) / 2;
 
                 //TEST JAUNE
-                if (MoyenneY > p_TETE.Y + 0.1)
+                if (MoyenneY > p_TETE.Y + MargesPinceH)
                 {
                     //lblPINCEupdown.Text = "▲";
                     pinceUpDown = 1;
                 }
                 else
                 {
-                    if (MoyenneY < p_TETE.Y - 0.6)
+                    if (MoyenneY < p_TETE.Y + MargesPinceB)
                     {
                         //lblPINCEupdown.Text = "▼";
                         pinceUpDown = -1;
@@ -133,14 +190,14 @@ namespace projet_p1
                     }
                 }
                 //TEST ROUGE
-                if (MoyenneZ > p_TETE.Z - 0.25)
+                if (MoyenneZ > p_TETE.Z + MargesPinceC)
                 {
                     //lblPINCEopenclose.Text = "→←";
                     pinceOpenClose = -1;
                 }
                 else
                 {
-                    if (MoyenneZ < p_TETE.Z - 0.43)
+                    if (MoyenneZ < p_TETE.Z - MargesPinceO)
                     {
                         //lblPINCEopenclose.Text = "←→";
                         pinceOpenClose = 1;
