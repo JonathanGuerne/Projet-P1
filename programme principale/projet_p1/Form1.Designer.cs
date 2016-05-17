@@ -42,7 +42,6 @@
             this.lblPINCEopenclose = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelKVueDessus = new System.Windows.Forms.Panel();
             this.panelVitesse = new System.Windows.Forms.Panel();
             this.pbox_VUE_Autres = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_VUE_Autres)).BeginInit();
@@ -170,20 +169,6 @@
             this.panel1.Size = new System.Drawing.Size(430, 298);
             this.panel1.TabIndex = 25;
             // 
-            // panelKVueDessus
-            // 
-            this.panelKVueDessus.BackgroundImage = global::projet_p1.Properties.Resources.BG1;
-            this.panelKVueDessus.Location = new System.Drawing.Point(12, 313);
-            this.panelKVueDessus.Name = "panelKVueDessus";
-            this.panelKVueDessus.Size = new System.Drawing.Size(430, 310);
-            this.panelKVueDessus.TabIndex = 26;
-            this.panelKVueDessus.Paint += new System.Windows.Forms.PaintEventHandler(this.panelKVueDessus_Paint);
-            this.panelKVueDessus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelKVueDessus_MouseDown);
-            this.panelKVueDessus.MouseLeave += new System.EventHandler(this.panelKVueDessus_MouseLeave);
-            this.panelKVueDessus.MouseHover += new System.EventHandler(this.panelKVueDessus_MouseHover);
-            this.panelKVueDessus.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelKVueDessus_MouseMove);
-            this.panelKVueDessus.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelKVueDessus_MouseUp);
-            // 
             // panelVitesse
             // 
             this.panelVitesse.Location = new System.Drawing.Point(448, 9);
@@ -195,7 +180,7 @@
             // pbox_VUE_Autres
             // 
             this.pbox_VUE_Autres.BackgroundImage = global::projet_p1.Properties.Resources.BG1;
-            this.pbox_VUE_Autres.Location = new System.Drawing.Point(619, 313);
+            this.pbox_VUE_Autres.Location = new System.Drawing.Point(12, 313);
             this.pbox_VUE_Autres.Name = "pbox_VUE_Autres";
             this.pbox_VUE_Autres.Size = new System.Drawing.Size(430, 310);
             this.pbox_VUE_Autres.TabIndex = 27;
@@ -213,7 +198,6 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1059, 635);
             this.Controls.Add(this.pbox_VUE_Autres);
-            this.Controls.Add(this.panelKVueDessus);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelVitesse);
             this.Controls.Add(this.lblPINCEopenclose);
@@ -230,6 +214,8 @@
             this.Name = "Form1";
             this.Text = "K-Driver";
             this.Load += new System.EventHandler(this.Form1_Load_1);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pbox_VUE_Autres)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -251,7 +237,6 @@
         private System.Windows.Forms.Panel panelVitesse;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panelKVueDessus;
         private System.Windows.Forms.PictureBox pbox_VUE_Autres;
     }
 }

@@ -22,15 +22,16 @@ namespace projet_p1
         SkeletonPoint LHand;
         double vGauche;
         double vDroite;
-        double vG = 49;
+        double vG = 0;
         double vD = 0;
         double refGauche = 0;
         double refDroite = 0;
         Boolean modePince;
+        Boolean modePinceOld;
         int pinceUpDown = 0;
         int pinceOpenClose = 0;
 
-        double MargesPinceH = 0.1;
+        double MargesPinceH = -0.15;
         double MargesPinceB = -0.6;
         double MargesPinceC = -0.25;
         double MargesPinceO = -0.43;
@@ -39,6 +40,14 @@ namespace projet_p1
         public double getVGauche()
         {
             return vG;
+        }
+        public double getReferenceDroite()
+        {
+            return refDroite;
+        }
+        public double getReferenceGauche()
+        {
+            return refGauche;
         }
         public double getVDroite()
         {
@@ -108,13 +117,36 @@ namespace projet_p1
         {
             largeurConduite = A1;
         }
-
+        public void SwitchMode()
+        {
+            if (modePince == true)
+            {
+                modePince = false;
+            }
+            else
+            {
+                modePince = true;
+            }
+        }
         public void refreshAccAB(Skeleton sk)
         {
             SkeletonPoint p_MainDroite = sk.Joints[JointType.HandRight].Position;
             SkeletonPoint p_MainGauche = sk.Joints[JointType.HandLeft].Position;
             SkeletonPoint p_TETE = sk.Joints[JointType.Head].Position;
+
+            if (modePinceOld == false)
+            {
+                if (p_MainDroite.X + 0.12 <= p_MainGauche.X)
+                {
+                    modePinceOld = true;
+                    SwitchMode();
+                }
+            }
             if (p_MainDroite.X + 0.12 > p_MainGauche.X)
+            {
+                modePinceOld = false;
+            }
+            if (modePince == false)
             {
                 modePince = false;
                 if (refDroite == 0)
@@ -167,7 +199,7 @@ namespace projet_p1
                 refGauche = 0;
                 vDroite = 0;
                 vGauche = 0;
-                double MoyenneY = p_MainDroite.Y + p_MainGauche.Y;
+                double MoyenneY = (p_MainDroite.Y + p_MainGauche.Y) / 2;
                 double MoyenneZ = (p_MainDroite.Z + p_MainGauche.Z) / 2;
 
                 //TEST JAUNE
@@ -197,7 +229,7 @@ namespace projet_p1
                 }
                 else
                 {
-                    if (MoyenneZ < p_TETE.Z - MargesPinceO)
+                    if (MoyenneZ < p_TETE.Z + MargesPinceO)
                     {
                         //lblPINCEopenclose.Text = "←→";
                         pinceOpenClose = 1;
@@ -269,22 +301,6 @@ namespace projet_p1
                 }
             }
         }
-
-        //private void btnGO_Click(object sender, EventArgs e)
-        //{
-        //    if (btnGO.Text == "GO")
-        //    {
-        //        refreshBTN2(btnD, 1);
-        //        refreshBTN2(btnG, 1);
-        //        btnGO.Text = "STOP";
-        //    }
-        //    else
-        //    {
-        //        btnGO.Text = "GO";
-        //        refreshBTN2(btnD, 0);
-        //        refreshBTN2(btnG, 0);
-        //    }
-        //}
         public void launch()
         {
             foreach (var potentialSensor in KinectSensor.KinectSensors)
