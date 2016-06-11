@@ -29,133 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblGAUCHE1 = new System.Windows.Forms.Label();
-            this.lblDROITE1 = new System.Windows.Forms.Label();
-            this.lblGAUCHEref = new System.Windows.Forms.Label();
-            this.lblDROITEref = new System.Windows.Forms.Label();
-            this.lblGAUCHEv = new System.Windows.Forms.Label();
-            this.lblDROITEv = new System.Windows.Forms.Label();
-            this.lblDROITEx = new System.Windows.Forms.Label();
-            this.lblGAUCHEx = new System.Windows.Forms.Label();
-            this.lblHEADx = new System.Windows.Forms.Label();
-            this.lblPINCEupdown = new System.Windows.Forms.Label();
-            this.lblPINCEopenclose = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelVitesse = new System.Windows.Forms.Panel();
+            this.cbxModeSimluation = new System.Windows.Forms.CheckBox();
+            this.pboxSIM = new System.Windows.Forms.PictureBox();
             this.pbox_VUE_Autres = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxSIM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_VUE_Autres)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblGAUCHE1
-            // 
-            this.lblGAUCHE1.AutoSize = true;
-            this.lblGAUCHE1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGAUCHE1.Location = new System.Drawing.Point(721, 9);
-            this.lblGAUCHE1.Name = "lblGAUCHE1";
-            this.lblGAUCHE1.Size = new System.Drawing.Size(121, 20);
-            this.lblGAUCHE1.TabIndex = 1;
-            this.lblGAUCHE1.Text = "position gauche";
-            // 
-            // lblDROITE1
-            // 
-            this.lblDROITE1.AutoSize = true;
-            this.lblDROITE1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDROITE1.Location = new System.Drawing.Point(848, 9);
-            this.lblDROITE1.Name = "lblDROITE1";
-            this.lblDROITE1.Size = new System.Drawing.Size(108, 20);
-            this.lblDROITE1.TabIndex = 9;
-            this.lblDROITE1.Text = "position droite";
-            // 
-            // lblGAUCHEref
-            // 
-            this.lblGAUCHEref.AutoSize = true;
-            this.lblGAUCHEref.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGAUCHEref.Location = new System.Drawing.Point(721, 101);
-            this.lblGAUCHEref.Name = "lblGAUCHEref";
-            this.lblGAUCHEref.Size = new System.Drawing.Size(108, 20);
-            this.lblGAUCHEref.TabIndex = 11;
-            this.lblGAUCHEref.Text = "position droite";
-            // 
-            // lblDROITEref
-            // 
-            this.lblDROITEref.AutoSize = true;
-            this.lblDROITEref.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDROITEref.Location = new System.Drawing.Point(848, 101);
-            this.lblDROITEref.Name = "lblDROITEref";
-            this.lblDROITEref.Size = new System.Drawing.Size(121, 20);
-            this.lblDROITEref.TabIndex = 10;
-            this.lblDROITEref.Text = "position gauche";
-            // 
-            // lblGAUCHEv
-            // 
-            this.lblGAUCHEv.AutoSize = true;
-            this.lblGAUCHEv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGAUCHEv.Location = new System.Drawing.Point(721, 160);
-            this.lblGAUCHEv.Name = "lblGAUCHEv";
-            this.lblGAUCHEv.Size = new System.Drawing.Size(108, 20);
-            this.lblGAUCHEv.TabIndex = 13;
-            this.lblGAUCHEv.Text = "position droite";
-            // 
-            // lblDROITEv
-            // 
-            this.lblDROITEv.AutoSize = true;
-            this.lblDROITEv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDROITEv.Location = new System.Drawing.Point(848, 160);
-            this.lblDROITEv.Name = "lblDROITEv";
-            this.lblDROITEv.Size = new System.Drawing.Size(121, 20);
-            this.lblDROITEv.TabIndex = 12;
-            this.lblDROITEv.Text = "position gauche";
-            // 
-            // lblDROITEx
-            // 
-            this.lblDROITEx.AutoSize = true;
-            this.lblDROITEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDROITEx.Location = new System.Drawing.Point(848, 39);
-            this.lblDROITEx.Name = "lblDROITEx";
-            this.lblDROITEx.Size = new System.Drawing.Size(108, 20);
-            this.lblDROITEx.TabIndex = 15;
-            this.lblDROITEx.Text = "position droite";
-            // 
-            // lblGAUCHEx
-            // 
-            this.lblGAUCHEx.AutoSize = true;
-            this.lblGAUCHEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGAUCHEx.Location = new System.Drawing.Point(721, 39);
-            this.lblGAUCHEx.Name = "lblGAUCHEx";
-            this.lblGAUCHEx.Size = new System.Drawing.Size(121, 20);
-            this.lblGAUCHEx.TabIndex = 14;
-            this.lblGAUCHEx.Text = "position gauche";
-            // 
-            // lblHEADx
-            // 
-            this.lblHEADx.AutoSize = true;
-            this.lblHEADx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHEADx.Location = new System.Drawing.Point(787, 68);
-            this.lblHEADx.Name = "lblHEADx";
-            this.lblHEADx.Size = new System.Drawing.Size(77, 20);
-            this.lblHEADx.TabIndex = 16;
-            this.lblHEADx.Text = "lblHEADx";
-            // 
-            // lblPINCEupdown
-            // 
-            this.lblPINCEupdown.AutoSize = true;
-            this.lblPINCEupdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPINCEupdown.Location = new System.Drawing.Point(744, 291);
-            this.lblPINCEupdown.Name = "lblPINCEupdown";
-            this.lblPINCEupdown.Size = new System.Drawing.Size(33, 46);
-            this.lblPINCEupdown.TabIndex = 21;
-            this.lblPINCEupdown.Text = "-";
-            // 
-            // lblPINCEopenclose
-            // 
-            this.lblPINCEopenclose.AutoSize = true;
-            this.lblPINCEopenclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPINCEopenclose.Location = new System.Drawing.Point(798, 291);
-            this.lblPINCEopenclose.Name = "lblPINCEopenclose";
-            this.lblPINCEopenclose.Size = new System.Drawing.Size(33, 46);
-            this.lblPINCEopenclose.TabIndex = 22;
-            this.lblPINCEopenclose.Text = "-";
             // 
             // timer1
             // 
@@ -177,8 +59,32 @@
             this.panelVitesse.TabIndex = 24;
             this.panelVitesse.Paint += new System.Windows.Forms.PaintEventHandler(this.panelVitesse_Paint);
             // 
+            // cbxModeSimluation
+            // 
+            this.cbxModeSimluation.AutoSize = true;
+            this.cbxModeSimluation.Location = new System.Drawing.Point(619, 8);
+            this.cbxModeSimluation.Name = "cbxModeSimluation";
+            this.cbxModeSimluation.Size = new System.Drawing.Size(104, 17);
+            this.cbxModeSimluation.TabIndex = 28;
+            this.cbxModeSimluation.Text = "Mode Simulation";
+            this.cbxModeSimluation.UseVisualStyleBackColor = true;
+            this.cbxModeSimluation.CheckedChanged += new System.EventHandler(this.cbxModeSimluation_CheckedChanged);
+            // 
+            // pboxSIM
+            // 
+            this.pboxSIM.BackColor = System.Drawing.Color.White;
+            this.pboxSIM.Location = new System.Drawing.Point(619, 31);
+            this.pboxSIM.Name = "pboxSIM";
+            this.pboxSIM.Size = new System.Drawing.Size(648, 592);
+            this.pboxSIM.TabIndex = 29;
+            this.pboxSIM.TabStop = false;
+            this.pboxSIM.Visible = false;
+            this.pboxSIM.Click += new System.EventHandler(this.pboxSIM_Click);
+            this.pboxSIM.Paint += new System.Windows.Forms.PaintEventHandler(this.pboxSIM_Paint);
+            // 
             // pbox_VUE_Autres
             // 
+            this.pbox_VUE_Autres.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pbox_VUE_Autres.BackgroundImage = global::projet_p1.Properties.Resources.BG1;
             this.pbox_VUE_Autres.Location = new System.Drawing.Point(12, 313);
             this.pbox_VUE_Autres.Name = "pbox_VUE_Autres";
@@ -197,25 +103,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1059, 635);
+            this.Controls.Add(this.pboxSIM);
+            this.Controls.Add(this.cbxModeSimluation);
             this.Controls.Add(this.pbox_VUE_Autres);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelVitesse);
-            this.Controls.Add(this.lblPINCEopenclose);
-            this.Controls.Add(this.lblPINCEupdown);
-            this.Controls.Add(this.lblHEADx);
-            this.Controls.Add(this.lblDROITEx);
-            this.Controls.Add(this.lblGAUCHEx);
-            this.Controls.Add(this.lblGAUCHEv);
-            this.Controls.Add(this.lblDROITEv);
-            this.Controls.Add(this.lblGAUCHEref);
-            this.Controls.Add(this.lblDROITEref);
-            this.Controls.Add(this.lblDROITE1);
-            this.Controls.Add(this.lblGAUCHE1);
             this.Name = "Form1";
             this.Text = "K-Driver";
             this.Load += new System.EventHandler(this.Form1_Load_1);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.Resize += new System.EventHandler(this.Form1_Resize);
+            ((System.ComponentModel.ISupportInitialize)(this.pboxSIM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_VUE_Autres)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -223,21 +121,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblGAUCHE1;
-        private System.Windows.Forms.Label lblDROITE1;
-        private System.Windows.Forms.Label lblGAUCHEref;
-        private System.Windows.Forms.Label lblDROITEref;
-        private System.Windows.Forms.Label lblGAUCHEv;
-        private System.Windows.Forms.Label lblDROITEv;
-        private System.Windows.Forms.Label lblDROITEx;
-        private System.Windows.Forms.Label lblGAUCHEx;
-        private System.Windows.Forms.Label lblHEADx;
-        private System.Windows.Forms.Label lblPINCEupdown;
-        private System.Windows.Forms.Label lblPINCEopenclose;
         private System.Windows.Forms.Panel panelVitesse;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pbox_VUE_Autres;
+        private System.Windows.Forms.CheckBox cbxModeSimluation;
+        private System.Windows.Forms.PictureBox pboxSIM;
     }
 }
 

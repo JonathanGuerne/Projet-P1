@@ -12,6 +12,9 @@ namespace projet_p1
 {
     public partial class Form1 : Form
     {
+        double af = 0; // simulation
+        double posX = 100; // simulation
+        double posY = 100; // simulation
         Kinect kinect;
         Rectangle R;
         int flagBG = 0;
@@ -179,30 +182,7 @@ namespace projet_p1
         {
             panelVitesse.Refresh();
             pbox_VUE_Autres.Refresh();
-            if(kinect.getPinceOpenClose()==0)
-            {
-                lblPINCEopenclose.Text = "○";
-            }
-            else if (kinect.getPinceOpenClose() == 1)
-            {
-                lblPINCEopenclose.Text = "←→";
-            }
-            else
-            {
-                lblPINCEopenclose.Text = "→←";
-            }
-            if (kinect.getPinceUpDown() == 0)
-            {
-                lblPINCEupdown.Text = "○";
-            }
-            else if (kinect.getPinceUpDown() == 1)
-            {
-                lblPINCEupdown.Text = "▲";
-            }
-            else
-            {
-                lblPINCEupdown.Text = "▼";
-            }
+            pboxSIM.Refresh();
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
@@ -259,22 +239,18 @@ namespace projet_p1
                 if (changeH == true)
                 {
                     kinect.setMargesPinceH((-e.Y + 93.0) / 250);
-                    lblDROITE1.Text = "H : " + kinect.getMargesPinceH().ToString() ;
                 }
                 if (changeB == true)
                 {
                     kinect.setMargesPinceB((-e.Y + 93.0) / 250);
-                    lblDROITEref.Text = "B : " + kinect.getMargesPinceB().ToString();
                 }
                 if (changeC == true)
                 {
                     kinect.setMargesPinceC((-e.X + 52.0) / 480);
-                    lblDROITEv.Text = "C : " + kinect.getMargesPinceC().ToString();
                 }
                 if (changeO == true)
                 {
                     kinect.setMargesPinceO((-e.X + 52.0) / 480);
-                   lblDROITEx.Text  = "O : " + kinect.getMargesPinceO().ToString();
                 }
             }
         }
@@ -303,9 +279,11 @@ namespace projet_p1
             PictureBox p = sender as PictureBox;
             Graphics g = e.Graphics;
             Brush brush;
-
+            
             if (kinect.getHead().Z != 0 && kinect.getModePince() == false)
             {
+                g.RotateTransform(180);
+                g.TranslateTransform(-p.Width, -p.Height);
                 if (flagBG == 1)
                 {
                     p.BackgroundImage = projet_p1.Properties.Resources.BG1;
@@ -330,6 +308,7 @@ namespace projet_p1
                 R.Height = 30;
                 R.X = (int)(kinect.getHead().Z * 100) - 15;
                 R.Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) - 15;
+                //R.X = p.Width - R.X - R.Width;
                 //R = new Rectangle((int)(kinect.getHead().Z * 100), (p.Height/2)+(int)(kinect.getHead().X*100) ,40,40);
                 brush = BRBleuTurquoise;
 
@@ -340,6 +319,8 @@ namespace projet_p1
                 R.Height = 20;
                 R.X = (int)(kinect.getLHand().Z * 100) - 10;
                 R.Y = (p.Height / 2) + (int)(-kinect.getLHand().X * 100) - 10;
+                //R.X = p.Width - R.X - R.Width;
+                //R.Y = p.Height - R.Y - R.Width;
                 //R = new Rectangle((int)(kinect.getLHand().Z * 100), (p.Height / 2) + (int)(kinect.getLHand().X * 100), 30, 30);
                 brush = BRRougeClair;
 
@@ -350,6 +331,8 @@ namespace projet_p1
                 R.Height = 20;
                 R.X = (int)(kinect.getRHand().Z * 100) - 10;
                 R.Y = (p.Height / 2) + (int)(-kinect.getRHand().X * 100) - 10;
+                //R.X = p.Width - R.X - R.Width;
+                //R.Y = p.Height - R.Y - R.Width;
                 //R = new Rectangle((int)(kinect.getRHand().Z * 100), (p.Height / 2) + (int)(kinect.getRHand().X * 100), 30, 30);
 
                 g.FillEllipse(brush, R);
@@ -373,18 +356,24 @@ namespace projet_p1
                     g.FillRectangle(brush, R);
                 }
                 // ------------------- REFERENCES ---------------------
-                R.Width = 4;
-                R.Height = kinect.getLargeurConduite();
-                R.X = (int)(kinect.getReferenceDroite());
-                R.Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) - (int)(kinect.getLargeurConduite());
-
-                g.FillRectangle(BRJaunePetant,R);
-                R.Width = 4;
-                R.Height = kinect.getLargeurConduite();
-                R.X = (int)(kinect.getReferenceGauche());
-                R.Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100);
-
-                g.FillRectangle(BRJaunePetant, R);
+                if(kinect.getReferenceDroite() != 0)
+                {
+                    R.Width = 4;
+                    R.Height = kinect.getLargeurConduite();
+                    R.X = (int)(kinect.getReferenceDroite())-2;
+                    R.Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) - (int)(kinect.getLargeurConduite());
+                    //R.X = p.Width - R.X - R.Width;
+                    g.FillRectangle(BRJaunePetant, R);
+                }
+                if (kinect.getReferenceGauche() != 0)
+                {
+                    R.Width = 4;
+                    R.Height = kinect.getLargeurConduite();
+                    R.X = (int)(kinect.getReferenceGauche())-2;
+                    R.Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100);
+                    //R.X = p.Width - R.X - R.Width;
+                    g.FillRectangle(BRJaunePetant, R);
+                }
             }
             ///////////////////////////// MODE PINCE ///////////////////////////////
             else if (kinect.getModePince() == true)
@@ -515,22 +504,18 @@ namespace projet_p1
                     if (changeH == true)
                     {
                         kinect.setMargesPinceH((-e.Y + 93.0) / 250);
-                        lblDROITE1.Text = "H : " + kinect.getMargesPinceH().ToString();
                     }
                     if (changeB == true)
                     {
                         kinect.setMargesPinceB((-e.Y + 93.0) / 250);
-                        lblDROITEref.Text = "B : " + kinect.getMargesPinceB().ToString();
                     }
                     if (changeC == true)
                     {
                         kinect.setMargesPinceC((-e.X + 52.0) / 480);
-                        lblDROITEv.Text = "C : " + kinect.getMargesPinceC().ToString();
                     }
                     if (changeO == true)
                     {
                         kinect.setMargesPinceO((-e.X + 52.0) / 480);
-                        lblDROITEx.Text = "O : " + kinect.getMargesPinceO().ToString();
                     }
                 }
             }
@@ -549,7 +534,6 @@ namespace projet_p1
                     if (changeL == true)
                     {
                         kinect.setLargeurConduite(Math.Abs((e.Y - pbox_VUE_Autres.Height / 2) + (int)(kinect.getHead().X * 100)));
-                        lblGAUCHEref.Text = "O : " + kinect.getLargeurConduite().ToString();
                     }
                 }
             }
@@ -582,6 +566,90 @@ namespace projet_p1
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             
+        }
+        /// SIMULATION /// SIMULATION /// SIMULATION /// SIMULATION /// SIMULATION !!!!!
+        /// /// SIMULATION /// SIMULATION /// SIMULATION /// SIMULATION /// SIMULATION !!!!!
+        /// /// SIMULATION /// SIMULATION /// SIMULATION /// SIMULATION /// SIMULATION !!!!!
+        /// /// SIMULATION /// SIMULATION /// SIMULATION /// SIMULATION /// SIMULATION !!!!!
+        private void cbxModeSimluation_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cbxModeSimluation.Checked == true)
+            {
+                Width += 800;
+                pboxSIM.Visible = true;
+            }
+            else
+            {
+                Width = 1075;
+                pboxSIM.Visible = false;
+            }
+        }
+        public static Bitmap RotateImage(Bitmap b, float angle, Graphics g)
+        {
+            //create a new empty bitmap to hold rotated image
+            Bitmap returnBitmap = new Bitmap(b.Width, b.Height);
+            //make a graphics object from the empty bitmap
+            using (g = Graphics.FromImage(returnBitmap))
+            {
+                //move rotation point to center of image
+                g.TranslateTransform((float)b.Width / 2, (float)b.Height / 2);
+                //rotate
+                g.RotateTransform(angle);
+                //move image back
+                g.TranslateTransform(-(float)b.Width / 2, -(float)b.Height / 2);
+                //draw passed in image onto graphics object
+                g.DrawImage(b, new Point(0, 0));
+            }
+            return returnBitmap;
+        }
+
+        private void pboxSIM_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pboxSIM_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            //Graphics g = e.Graphics;
+            double a = (kinect.getVGauche() - kinect.getVDroite()) * 0.05;
+
+            double v = (kinect.getVDroite() + kinect.getVGauche()) / 1;
+
+            af += a;
+
+            double cos = Math.Cos((Math.PI / 180) * af);
+            double sin = Math.Sin((Math.PI / 180) * af);
+
+            double Vx = cos * v * 0.1;
+            double Vy = sin * v * 0.1;
+
+            posX += Vx;
+            posY += Vy;
+
+            if (posX < -30) posX = -30;
+            if (posY < -30) posY = -30;
+            if (posX > 558) posX = 558;
+            if (posY > 502) posY = 502;
+
+            //Load an image in from a file
+            Image tank;
+
+            tank = RotateImage(new Bitmap(Properties.Resources.TANK), (float)af - 180, g);
+
+            try
+            {
+                g.Clear(Color.White);
+            }
+            catch (System.NullReferenceException e1)
+            { }
+
+            //g.TranslateTransform((float));
+            try
+            {
+                g.DrawImage(tank, new Point((int)posX, (int)posY));
+            }
+            catch (System.NullReferenceException e1) { }
         }
     }
 }
