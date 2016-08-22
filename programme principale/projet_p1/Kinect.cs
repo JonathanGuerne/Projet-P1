@@ -22,8 +22,8 @@ namespace projet_p1
         SkeletonPoint LHand;
         double vGauche;
         double vDroite;
-        double vG = 0;
-        double vD = 0;
+        double vGLisse = 0;
+        double vDLisse = 0;
         double refGauche = 0;
         double refDroite = 0;
         Boolean modePince;
@@ -37,9 +37,9 @@ namespace projet_p1
         double MargesPinceO = -0.43;
         int largeurConduite = 40;
 
-        public double getVGauche()
+        public double getVGLisse()
         {
-            return vG;
+            return vGLisse;
         }
         public double getReferenceDroite()
         {
@@ -49,9 +49,9 @@ namespace projet_p1
         {
             return refGauche;
         }
-        public double getVDroite()
+        public double getVDLisse()
         {
-            return vD;
+            return vDLisse;
         }
         public SkeletonPoint getHead()
         {
@@ -117,78 +117,60 @@ namespace projet_p1
         {
             largeurConduite = A1;
         }
-        public void SwitchMode()
-        {
-            if (modePince == true)
-            {
-                modePince = false;
-            }
-            else
-            {
-                modePince = true;
-            }
-        }
         public void refreshAccAB(Skeleton sk)
         {
-            SkeletonPoint p_MainDroite = sk.Joints[JointType.HandRight].Position;
-            SkeletonPoint p_MainGauche = sk.Joints[JointType.HandLeft].Position;
-            SkeletonPoint p_TETE = sk.Joints[JointType.Head].Position;
 
-            if (modePinceOld == false)
+            if (modePinceOld == false)//VERIFIE LE DERNIER ETAT POUR NE PAS CHANGER DE MODE EN CONTINUE QUAND LES BRAS SONT CROISES
             {
-                if (p_MainDroite.X + 0.12 <= p_MainGauche.X)
+                if (RHand.X + 0.12 <= LHand.X)//CHANGEMENT DE MODE  
                 {
                     modePinceOld = true;
-                    SwitchMode();
+                    modePince = !modePince;//remplace la méthode SwitchMode
                 }
             }
-            if (p_MainDroite.X + 0.12 > p_MainGauche.X)
+            if (RHand.X + 0.12 > LHand.X)
             {
                 modePinceOld = false;
             }
+
+
+            //MODE PILOTE
             if (modePince == false)
             {
-                modePince = false;
-                if (refDroite == 0)
-                {
-                    //refDroite = p_TETE.X * 100;
-                }
-                if (refGauche == 0)
-                {
-                    //refGauche = p_TETE.X * 100;
-                }
 
-                if (p_MainDroite.X * 100 < p_TETE.X * 100 + largeurConduite)          // vérifie la position d'arrête (30 cm sur les côtés) (si c'est à l'arrête, peut importe la positions l'acceleration = 0)
+                if (RHand.X * 100 < Head.X * 100 + largeurConduite)          // vérifie la position d'arrête (30 cm sur les côtés) (si c'est à l'arrête, peut importe la positions l'acceleration = 0)
                 {
                     if (refDroite == 0)     // vérifie si la reference est déjà définie ou si on doit la redéfinir (donc si on rentre dans le camp de contrôle)
                     {
-                        refDroite = p_MainDroite.Z * 100;   // redéfini la référence)
+                        refDroite = RHand.Z * 100;   // redéfini la référence)
                     }
-                    vDroite = refDroite - p_MainDroite.Z * 100;     // redéfini la vitesse par rapport à la référence
+                    vDroite = refDroite - RHand.Z * 100;     // redéfini la vitesse par rapport à la référence
                 }
                 else
                 {
                     refDroite = 0;
                     vDroite = 0;
-                    vD = 0;
+                    vDLisse = 0;
                 }
 
-                if (p_MainGauche.X * 100 > p_TETE.X * 100 - largeurConduite)
+
+                //même processus à gauche 
+                if (LHand.X * 100 > Head.X * 100 - largeurConduite)
                 {
                     if (refGauche == 0)
                     {
-                        refGauche = p_MainGauche.Z * 100;
+                        refGauche = LHand.Z * 100;
                     }
-                    vGauche = refGauche - p_MainGauche.Z * 100;
+                    vGauche = refGauche - LHand.Z * 100;
                 }
                 else
                 {
                     vGauche = 0;
-                    vG = 0;
+                    vGLisse = 0;
                     refGauche = 0;
                 }
+
                 //lblPINCEopenclose.Text = "-";
-                pinceOpenClose = 0;
                 //lblPINCEupdown.Text = "-";
                 pinceOpenClose = 0;
             }
@@ -199,18 +181,18 @@ namespace projet_p1
                 refGauche = 0;
                 vDroite = 0;
                 vGauche = 0;
-                double MoyenneY = (p_MainDroite.Y + p_MainGauche.Y) / 2;
-                double MoyenneZ = (p_MainDroite.Z + p_MainGauche.Z) / 2;
+                double MoyenneY = (RHand.Y + LHand.Y) / 2;
+                double MoyenneZ = (RHand.Z + LHand.Z) / 2;
 
                 //TEST JAUNE
-                if (MoyenneY > p_TETE.Y + MargesPinceH)
+                if (MoyenneY > Head.Y + MargesPinceH)
                 {
                     //lblPINCEupdown.Text = "▲";
                     pinceUpDown = 1;
                 }
                 else
                 {
-                    if (MoyenneY < p_TETE.Y + MargesPinceB)
+                    if (MoyenneY < Head.Y + MargesPinceB)
                     {
                         //lblPINCEupdown.Text = "▼";
                         pinceUpDown = -1;
@@ -222,14 +204,14 @@ namespace projet_p1
                     }
                 }
                 //TEST ROUGE
-                if (MoyenneZ > p_TETE.Z + MargesPinceC)
+                if (MoyenneZ > Head.Z + MargesPinceC)
                 {
                     //lblPINCEopenclose.Text = "→←";
                     pinceOpenClose = -1;
                 }
                 else
                 {
-                    if (MoyenneZ < p_TETE.Z + MargesPinceO)
+                    if (MoyenneZ < Head.Z + MargesPinceO)
                     {
                         //lblPINCEopenclose.Text = "←→";
                         pinceOpenClose = 1;
@@ -242,34 +224,34 @@ namespace projet_p1
                 }
             }
             // stabilisation
-            if (vD == 0)
+            if (vDLisse == 0)
             {
-                vD = vDroite;
+                vDLisse = vDroite;
             }
             else
             {
-                if (Math.Abs(vD - vDroite) < 3)
+                if (Math.Abs(vDLisse - vDroite) < 3)
                 {
-                    vD = (vD + vDroite) / 2;
+                    vDLisse = (vDLisse + vDroite) / 2;
                 }
                 else
                 {
-                    vD = (5 * vD + vDroite) / 6;
+                    vDLisse = (5 * vDLisse + vDroite) / 6;
                 }
             }
-            if (vG == 0)
+            if (vGLisse == 0)
             {
-                vG = vGauche;
+                vGLisse = vGauche;
             }
             else
             {
-                if (Math.Abs(vG - vGauche) < 3)
+                if (Math.Abs(vGLisse - vGauche) < 3)
                 {
-                    vG = (vG + vGauche) / 2;
+                    vGLisse = (vGLisse + vGauche) / 2;
                 }
                 else
                 {
-                    vG = (5 * vG + vGauche) / 6;
+                    vGLisse = (5 * vGLisse + vGauche) / 6;
                 }
             }
         }
@@ -293,14 +275,16 @@ namespace projet_p1
             {
                 if (skel.TrackingState == SkeletonTrackingState.Tracked)
                 {
-                    refreshAccAB(skel);
+                    
                     Head = skel.Joints[JointType.Head].Position;
                     RHand = skel.Joints[JointType.HandRight].Position;
                     LHand = skel.Joints[JointType.HandLeft].Position;
+                    refreshAccAB(skel);
                     break;
                 }
             }
         }
+
         public void launch()
         {
             foreach (var potentialSensor in KinectSensor.KinectSensors)
