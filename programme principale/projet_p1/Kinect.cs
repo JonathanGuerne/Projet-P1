@@ -35,7 +35,7 @@ namespace projet_p1
         double MargesPinceB = -0.6;
         double MargesPinceC = -0.25;
         double MargesPinceO = -0.43;
-        int largeurConduite = 30;
+        int largeurConduite = 40;
 
         public double getVGauche()
         {
