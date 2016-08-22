@@ -33,3 +33,15 @@ C:\Users\deni.gahlinge\Documents\ProjetP1\ProjetP1git\GitHub\Projet-P1\programme
 C:\Users\deni.gahlinge\Documents\ProjetP1\ProjetP1git\GitHub\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.Form_test_dessin.resources
 C:\Users\deni.gahlinge\Documents\ProjetP1\ProjetP1git\GitHub\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.Properties.Resources.resources
 C:\Users\deni.gahlinge\Documents\ProjetP1\ProjetP1git\GitHub\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.csproj.GenerateResource.Cache
+C:\Users\pedro.costa\Desktop\Projet-P1\programme principale\projet_p1\bin\Debug\projet_p1.exe.config
+C:\Users\pedro.costa\Desktop\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.exe
+C:\Users\pedro.costa\Desktop\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.pdb
+C:\Users\pedro.costa\Desktop\Projet-P1\programme principale\projet_p1\bin\Debug\projet_p1.exe
+C:\Users\pedro.costa\Desktop\Projet-P1\programme principale\projet_p1\bin\Debug\projet_p1.pdb
+C:\Users\pedro.costa\Desktop\Projet-P1\programme principale\projet_p1\bin\Debug\Microsoft.Kinect.dll
+C:\Users\pedro.costa\Desktop\Projet-P1\programme principale\projet_p1\bin\Debug\Microsoft.Kinect.xml
+C:\Users\pedro.costa\Desktop\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.csprojResolveAssemblyReference.cache
+C:\Users\pedro.costa\Desktop\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.Form1.resources
+C:\Users\pedro.costa\Desktop\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.Form_test_dessin.resources
+C:\Users\pedro.costa\Desktop\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.Properties.Resources.resources
+C:\Users\pedro.costa\Desktop\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.csproj.GenerateResource.Cache

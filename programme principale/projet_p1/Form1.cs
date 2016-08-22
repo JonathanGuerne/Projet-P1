@@ -104,14 +104,14 @@ namespace projet_p1
             points[0].X = 14;
             points[0].Y = p.Height / 2;
             points[1].X = 14;
-            points[1].Y = (int)((p.Height / 2) - (kinect.getVGauche() * facteur));
+            points[1].Y = (int)((p.Height / 2) - (kinect.getVGLisse() * facteur));
             points[2].X = (p.Width / 2) - 14;
-            points[2].Y = (int)((p.Height / 2) - (kinect.getVGauche() * facteur));
+            points[2].Y = (int)((p.Height / 2) - (kinect.getVGLisse() * facteur));
             points[3].X = (p.Width / 2) - 14;
             points[3].Y = p.Height / 2;
-            if ((int)(Math.Abs(kinect.getVGauche()) * 255) / 50 < 255 && (int)((-Math.Abs(kinect.getVGauche()) * 255) / 50) + 255 < 255)
+            if ((int)(Math.Abs(kinect.getVGLisse()) * 255) / 50 < 255 && (int)((-Math.Abs(kinect.getVGLisse()) * 255) / 50) + 255 < 255)
             {
-                brush = new SolidBrush(Color.FromArgb(255, 0, (int)((-Math.Abs(kinect.getVGauche()) * 255) / 100) + 255, (int)(Math.Abs(kinect.getVGauche()) * 255) / 50));
+                brush = new SolidBrush(Color.FromArgb(255, 0, (int)((-Math.Abs(kinect.getVGLisse()) * 255) / 100) + 255, (int)(Math.Abs(kinect.getVGLisse()) * 255) / 50));
             }
             else
             {
@@ -124,14 +124,14 @@ namespace projet_p1
             points[0].X = (p.Width / 2) + 14;
             points[0].Y = p.Height / 2;
             points[1].X = (p.Width / 2) + 14;
-            points[1].Y = (int)((p.Height / 2) - (kinect.getVDroite() * facteur));
+            points[1].Y = (int)((p.Height / 2) - (kinect.getVDLisse() * facteur));
             points[2].X = p.Width - 14;
-            points[2].Y = (int)((p.Height / 2) - (kinect.getVDroite() * facteur));
+            points[2].Y = (int)((p.Height / 2) - (kinect.getVDLisse() * facteur));
             points[3].X = p.Width - 14;
             points[3].Y = p.Height / 2;
-            if ((int)(Math.Abs(kinect.getVDroite()) * 255) / 50<255 && (int)((-Math.Abs(kinect.getVDroite()) * 255) / 50) + 255<255)
+            if ((int)(Math.Abs(kinect.getVDLisse()) * 255) / 50<255 && (int)((-Math.Abs(kinect.getVDLisse()) * 255) / 50) + 255<255)
             {
-                brush = new SolidBrush(Color.FromArgb(255, 0, (int)((-Math.Abs(kinect.getVDroite()) * 255) / 100) + 255, (int)(Math.Abs(kinect.getVDroite()) * 255) / 50));
+                brush = new SolidBrush(Color.FromArgb(255, 0, (int)((-Math.Abs(kinect.getVDLisse()) * 255) / 100) + 255, (int)(Math.Abs(kinect.getVDLisse()) * 255) / 50));
             }
             else
             {
@@ -168,13 +168,13 @@ namespace projet_p1
 
             g.FillPolygon(brush, points);
 
-            if(kinect.getVGauche() != 0)
+            if(kinect.getVGLisse() != 0)
             {
-                Console.WriteLine("Vgauche : " + kinect.getVGauche());
+                Console.WriteLine("Vgauche : " + kinect.getVGLisse());
             }
-            if (kinect.getVDroite() != 0)
+            if (kinect.getVDLisse() != 0)
             {
-                Console.WriteLine("Vdroite : " + kinect.getVDroite());
+                Console.WriteLine("Vdroite : " + kinect.getVDLisse());
             }
         }
 
@@ -612,9 +612,9 @@ namespace projet_p1
         {
             Graphics g = e.Graphics;
             //Graphics g = e.Graphics;
-            double a = (kinect.getVGauche() - kinect.getVDroite()) * 0.05;
+            double a = (kinect.getVGLisse() - kinect.getVDLisse()) * 0.05;
 
-            double v = (kinect.getVDroite() + kinect.getVGauche()) / 1;
+            double v = (kinect.getVDLisse() + kinect.getVGLisse()) / 1;
 
             af += a;
 
