@@ -179,7 +179,6 @@ namespace projet_p1
             }
             else
             {
-                modePince = true;
                 refDroite = 0;
                 refGauche = 0;
                 vDroite = 0;
