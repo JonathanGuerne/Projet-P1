@@ -98,8 +98,16 @@ namespace projet_p1
             double facteur = 7;
 
             rectVitesse.X = 14;
-            rectVitesse.Y = p.Height / 2;
-            rectVitesse.Height = -(int)(kinect.getVGLisse() * facteur);
+            if (-(int)(kinect.getVGLisse() * facteur) > 0)
+            {
+                rectVitesse.Height = -(int)(kinect.getVGLisse() * facteur);
+                rectVitesse.Y = p.Height / 2;
+            }
+            else
+            {
+                rectVitesse.Height = (int)(kinect.getVGLisse() * facteur);
+                rectVitesse.Y = p.Height / 2 - rectVitesse.Height;
+            }
             rectVitesse.Width = (p.Width / 2) - (2 * rectVitesse.X);
 
             if ((int)(Math.Abs(kinect.getVGLisse()) * 255) / 50 < 255 && (int)((-Math.Abs(kinect.getVGLisse()) * 255) / 50) + 255 < 255)
@@ -113,6 +121,16 @@ namespace projet_p1
 
             g.FillRectangle(brush, rectVitesse);
 
+            if(-(int)(kinect.getVDLisse() * facteur)>0)
+            {
+                rectVitesse.Height = -(int)(kinect.getVDLisse() * facteur);
+                rectVitesse.Y = p.Height / 2;
+            }
+            else
+            {
+                rectVitesse.Height = (int)(kinect.getVDLisse() * facteur);
+                rectVitesse.Y = p.Height / 2 - rectVitesse.Height;
+            }
             rectVitesse.X += p.Width / 2;
             if ((int)(Math.Abs(kinect.getVDLisse()) * 255) / 50 < 255 && (int)((-Math.Abs(kinect.getVDLisse()) * 255) / 50) + 255 < 255)
             {
