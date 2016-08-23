@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panelVitesse = new System.Windows.Forms.Panel();
             this.cbxModeSimluation = new System.Windows.Forms.CheckBox();
             this.pboxSIM = new System.Windows.Forms.PictureBox();
@@ -45,27 +44,22 @@
             this.timer1.Interval = 37;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(12, 9);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(430, 298);
-            this.panel1.TabIndex = 25;
-            // 
             // panelVitesse
             // 
-            this.panelVitesse.Location = new System.Drawing.Point(448, 9);
+            this.panelVitesse.Location = new System.Drawing.Point(597, 11);
+            this.panelVitesse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelVitesse.Name = "panelVitesse";
-            this.panelVitesse.Size = new System.Drawing.Size(165, 614);
+            this.panelVitesse.Size = new System.Drawing.Size(220, 756);
             this.panelVitesse.TabIndex = 24;
             this.panelVitesse.Paint += new System.Windows.Forms.PaintEventHandler(this.panelVitesse_Paint);
             // 
             // cbxModeSimluation
             // 
             this.cbxModeSimluation.AutoSize = true;
-            this.cbxModeSimluation.Location = new System.Drawing.Point(619, 8);
+            this.cbxModeSimluation.Location = new System.Drawing.Point(825, 10);
+            this.cbxModeSimluation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxModeSimluation.Name = "cbxModeSimluation";
-            this.cbxModeSimluation.Size = new System.Drawing.Size(104, 17);
+            this.cbxModeSimluation.Size = new System.Drawing.Size(134, 21);
             this.cbxModeSimluation.TabIndex = 28;
             this.cbxModeSimluation.Text = "Mode Simulation";
             this.cbxModeSimluation.UseVisualStyleBackColor = true;
@@ -74,9 +68,10 @@
             // pboxSIM
             // 
             this.pboxSIM.BackColor = System.Drawing.Color.White;
-            this.pboxSIM.Location = new System.Drawing.Point(619, 31);
+            this.pboxSIM.Location = new System.Drawing.Point(825, 38);
+            this.pboxSIM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pboxSIM.Name = "pboxSIM";
-            this.pboxSIM.Size = new System.Drawing.Size(648, 592);
+            this.pboxSIM.Size = new System.Drawing.Size(864, 729);
             this.pboxSIM.TabIndex = 29;
             this.pboxSIM.TabStop = false;
             this.pboxSIM.Visible = false;
@@ -88,9 +83,10 @@
             this.pbox_VUE_Autres.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pbox_VUE_Autres.BackgroundImage = global::projet_p1.Properties.Resources.BG1;
             this.pbox_VUE_Autres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbox_VUE_Autres.Location = new System.Drawing.Point(12, 313);
+            this.pbox_VUE_Autres.Location = new System.Drawing.Point(16, 385);
+            this.pbox_VUE_Autres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbox_VUE_Autres.Name = "pbox_VUE_Autres";
-            this.pbox_VUE_Autres.Size = new System.Drawing.Size(430, 310);
+            this.pbox_VUE_Autres.Size = new System.Drawing.Size(573, 381);
             this.pbox_VUE_Autres.TabIndex = 27;
             this.pbox_VUE_Autres.TabStop = false;
             this.pbox_VUE_Autres.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
@@ -104,25 +100,26 @@
             this.lblKinectControlView.AutoSize = true;
             this.lblKinectControlView.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKinectControlView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.lblKinectControlView.Location = new System.Drawing.Point(116, 313);
+            this.lblKinectControlView.Location = new System.Drawing.Point(155, 385);
+            this.lblKinectControlView.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKinectControlView.Name = "lblKinectControlView";
-            this.lblKinectControlView.Size = new System.Drawing.Size(213, 23);
+            this.lblKinectControlView.Size = new System.Drawing.Size(272, 29);
             this.lblKinectControlView.TabIndex = 30;
             this.lblKinectControlView.Text = "Vue du dessus - mode conduite";
             this.lblKinectControlView.Visible = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1059, 635);
+            this.ClientSize = new System.Drawing.Size(1412, 782);
             this.Controls.Add(this.lblKinectControlView);
             this.Controls.Add(this.pboxSIM);
             this.Controls.Add(this.cbxModeSimluation);
             this.Controls.Add(this.pbox_VUE_Autres);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelVitesse);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "K-Driver";
             this.Load += new System.EventHandler(this.Form1_Load_1);
@@ -138,7 +135,6 @@
         #endregion
         private System.Windows.Forms.Panel panelVitesse;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pbox_VUE_Autres;
         private System.Windows.Forms.CheckBox cbxModeSimluation;
         private System.Windows.Forms.PictureBox pboxSIM;

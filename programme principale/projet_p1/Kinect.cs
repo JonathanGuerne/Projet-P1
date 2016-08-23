@@ -31,10 +31,12 @@ namespace projet_p1
         int pinceUpDown = 0;
         int pinceOpenClose = 0;
 
-        double MargesPinceH = -0.15;
-        double MargesPinceB = -0.6;
-        double MargesPinceC = -0.25;
-        double MargesPinceO = -0.43;
+        double margeChangementMode = 0.12;
+
+        double margesPinceH = -0.15;
+        double margesPinceB = -0.6;
+        double margesPinceC = -0.25;
+        double margesPinceO = -0.43;
         int largeurConduite = 40;
 
         public double getVGLisse()
@@ -79,35 +81,35 @@ namespace projet_p1
         }
         public double getMargesPinceH()
         {
-            return MargesPinceH;
+            return margesPinceH;
         }
         public void setMargesPinceH(double A1)
         {
-            MargesPinceH = A1;
+            margesPinceH = A1;
         }
         public double getMargesPinceB()
         {
-            return MargesPinceB;
+            return margesPinceB;
         }
         public void setMargesPinceB(double A1)
         {
-            MargesPinceB = A1;
+            margesPinceB = A1;
         }
         public double getMargesPinceC()
         {
-            return MargesPinceC;
+            return margesPinceC;
         }
         public void setMargesPinceC(double A1)
         {
-            MargesPinceC = A1;
+            margesPinceC = A1;
         }
         public double getMargesPinceO()
         {
-            return MargesPinceO;
+            return margesPinceO;
         }
         public void setMargesPinceO(double A1)
         {
-            MargesPinceO = A1;
+            margesPinceO = A1;
         }
         public int getLargeurConduite()
         {
@@ -122,13 +124,13 @@ namespace projet_p1
 
             if (modePinceOld == false)//VERIFIE LE DERNIER ETAT POUR NE PAS CHANGER DE MODE EN CONTINUE QUAND LES BRAS SONT CROISES
             {
-                if (RHand.X + 0.12 <= LHand.X)//CHANGEMENT DE MODE  
+                if (RHand.X + margeChangementMode <= LHand.X)//CHANGEMENT DE MODE  
                 {
                     modePinceOld = true;
                     modePince = !modePince;//remplace la méthode SwitchMode
                 }
             }
-            if (RHand.X + 0.12 > LHand.X)
+            if (RHand.X + margeChangementMode > LHand.X)
             {
                 modePinceOld = false;
             }
@@ -186,14 +188,14 @@ namespace projet_p1
                 double MoyenneZ = (RHand.Z + LHand.Z) / 2;
 
                 //TEST JAUNE
-                if (MoyenneY > Head.Y + MargesPinceH)
+                if (MoyenneY > Head.Y + margesPinceH)
                 {
                     //lblPINCEupdown.Text = "▲";
                     pinceUpDown = 1;
                 }
                 else
                 {
-                    if (MoyenneY < Head.Y + MargesPinceB)
+                    if (MoyenneY < Head.Y + margesPinceB)
                     {
                         //lblPINCEupdown.Text = "▼";
                         pinceUpDown = -1;
@@ -205,14 +207,14 @@ namespace projet_p1
                     }
                 }
                 //TEST ROUGE
-                if (MoyenneZ > Head.Z + MargesPinceC)
+                if (MoyenneZ > Head.Z + margesPinceC)
                 {
                     //lblPINCEopenclose.Text = "→←";
                     pinceOpenClose = -1;
                 }
                 else
                 {
-                    if (MoyenneZ < Head.Z + MargesPinceO)
+                    if (MoyenneZ < Head.Z + margesPinceO)
                     {
                         //lblPINCEopenclose.Text = "←→";
                         pinceOpenClose = 1;

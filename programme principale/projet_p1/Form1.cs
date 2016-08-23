@@ -12,17 +12,19 @@ namespace projet_p1
 {
     public partial class Form1 : Form
     {
+        Kinect kinect;
+
+        Rectangle R;
+
         double af = 0; // simulation
         double posX = 100; // simulation
         double posY = 100; // simulation
-        Kinect kinect;
-        Rectangle R;
+
         int flagBG = 0;
+
         Point[] points = new Point[4];
         Point[] pointsH = new Point[4];
-        //Color BRGrisFonce = 
-        //Color BRvertclaire = Color.FromArgb(255, 0, 192, 0);
-        //Color BRJaunePetant = Color.FromArgb(255, 255, 255, 0);
+
         Brush BRGrisFonce = new SolidBrush(Color.FromArgb(255, 64, 64, 64));
         Brush BRVertClaire = new SolidBrush(Color.FromArgb(255, 0, 192, 0));
         Brush BRJaunePetant = new SolidBrush(Color.FromArgb(255, 255, 255, 0));
@@ -33,6 +35,7 @@ namespace projet_p1
         Brush BROrange = new SolidBrush(Color.FromArgb(255, 250, 150, 0));
         Brush BRBleuTransparent = new SolidBrush(Color.FromArgb(90, 0, 60, 250));
         Brush BRBleu = new SolidBrush(Color.FromArgb(255, 0, 60, 250));
+
         Boolean changeH = false;
         Boolean changeB = false;
         Boolean changeC = false;
@@ -71,7 +74,7 @@ namespace projet_p1
             Panel p = sender as Panel;
             Graphics g = e.Graphics;
             //Brush brush;
-            
+
             points[0].X = 10;
             points[0].Y = 0;
             points[1].X = 10;
@@ -88,7 +91,7 @@ namespace projet_p1
             points[0].X = (p.Width / 2) + 10;
             points[0].Y = 0;
             points[1].X = (p.Width / 2) + 10;
-            points[1].Y =  p.Height;
+            points[1].Y = p.Height;
             points[2].X = (p.Width) - 10;
             points[2].Y = p.Height;
             points[3].X = (p.Width) - 10;
@@ -100,7 +103,7 @@ namespace projet_p1
 
 
             double facteur = 7;//p.Height / 20;
-            
+
             points[0].X = 14;
             points[0].Y = p.Height / 2;
             points[1].X = 14;
@@ -117,7 +120,7 @@ namespace projet_p1
             {
                 brush = BRRougePetant;
             }
-            
+
             //brush = new SolidBrush(Color.FromArgb(255, 0, 100, 0));
             g.FillPolygon(brush, points);
 
@@ -129,7 +132,7 @@ namespace projet_p1
             points[2].Y = (int)((p.Height / 2) - (kinect.getVDLisse() * facteur));
             points[3].X = p.Width - 14;
             points[3].Y = p.Height / 2;
-            if ((int)(Math.Abs(kinect.getVDLisse()) * 255) / 50<255 && (int)((-Math.Abs(kinect.getVDLisse()) * 255) / 50) + 255<255)
+            if ((int)(Math.Abs(kinect.getVDLisse()) * 255) / 50 < 255 && (int)((-Math.Abs(kinect.getVDLisse()) * 255) / 50) + 255 < 255)
             {
                 brush = new SolidBrush(Color.FromArgb(255, 0, (int)((-Math.Abs(kinect.getVDLisse()) * 255) / 100) + 255, (int)(Math.Abs(kinect.getVDLisse()) * 255) / 50));
             }
@@ -137,8 +140,8 @@ namespace projet_p1
             {
                 brush = BRRougePetant;
             }
-            
-            
+
+
             //brush = new SolidBrush(Color.FromArgb(255, 0, 100, 0));
             g.FillPolygon(brush, points);
 
@@ -168,7 +171,7 @@ namespace projet_p1
 
             g.FillPolygon(brush, points);
 
-            if(kinect.getVGLisse() != 0)
+            if (kinect.getVGLisse() != 0)
             {
                 Console.WriteLine("Vgauche : " + kinect.getVGLisse());
             }
