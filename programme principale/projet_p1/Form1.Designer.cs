@@ -35,9 +35,11 @@
             this.pbox_VUE_Autres = new System.Windows.Forms.PictureBox();
             this.lblKinectControlView = new System.Windows.Forms.Label();
             this.pbVitesse = new System.Windows.Forms.PictureBox();
+            this.pbCapteurs = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pboxSIM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_VUE_Autres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVitesse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCapteurs)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -49,7 +51,7 @@
             // 
             this.cbxModeSimluation.AutoSize = true;
             this.cbxModeSimluation.Location = new System.Drawing.Point(825, 10);
-            this.cbxModeSimluation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxModeSimluation.Margin = new System.Windows.Forms.Padding(4);
             this.cbxModeSimluation.Name = "cbxModeSimluation";
             this.cbxModeSimluation.Size = new System.Drawing.Size(134, 21);
             this.cbxModeSimluation.TabIndex = 28;
@@ -61,7 +63,7 @@
             // 
             this.pboxSIM.BackColor = System.Drawing.Color.White;
             this.pboxSIM.Location = new System.Drawing.Point(825, 38);
-            this.pboxSIM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pboxSIM.Margin = new System.Windows.Forms.Padding(4);
             this.pboxSIM.Name = "pboxSIM";
             this.pboxSIM.Size = new System.Drawing.Size(864, 729);
             this.pboxSIM.TabIndex = 29;
@@ -75,7 +77,7 @@
             this.pbox_VUE_Autres.BackgroundImage = global::projet_p1.Properties.Resources.BG1;
             this.pbox_VUE_Autres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbox_VUE_Autres.Location = new System.Drawing.Point(16, 385);
-            this.pbox_VUE_Autres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbox_VUE_Autres.Margin = new System.Windows.Forms.Padding(4);
             this.pbox_VUE_Autres.Name = "pbox_VUE_Autres";
             this.pbox_VUE_Autres.Size = new System.Drawing.Size(573, 381);
             this.pbox_VUE_Autres.TabIndex = 27;
@@ -108,18 +110,29 @@
             this.pbVitesse.TabStop = false;
             this.pbVitesse.Paint += new System.Windows.Forms.PaintEventHandler(this.panelVitesse_Paint);
             // 
+            // pbCapteurs
+            // 
+            this.pbCapteurs.ErrorImage = global::projet_p1.Properties.Resources.Vu;
+            this.pbCapteurs.Location = new System.Drawing.Point(825, 38);
+            this.pbCapteurs.Name = "pbCapteurs";
+            this.pbCapteurs.Size = new System.Drawing.Size(595, 728);
+            this.pbCapteurs.TabIndex = 32;
+            this.pbCapteurs.TabStop = false;
+            this.pbCapteurs.Paint += new System.Windows.Forms.PaintEventHandler(this.pbCapteurs_Paint);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1412, 782);
+            this.Controls.Add(this.pbCapteurs);
             this.Controls.Add(this.pbVitesse);
             this.Controls.Add(this.lblKinectControlView);
             this.Controls.Add(this.pboxSIM);
             this.Controls.Add(this.cbxModeSimluation);
             this.Controls.Add(this.pbox_VUE_Autres);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "K-Driver";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
@@ -127,6 +140,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pboxSIM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_VUE_Autres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVitesse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCapteurs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,6 +153,7 @@
         private System.Windows.Forms.PictureBox pboxSIM;
         private System.Windows.Forms.Label lblKinectControlView;
         private System.Windows.Forms.PictureBox pbVitesse;
+        private System.Windows.Forms.PictureBox pbCapteurs;
     }
 }
 

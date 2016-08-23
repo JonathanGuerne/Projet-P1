@@ -103,6 +103,75 @@
   <ItemGroup>
     <None Include="bin\TANK.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capB0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capB1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capB2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capB3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capB4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capD0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capD1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capD2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capD3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capD4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capG0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capG2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capG3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capG4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capH0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capH1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capH2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capH3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capH4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\nonVu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\voiture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Vu.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

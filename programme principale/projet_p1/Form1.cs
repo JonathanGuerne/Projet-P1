@@ -14,6 +14,13 @@ namespace projet_p1
     {
         Kinect kinect;
 
+        Boolean VoitureConnection = true;
+        int DetecObstacleAvant = 450;
+        int DetecObstacleArriere = 330;
+        int DetecObstacleDroite = 420;
+        int DetecObstacleGauche = 102;
+        int StatuVoiture = 0xFF;
+
         Rectangle rectVueAutre;
         Rectangle rectVitesse;
 
@@ -52,7 +59,7 @@ namespace projet_p1
             kinect.form = this;
             kinect.launch();
             timer1.Start();
-            
+
         }
 
 
@@ -74,7 +81,7 @@ namespace projet_p1
             rectVitesse.X = 10;
             rectVitesse.Y = 0;
             rectVitesse.Height = p.Height;
-            rectVitesse.Width = (p.Width / 2)-(2*rectVitesse.X);
+            rectVitesse.Width = (p.Width / 2) - (2 * rectVitesse.X);
 
             Brush brush = BRGrisFonce;
 
@@ -91,8 +98,8 @@ namespace projet_p1
             double facteur = 7;
 
             rectVitesse.X = 14;
-            rectVitesse.Y = p.Height/2;
-            rectVitesse.Height = -(int)(kinect.getVGLisse()*facteur);
+            rectVitesse.Y = p.Height / 2;
+            rectVitesse.Height = -(int)(kinect.getVGLisse() * facteur);
             rectVitesse.Width = (p.Width / 2) - (2 * rectVitesse.X);
 
             if ((int)(Math.Abs(kinect.getVGLisse()) * 255) / 50 < 255 && (int)((-Math.Abs(kinect.getVGLisse()) * 255) / 50) + 255 < 255)
@@ -119,7 +126,7 @@ namespace projet_p1
             g.FillRectangle(brush, rectVitesse);
 
             rectVitesse.X = 10;
-            rectVitesse.Y = (p.Height / 2)-2;
+            rectVitesse.Y = (p.Height / 2) - 2;
             rectVitesse.Height = 4;
             rectVitesse.Width = (p.Width / 2) - (2 * rectVitesse.X);
 
@@ -152,7 +159,7 @@ namespace projet_p1
 
         private void panelKVueDessus_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Y-15 < 93 - (int)(kinect.getMargesPinceHaut() * 250))
+            if (e.Y - 15 < 93 - (int)(kinect.getMargesPinceHaut() * 250))
             {
                 changeHaut = true;
             }
@@ -160,7 +167,7 @@ namespace projet_p1
             {
                 changeHaut = false;
             }
-            if (e.Y+15 > 93 - (int)(kinect.getMargesPinceBas() * 250))
+            if (e.Y + 15 > 93 - (int)(kinect.getMargesPinceBas() * 250))
             {
                 changeBas = true;
             }
@@ -168,7 +175,7 @@ namespace projet_p1
             {
                 changeBas = false;
             }
-            if (e.X-15 < 52 - (int)(kinect.getMargesPinceClose() * 250))
+            if (e.X - 15 < 52 - (int)(kinect.getMargesPinceClose() * 250))
             {
                 changeClose = true;
             }
@@ -176,7 +183,7 @@ namespace projet_p1
             {
                 changeClose = false;
             }
-            if (e.X+15 > 52 - (int)(kinect.getMargesPinceOpen() * 250))
+            if (e.X + 15 > 52 - (int)(kinect.getMargesPinceOpen() * 250))
             {
                 changeOpen = true;
             }
@@ -508,12 +515,12 @@ namespace projet_p1
 
         private void Form1_Resize(object sender, EventArgs e)
         {
-            pbVitesse.Height = this.ClientSize.Height-20;
+            pbVitesse.Height = this.ClientSize.Height - 20;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
         }
         /// SIMULATION /// SIMULATION /// SIMULATION /// SIMULATION /// SIMULATION !!!!!
         /// /// SIMULATION /// SIMULATION /// SIMULATION /// SIMULATION /// SIMULATION !!!!!
@@ -521,14 +528,16 @@ namespace projet_p1
         /// /// SIMULATION /// SIMULATION /// SIMULATION /// SIMULATION /// SIMULATION !!!!!
         private void cbxModeSimluation_CheckedChanged(object sender, EventArgs e)
         {
-            if(cbxModeSimluation.Checked == true)
+            if (cbxModeSimluation.Checked == true)
             {
                 Width += 800;
                 pboxSIM.Visible = true;
+                pbCapteurs.Visible = false;
             }
             else
             {
                 Width = 1075;
+                pbCapteurs.Visible = true;
                 pboxSIM.Visible = false;
             }
         }
@@ -593,6 +602,204 @@ namespace projet_p1
                 g.DrawImage(tank, new Point((int)posX, (int)posY));
             }
             catch (System.NullReferenceException e1) { }
+        }
+
+        private void pbCapteurs_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox p = sender as PictureBox;
+            Graphics g = e.Graphics;
+            Brush brush;
+            Rectangle R1 = new Rectangle();
+
+            if (VoitureConnection == true)
+            {
+                // -- capteur gauche
+                Image IMGcapG;
+                if (DetecObstacleGauche > 400)
+                {
+                    IMGcapG = Properties.Resources.capG0;
+                }
+                else if (DetecObstacleGauche > 300 && DetecObstacleGauche < 400)
+                {
+                    IMGcapG = Properties.Resources.capG1;
+                }
+                else if (DetecObstacleGauche > 200 && DetecObstacleGauche < 300)
+                {
+                    IMGcapG = Properties.Resources.capG2;
+                }
+                else if (DetecObstacleGauche > 100 && DetecObstacleGauche < 200)
+                {
+                    IMGcapG = Properties.Resources.capG3;
+                }
+                else
+                {
+                    IMGcapG = Properties.Resources.capG4;
+                }
+                g.DrawImage(IMGcapG, new Point(90, 90));
+                // -- capteur droite
+                Image IMGcapD;
+                if (DetecObstacleDroite > 400)
+                {
+                    IMGcapD = Properties.Resources.capD0;
+                }
+                else if (DetecObstacleDroite > 300 && DetecObstacleDroite < 400)
+                {
+                    IMGcapD = Properties.Resources.capD1;
+                }
+                else if (DetecObstacleDroite > 200 && DetecObstacleDroite < 300)
+                {
+                    IMGcapD = Properties.Resources.capD2;
+                }
+                else if (DetecObstacleDroite > 100 && DetecObstacleDroite < 200)
+                {
+                    IMGcapD = Properties.Resources.capD3;
+                }
+                else
+                {
+                    IMGcapD = Properties.Resources.capD4;
+                }
+                g.DrawImage(IMGcapD, new Point(215, 90));
+                // -- capteur haut
+                Image IMGcapH;
+                if (DetecObstacleAvant > 400)
+                {
+                    IMGcapH = Properties.Resources.capH0;
+                }
+                else if (DetecObstacleAvant > 300 && DetecObstacleAvant < 400)
+                {
+                    IMGcapH = Properties.Resources.capH1;
+                }
+                else if (DetecObstacleAvant > 200 && DetecObstacleAvant < 300)
+                {
+                    IMGcapH = Properties.Resources.capH2;
+                }
+                else if (DetecObstacleAvant > 100 && DetecObstacleAvant < 200)
+                {
+                    IMGcapH = Properties.Resources.capH3;
+                }
+                else
+                {
+                    IMGcapH = Properties.Resources.capH4;
+                }
+                g.DrawImage(IMGcapH, new Point(152, 7));
+                // -- capteur bas
+                Image IMGcapB;
+                if (DetecObstacleArriere >= 400)
+                {
+                    IMGcapB = Properties.Resources.capB0;
+                }
+                else if (DetecObstacleArriere >= 300 && DetecObstacleArriere < 400)
+                {
+                    IMGcapB = Properties.Resources.capB1;
+                }
+                else if (DetecObstacleArriere >= 200 && DetecObstacleArriere < 300)
+                {
+                    IMGcapB = Properties.Resources.capB2;
+                }
+                else if (DetecObstacleArriere >= 100 && DetecObstacleArriere < 200)
+                {
+                    IMGcapB = Properties.Resources.capB3;
+                }
+                else
+                {
+                    IMGcapB = Properties.Resources.capB4;
+                }
+                g.DrawImage(IMGcapB, new Point(152, 177));
+                Image Voiture;
+                Voiture = Properties.Resources.voiture;
+                g.DrawImage(Voiture, new Point(150, 80));
+                // EXTRACTION DES BITS DE LA DONNEE POUR AFFICHER LES VUS
+                int E = StatuVoiture;
+                Image IMGvu;
+                if (E % 2 == 1)
+                {
+                    IMGvu = Properties.Resources.nonVu;
+                    E -= 1;
+                }
+                else
+                {
+                    IMGvu = Properties.Resources.Vu;
+                }
+                g.DrawImageUnscaled(IMGvu, new Point(100, 300));
+                if (E % 4 == 2)
+                {
+                    IMGvu = Properties.Resources.nonVu;
+                    E -= 2;
+                }
+                else
+                {
+                    IMGvu = Properties.Resources.Vu;
+                }
+                g.DrawImageUnscaled(IMGvu, new Point(100, 325));
+                if (E % 8 == 4)
+                {
+                    IMGvu = Properties.Resources.nonVu;
+                    E -= 4;
+                }
+                else
+                {
+                    IMGvu = Properties.Resources.Vu;
+                }
+                g.DrawImageUnscaled(IMGvu, new Point(100, 350));
+                if (E % 16 == 8)
+                {
+                    IMGvu = Properties.Resources.nonVu;
+                    E -= 8;
+                }
+                else
+                {
+                    IMGvu = Properties.Resources.Vu;
+                }
+                g.DrawImageUnscaled(IMGvu, new Point(100, 375));
+                if (E % 32 == 16)
+                {
+                    IMGvu = Properties.Resources.nonVu;
+                    E -= 16;
+                }
+                else
+                {
+                    IMGvu = Properties.Resources.Vu;
+                }
+                g.DrawImageUnscaled(IMGvu, new Point(100, 400));
+                if (E % 64 == 32)
+                {
+                    IMGvu = Properties.Resources.nonVu;
+                    E -= 32;
+                }
+                else
+                {
+                    IMGvu = Properties.Resources.Vu;
+                }
+                g.DrawImageUnscaled(IMGvu, new Point(100, 425));
+                if (E % 128 == 64)
+                {
+                    IMGvu = Properties.Resources.nonVu;
+                    E -= 64;
+                }
+                else
+                {
+                    IMGvu = Properties.Resources.Vu;
+                }
+                g.DrawImageUnscaled(IMGvu, new Point(100, 450));
+                if (E % 256 == 128)
+                {
+                    IMGvu = Properties.Resources.nonVu;
+                    E -= 128;
+                }
+                else
+                {
+                    IMGvu = Properties.Resources.Vu;
+                }
+                g.DrawImageUnscaled(IMGvu, new Point(100, 475));
+                /*R1.X = Convert.ToInt32(p.Height / 2 - p.Height * 0.49);
+                R1.Y = Convert.ToInt32(p.Width / 2 - p.Width * 0.49);
+                R1.Height = Convert.ToInt32(p.Height * 0.98);
+                R1.Width = Convert.ToInt32(p.Width * 0.98);
+                brush = BRBleuTurquoise;
+                g.FillEllipse(brush, R1);*/
+
+
+            }
         }
     }
 }
