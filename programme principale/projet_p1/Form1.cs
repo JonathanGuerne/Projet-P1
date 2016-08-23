@@ -14,7 +14,8 @@ namespace projet_p1
     {
         Kinect kinect;
 
-        Rectangle R;
+        Rectangle rectVueAutre;
+        Rectangle rectVitesse;
 
         double af = 0; // simulation
         double posX = 100; // simulation
@@ -64,54 +65,36 @@ namespace projet_p1
             kinect.Form1_FormClosing(sender, e);
         }
 
-        private void btnD_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void panelVitesse_Paint(object sender, PaintEventArgs e)
         {
-            Panel p = sender as Panel;
+            PictureBox p = sender as PictureBox;
             Graphics g = e.Graphics;
             //Brush brush;
 
-            points[0].X = 10;
-            points[0].Y = 0;
-            points[1].X = 10;
-            points[1].Y = p.Height;
-            points[2].X = (p.Width / 2) - 10;
-            points[2].Y = p.Height;
-            points[3].X = (p.Width / 2) - 10;
-            points[3].Y = 0;
+            rectVitesse.X = 10;
+            rectVitesse.Y = 0;
+            rectVitesse.Height = p.Height;
+            rectVitesse.Width = (p.Width / 2)-(2*rectVitesse.X);
 
             Brush brush = BRGrisFonce;
 
-            g.FillPolygon(brush, points);
+            g.FillRectangle(brush, rectVitesse);
 
-            points[0].X = (p.Width / 2) + 10;
-            points[0].Y = 0;
-            points[1].X = (p.Width / 2) + 10;
-            points[1].Y = p.Height;
-            points[2].X = (p.Width) - 10;
-            points[2].Y = p.Height;
-            points[3].X = (p.Width) - 10;
-            points[3].Y = 0;
+
+            rectVitesse.X += (p.Width / 2);
 
             brush = BRGrisFonce;
 
-            g.FillPolygon(brush, points);
+            g.FillRectangle(brush, rectVitesse);
 
 
             double facteur = 7;//p.Height / 20;
 
-            points[0].X = 14;
-            points[0].Y = p.Height / 2;
-            points[1].X = 14;
-            points[1].Y = (int)((p.Height / 2) - (kinect.getVGLisse() * facteur));
-            points[2].X = (p.Width / 2) - 14;
-            points[2].Y = (int)((p.Height / 2) - (kinect.getVGLisse() * facteur));
-            points[3].X = (p.Width / 2) - 14;
-            points[3].Y = p.Height / 2;
+            rectVitesse.X = 14;
+            rectVitesse.Y = p.Height/2;
+            rectVitesse.Height = -(int)(kinect.getVGLisse()*facteur);
+            rectVitesse.Width = (p.Width / 2) - (2 * rectVitesse.X);
+
             if ((int)(Math.Abs(kinect.getVGLisse()) * 255) / 50 < 255 && (int)((-Math.Abs(kinect.getVGLisse()) * 255) / 50) + 255 < 255)
             {
                 brush = new SolidBrush(Color.FromArgb(255, 0, (int)((-Math.Abs(kinect.getVGLisse()) * 255) / 100) + 255, (int)(Math.Abs(kinect.getVGLisse()) * 255) / 50));
@@ -121,17 +104,9 @@ namespace projet_p1
                 brush = BRRougePetant;
             }
 
-            //brush = new SolidBrush(Color.FromArgb(255, 0, 100, 0));
-            g.FillPolygon(brush, points);
+            g.FillRectangle(brush, rectVitesse);
 
-            points[0].X = (p.Width / 2) + 14;
-            points[0].Y = p.Height / 2;
-            points[1].X = (p.Width / 2) + 14;
-            points[1].Y = (int)((p.Height / 2) - (kinect.getVDLisse() * facteur));
-            points[2].X = p.Width - 14;
-            points[2].Y = (int)((p.Height / 2) - (kinect.getVDLisse() * facteur));
-            points[3].X = p.Width - 14;
-            points[3].Y = p.Height / 2;
+            rectVitesse.X += p.Width / 2;
             if ((int)(Math.Abs(kinect.getVDLisse()) * 255) / 50 < 255 && (int)((-Math.Abs(kinect.getVDLisse()) * 255) / 50) + 255 < 255)
             {
                 brush = new SolidBrush(Color.FromArgb(255, 0, (int)((-Math.Abs(kinect.getVDLisse()) * 255) / 100) + 255, (int)(Math.Abs(kinect.getVDLisse()) * 255) / 50));
@@ -141,35 +116,22 @@ namespace projet_p1
                 brush = BRRougePetant;
             }
 
+            g.FillRectangle(brush, rectVitesse);
 
-            //brush = new SolidBrush(Color.FromArgb(255, 0, 100, 0));
-            g.FillPolygon(brush, points);
-
-            points[0].X = 10;
-            points[0].Y = (p.Height / 2) - 2;
-            points[1].X = 10;
-            points[1].Y = (p.Height / 2) + 2;
-            points[2].X = (p.Width / 2) - 10;
-            points[2].Y = (p.Height / 2) + 2;
-            points[3].X = (p.Width / 2) - 10;
-            points[3].Y = (p.Height / 2) - 2;
+            rectVitesse.X = 10;
+            rectVitesse.Y = (p.Height / 2)-2;
+            rectVitesse.Height = 4;
+            rectVitesse.Width = (p.Width / 2) - (2 * rectVitesse.X);
 
             brush = BRJaunePetant;
 
-            g.FillPolygon(brush, points);
+            g.FillRectangle(brush, rectVitesse);
 
-            points[0].X = (p.Width / 2) + 10;
-            points[0].Y = (p.Height / 2) - 2;
-            points[1].X = (p.Width / 2) + 10;
-            points[1].Y = (p.Height / 2) + 2;
-            points[2].X = p.Width - 10;
-            points[2].Y = (p.Height / 2) + 2;
-            points[3].X = p.Width - 10;
-            points[3].Y = (p.Height / 2) - 2;
+            rectVitesse.X += p.Width / 2;
 
             brush = BRJaunePetant;
 
-            g.FillPolygon(brush, points);
+            g.FillRectangle(brush, rectVitesse);
 
             if (kinect.getVGLisse() != 0)
             {
@@ -183,24 +145,9 @@ namespace projet_p1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            panelVitesse.Refresh();
+            pbVitesse.Refresh();
             pbox_VUE_Autres.Refresh();
             pboxSIM.Refresh();
-        }
-
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelKVueDessus_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void panelKVueDessus_MouseHover(object sender, EventArgs e)
-        {
-
         }
 
         private void panelKVueDessus_MouseMove(object sender, MouseEventArgs e)
@@ -277,7 +224,7 @@ namespace projet_p1
             mouseDownYes = false;
         }
 
-        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        private void pbVueAutrePaint(object sender, PaintEventArgs e)
         {
             PictureBox p = sender as PictureBox;
             Graphics g = e.Graphics;
@@ -292,90 +239,97 @@ namespace projet_p1
                     p.BackgroundImage = projet_p1.Properties.Resources.BG1;
                     flagBG = 0;
                 }
-                pointsH[0].X = 0;
-                pointsH[0].Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) + kinect.getLargeurConduite();
-                pointsH[1].X = 0;
-                pointsH[1].Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) - kinect.getLargeurConduite();
-                pointsH[2].X = p.Width;
-                pointsH[2].Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) - kinect.getLargeurConduite();
-                pointsH[3].X = p.Width;
-                pointsH[3].Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) + kinect.getLargeurConduite();
+
+                rectVueAutre.X = 0;
+                rectVueAutre.Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) - kinect.getLargeurConduite();
+                rectVueAutre.Width = p.Width;
+                rectVueAutre.Height = 2 * kinect.getLargeurConduite();
+
+                //pointsH[0].X = 0;
+                //pointsH[0].Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) + kinect.getLargeurConduite();
+                //pointsH[1].X = 0;
+                //pointsH[1].Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) - kinect.getLargeurConduite();
+                //pointsH[2].X = p.Width;
+                //pointsH[2].Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) - kinect.getLargeurConduite();
+                //pointsH[3].X = p.Width;
+                //pointsH[3].Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) + kinect.getLargeurConduite();
 
 
                 brush = BROrangeTransparent;
 
-                g.FillPolygon(brush, pointsH);
+                g.FillRectangle(brush, rectVueAutre);
+                //g.FillPolygon(brush, pointsH);
 
                 // tête
-                R.Width = 30;
-                R.Height = 30;
-                R.X = (int)(kinect.getHead().Z * 100) - 15;
-                R.Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) - 15;
+                rectVueAutre.Width = 30;
+                rectVueAutre.Height = 30;
+                rectVueAutre.X = (int)(kinect.getHead().Z * 100) - 15;
+                rectVueAutre.Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) - 15;
                 //R.X = p.Width - R.X - R.Width;
                 //R = new Rectangle((int)(kinect.getHead().Z * 100), (p.Height/2)+(int)(kinect.getHead().X*100) ,40,40);
                 brush = BRBleuTurquoise;
 
-                g.FillEllipse(brush, R);
+                g.FillEllipse(brush, rectVueAutre);
 
                 // main gauche
-                R.Width = 20;
-                R.Height = 20;
-                R.X = (int)(kinect.getLHand().Z * 100) - 10;
-                R.Y = (p.Height / 2) + (int)(-kinect.getLHand().X * 100) - 10;
+                rectVueAutre.Width = 20;
+                rectVueAutre.Height = 20;
+                rectVueAutre.X = (int)(kinect.getLHand().Z * 100) - 10;
+                rectVueAutre.Y = (p.Height / 2) + (int)(-kinect.getLHand().X * 100) - 10;
                 //R.X = p.Width - R.X - R.Width;
                 //R.Y = p.Height - R.Y - R.Width;
                 //R = new Rectangle((int)(kinect.getLHand().Z * 100), (p.Height / 2) + (int)(kinect.getLHand().X * 100), 30, 30);
                 brush = BRRougeClair;
 
-                g.FillEllipse(brush, R);
+                g.FillEllipse(brush, rectVueAutre);
 
                 // main gauche
-                R.Width = 20;
-                R.Height = 20;
-                R.X = (int)(kinect.getRHand().Z * 100) - 10;
-                R.Y = (p.Height / 2) + (int)(-kinect.getRHand().X * 100) - 10;
+                rectVueAutre.Width = 20;
+                rectVueAutre.Height = 20;
+                rectVueAutre.X = (int)(kinect.getRHand().Z * 100) - 10;
+                rectVueAutre.Y = (p.Height / 2) + (int)(-kinect.getRHand().X * 100) - 10;
                 //R.X = p.Width - R.X - R.Width;
                 //R.Y = p.Height - R.Y - R.Width;
                 //R = new Rectangle((int)(kinect.getRHand().Z * 100), (p.Height / 2) + (int)(kinect.getRHand().X * 100), 30, 30);
 
-                g.FillEllipse(brush, R);
+                g.FillEllipse(brush, rectVueAutre);
 
-                
+
 
 
                 if (changeL == true)
                 {
-                    R.X = 0;
-                    R.Y = pbox_VUE_Autres.Height / 2 + (int)(-kinect.getHead().X * 100) - (int)(kinect.getLargeurConduite()) -2;
-                    R.Height = 4;
-                    R.Width = p.Width;
+                    rectVueAutre.X = 0;
+                    rectVueAutre.Y = pbox_VUE_Autres.Height / 2 + (int)(-kinect.getHead().X * 100) - (int)(kinect.getLargeurConduite()) - 2;
+                    rectVueAutre.Height = 4;
+                    rectVueAutre.Width = p.Width;
                     brush = BROrange;
-                    g.FillRectangle(brush, R);
+                    g.FillRectangle(brush, rectVueAutre);
 
-                    R.X = 0;
-                    R.Y = pbox_VUE_Autres.Height / 2 + (int)(-kinect.getHead().X * 100) + (int)(kinect.getLargeurConduite()) -2;
-                    R.Height = 4;
-                    R.Width = p.Width;
-                    g.FillRectangle(brush, R);
+                    rectVueAutre.X = 0;
+                    rectVueAutre.Y = pbox_VUE_Autres.Height / 2 + (int)(-kinect.getHead().X * 100) + (int)(kinect.getLargeurConduite()) - 2;
+                    rectVueAutre.Height = 4;
+                    rectVueAutre.Width = p.Width;
+                    g.FillRectangle(brush, rectVueAutre);
                 }
                 // ------------------- REFERENCES ---------------------
-                if(kinect.getReferenceDroite() != 0)
+                if (kinect.getReferenceDroite() != 0)
                 {
-                    R.Width = 4;
-                    R.Height = kinect.getLargeurConduite();
-                    R.X = (int)(kinect.getReferenceDroite())-2;
-                    R.Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) - (int)(kinect.getLargeurConduite());
+                    rectVueAutre.Width = 4;
+                    rectVueAutre.Height = kinect.getLargeurConduite();
+                    rectVueAutre.X = (int)(kinect.getReferenceDroite()) - 2;
+                    rectVueAutre.Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) - (int)(kinect.getLargeurConduite());
                     //R.X = p.Width - R.X - R.Width;
-                    g.FillRectangle(BRJaunePetant, R);
+                    g.FillRectangle(BRJaunePetant, rectVueAutre);
                 }
                 if (kinect.getReferenceGauche() != 0)
                 {
-                    R.Width = 4;
-                    R.Height = kinect.getLargeurConduite();
-                    R.X = (int)(kinect.getReferenceGauche())-2;
-                    R.Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100);
+                    rectVueAutre.Width = 4;
+                    rectVueAutre.Height = kinect.getLargeurConduite();
+                    rectVueAutre.X = (int)(kinect.getReferenceGauche()) - 2;
+                    rectVueAutre.Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100);
                     //R.X = p.Width - R.X - R.Width;
-                    g.FillRectangle(BRJaunePetant, R);
+                    g.FillRectangle(BRJaunePetant, rectVueAutre);
                 }
             }
             ///////////////////////////// MODE PINCE ///////////////////////////////
@@ -386,82 +340,82 @@ namespace projet_p1
                     p.BackgroundImage = projet_p1.Properties.Resources.BG2;
                     flagBG = 1;
                 }
-                R.Width = 20;
-                R.Height = 20;
-                R.X = (int)((kinect.getHead().Z - ((kinect.getRHand().Z + kinect.getLHand().Z)/2)) * 480) + 42;
-                R.Y = (int)((kinect.getHead().Y - ((kinect.getRHand().Y + kinect.getLHand().Y)/2)) * 250) + 83;
+                rectVueAutre.Width = 20;
+                rectVueAutre.Height = 20;
+                rectVueAutre.X = (int)((kinect.getHead().Z - ((kinect.getRHand().Z + kinect.getLHand().Z) / 2)) * 480) + 42;
+                rectVueAutre.Y = (int)((kinect.getHead().Y - ((kinect.getRHand().Y + kinect.getLHand().Y) / 2)) * 250) + 83;
                 //R = new Rectangle((int)(kinect.getLHand().Z * 100), (p.Height / 2) + (int)(kinect.getLHand().X * 100), 30, 30);
                 brush = BRRougeClair;
 
-                g.FillEllipse(brush, R);
+                g.FillEllipse(brush, rectVueAutre);
 
                 // HAUT
-                R.X = 0;
-                R.Y = 0;
-                R.Height = 93 - (int)(kinect.getMargesPinceH() * 250);
-                R.Width = p.Width;
+                rectVueAutre.X = 0;
+                rectVueAutre.Y = 0;
+                rectVueAutre.Height = 93 - (int)(kinect.getMargesPinceH() * 250);
+                rectVueAutre.Width = p.Width;
                 brush = BROrangeTransparent;
-                g.FillRectangle(brush, R);
+                g.FillRectangle(brush, rectVueAutre);
 
                 // BAS
-                R.X = 0;
-                R.Y = 93 - (int)(kinect.getMargesPinceB() * 250);
-                R.Height = p.Height - (93 - (int)(kinect.getMargesPinceB() * 250));
-                R.Width = p.Width;
-                g.FillRectangle(brush, R);
+                rectVueAutre.X = 0;
+                rectVueAutre.Y = 93 - (int)(kinect.getMargesPinceB() * 250);
+                rectVueAutre.Height = p.Height - (93 - (int)(kinect.getMargesPinceB() * 250));
+                rectVueAutre.Width = p.Width;
+                g.FillRectangle(brush, rectVueAutre);
 
                 // CLOSE
-                R.X = 0;
-                R.Y = 0;
-                R.Height = p.Height;
-                R.Width = 52 - (int)(kinect.getMargesPinceC() * 480);
+                rectVueAutre.X = 0;
+                rectVueAutre.Y = 0;
+                rectVueAutre.Height = p.Height;
+                rectVueAutre.Width = 52 - (int)(kinect.getMargesPinceC() * 480);
                 brush = BRBleuTransparent;
-                g.FillRectangle(brush, R);
+                g.FillRectangle(brush, rectVueAutre);
 
                 // CLOSE
-                R.X = 52 - (int)(kinect.getMargesPinceO() * 480);
-                R.Y = 0;
-                R.Height = p.Height;
-                R.Width = p.Width - (52 - (int)(kinect.getMargesPinceO() * 480));
-                g.FillRectangle(brush, R);
+                rectVueAutre.X = 52 - (int)(kinect.getMargesPinceO() * 480);
+                rectVueAutre.Y = 0;
+                rectVueAutre.Height = p.Height;
+                rectVueAutre.Width = p.Width - (52 - (int)(kinect.getMargesPinceO() * 480));
+                g.FillRectangle(brush, rectVueAutre);
 
                 if (changeH == true)
                 {
-                    R.X = 0;
-                    R.Y = 91 - (int)(kinect.getMargesPinceH() * 250);
-                    R.Height = 4;
-                    R.Width = p.Width;
+                    rectVueAutre.X = 0;
+                    rectVueAutre.Y = 91 - (int)(kinect.getMargesPinceH() * 250);
+                    rectVueAutre.Height = 4;
+                    rectVueAutre.Width = p.Width;
                     brush = BROrange;
-                    g.FillRectangle(brush, R);
+                    g.FillRectangle(brush, rectVueAutre);
                 }
                 if (changeB == true)
                 {
-                    R.X = 0;
-                    R.Y = 91 - (int)(kinect.getMargesPinceB() * 250);
-                    R.Height = 4;
-                    R.Width = p.Width;
+                    rectVueAutre.X = 0;
+                    rectVueAutre.Y = 91 - (int)(kinect.getMargesPinceB() * 250);
+                    rectVueAutre.Height = 4;
+                    rectVueAutre.Width = p.Width;
                     brush = BROrange;
-                    g.FillRectangle(brush, R);
+                    g.FillRectangle(brush, rectVueAutre);
                 }
                 if (changeC == true)
                 {
 
-                    R.X = 50 - (int)(kinect.getMargesPinceC() * 480);
-                    R.Y = 0;
-                    R.Height = p.Height;
-                    R.Width = 4;
+                    rectVueAutre.X = 50 - (int)(kinect.getMargesPinceC() * 480);
+                    rectVueAutre.Y = 0;
+                    rectVueAutre.Height = p.Height;
+                    rectVueAutre.Width = 4;
                     brush = BRBleu;
-                    g.FillRectangle(brush, R);
+                    g.FillRectangle(brush, rectVueAutre);
                 }
                 if (changeO == true)
                 {
 
-                    R.X = 50 - (int)(kinect.getMargesPinceO() * 480);
-                    R.Y = 0;
-                    R.Height = p.Height;
-                    R.Width = 4;
+                    rectVueAutre.X = 50 - (int)(kinect.getMargesPinceO() * 480);
+                    rectVueAutre.Y = 0;
+                    rectVueAutre.Height = p.Height;
+                    rectVueAutre.Width = 4;
                     brush = BRBleu;
-                    g.FillRectangle(brush, R);
+                    g.FillRectangle(brush, rectVueAutre);
                 }
             }
         }
@@ -563,7 +517,7 @@ namespace projet_p1
 
         private void Form1_Resize(object sender, EventArgs e)
         {
-            panelVitesse.Height = this.ClientSize.Height-20;
+            pbVitesse.Height = this.ClientSize.Height-20;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -604,11 +558,6 @@ namespace projet_p1
                 g.DrawImage(b, new Point(0, 0));
             }
             return returnBitmap;
-        }
-
-        private void pboxSIM_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void pboxSIM_Paint(object sender, PaintEventArgs e)
