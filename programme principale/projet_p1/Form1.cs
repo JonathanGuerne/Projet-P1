@@ -19,7 +19,7 @@ namespace projet_p1
         int DetecObstacleArriere = 330;
         int DetecObstacleDroite = 420;
         int DetecObstacleGauche = 102;
-        int StatuVoiture = 0xEF;
+        int StatuVoiture = 0xFF;
 
         Rectangle rectVueAutre;
         Rectangle rectVitesse;

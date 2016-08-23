@@ -44,6 +44,8 @@
             this.lblSTAT5 = new System.Windows.Forms.Label();
             this.lblSTAT8 = new System.Windows.Forms.Label();
             this.lblSTAT7 = new System.Windows.Forms.Label();
+            this.btnSettingsZigBEE = new System.Windows.Forms.Button();
+            this.btnConnect = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pboxSIM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_VUE_Autres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVitesse)).BeginInit();
@@ -199,12 +201,32 @@
             this.lblSTAT7.TabIndex = 39;
             this.lblSTAT7.Text = "Servomoteur bras";
             // 
+            // btnSettingsZigBEE
+            // 
+            this.btnSettingsZigBEE.Location = new System.Drawing.Point(729, 4);
+            this.btnSettingsZigBEE.Name = "btnSettingsZigBEE";
+            this.btnSettingsZigBEE.Size = new System.Drawing.Size(110, 22);
+            this.btnSettingsZigBEE.TabIndex = 41;
+            this.btnSettingsZigBEE.Text = "paramètres ZigBEE";
+            this.btnSettingsZigBEE.UseVisualStyleBackColor = true;
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.Location = new System.Drawing.Point(845, 4);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(106, 22);
+            this.btnConnect.TabIndex = 42;
+            this.btnConnect.Text = "connecter";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(963, 635);
+            this.Controls.Add(this.btnConnect);
+            this.Controls.Add(this.btnSettingsZigBEE);
             this.Controls.Add(this.lblSTAT8);
             this.Controls.Add(this.lblSTAT7);
             this.Controls.Add(this.lblSTAT6);
@@ -248,6 +270,8 @@
         private System.Windows.Forms.Label lblSTAT5;
         private System.Windows.Forms.Label lblSTAT8;
         private System.Windows.Forms.Label lblSTAT7;
+        private System.Windows.Forms.Button btnSettingsZigBEE;
+        private System.Windows.Forms.Button btnConnect;
     }
 }
 
