@@ -791,15 +791,12 @@ namespace projet_p1
                     IMGvu = Properties.Resources.Vu;
                 }
                 g.DrawImageUnscaled(IMGvu, new Point(100, 475));
-                /*R1.X = Convert.ToInt32(p.Height / 2 - p.Height * 0.49);
-                R1.Y = Convert.ToInt32(p.Width / 2 - p.Width * 0.49);
-                R1.Height = Convert.ToInt32(p.Height * 0.98);
-                R1.Width = Convert.ToInt32(p.Width * 0.98);
-                brush = BRBleuTurquoise;
-                g.FillEllipse(brush, R1);*/
-
-
             }
+        }
+
+        private void pbVitesse_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

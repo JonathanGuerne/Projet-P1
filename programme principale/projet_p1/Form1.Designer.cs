@@ -50,10 +50,9 @@
             // cbxModeSimluation
             // 
             this.cbxModeSimluation.AutoSize = true;
-            this.cbxModeSimluation.Location = new System.Drawing.Point(825, 10);
-            this.cbxModeSimluation.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxModeSimluation.Location = new System.Drawing.Point(619, 8);
             this.cbxModeSimluation.Name = "cbxModeSimluation";
-            this.cbxModeSimluation.Size = new System.Drawing.Size(134, 21);
+            this.cbxModeSimluation.Size = new System.Drawing.Size(104, 17);
             this.cbxModeSimluation.TabIndex = 28;
             this.cbxModeSimluation.Text = "Mode Simulation";
             this.cbxModeSimluation.UseVisualStyleBackColor = true;
@@ -62,10 +61,9 @@
             // pboxSIM
             // 
             this.pboxSIM.BackColor = System.Drawing.Color.White;
-            this.pboxSIM.Location = new System.Drawing.Point(825, 38);
-            this.pboxSIM.Margin = new System.Windows.Forms.Padding(4);
+            this.pboxSIM.Location = new System.Drawing.Point(619, 31);
             this.pboxSIM.Name = "pboxSIM";
-            this.pboxSIM.Size = new System.Drawing.Size(864, 729);
+            this.pboxSIM.Size = new System.Drawing.Size(648, 592);
             this.pboxSIM.TabIndex = 29;
             this.pboxSIM.TabStop = false;
             this.pboxSIM.Visible = false;
@@ -76,10 +74,9 @@
             this.pbox_VUE_Autres.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pbox_VUE_Autres.BackgroundImage = global::projet_p1.Properties.Resources.BG1;
             this.pbox_VUE_Autres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbox_VUE_Autres.Location = new System.Drawing.Point(16, 385);
-            this.pbox_VUE_Autres.Margin = new System.Windows.Forms.Padding(4);
+            this.pbox_VUE_Autres.Location = new System.Drawing.Point(12, 313);
             this.pbox_VUE_Autres.Name = "pbox_VUE_Autres";
-            this.pbox_VUE_Autres.Size = new System.Drawing.Size(573, 381);
+            this.pbox_VUE_Autres.Size = new System.Drawing.Size(430, 310);
             this.pbox_VUE_Autres.TabIndex = 27;
             this.pbox_VUE_Autres.TabStop = false;
             this.pbox_VUE_Autres.Paint += new System.Windows.Forms.PaintEventHandler(this.pbVueAutrePaint);
@@ -93,46 +90,47 @@
             this.lblKinectControlView.AutoSize = true;
             this.lblKinectControlView.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKinectControlView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.lblKinectControlView.Location = new System.Drawing.Point(155, 385);
-            this.lblKinectControlView.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblKinectControlView.Location = new System.Drawing.Point(116, 313);
             this.lblKinectControlView.Name = "lblKinectControlView";
-            this.lblKinectControlView.Size = new System.Drawing.Size(272, 29);
+            this.lblKinectControlView.Size = new System.Drawing.Size(213, 23);
             this.lblKinectControlView.TabIndex = 30;
             this.lblKinectControlView.Text = "Vue du dessus - mode conduite";
             this.lblKinectControlView.Visible = false;
             // 
             // pbVitesse
             // 
-            this.pbVitesse.Location = new System.Drawing.Point(596, 12);
+            this.pbVitesse.Location = new System.Drawing.Point(447, 10);
+            this.pbVitesse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbVitesse.Name = "pbVitesse";
-            this.pbVitesse.Size = new System.Drawing.Size(222, 754);
+            this.pbVitesse.Size = new System.Drawing.Size(166, 613);
             this.pbVitesse.TabIndex = 31;
             this.pbVitesse.TabStop = false;
+            this.pbVitesse.Click += new System.EventHandler(this.pbVitesse_Click);
             this.pbVitesse.Paint += new System.Windows.Forms.PaintEventHandler(this.panelVitesse_Paint);
             // 
             // pbCapteurs
             // 
             this.pbCapteurs.ErrorImage = global::projet_p1.Properties.Resources.Vu;
-            this.pbCapteurs.Location = new System.Drawing.Point(825, 38);
+            this.pbCapteurs.Location = new System.Drawing.Point(619, 31);
+            this.pbCapteurs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbCapteurs.Name = "pbCapteurs";
-            this.pbCapteurs.Size = new System.Drawing.Size(595, 728);
+            this.pbCapteurs.Size = new System.Drawing.Size(446, 592);
             this.pbCapteurs.TabIndex = 32;
             this.pbCapteurs.TabStop = false;
             this.pbCapteurs.Paint += new System.Windows.Forms.PaintEventHandler(this.pbCapteurs_Paint);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1412, 782);
+            this.ClientSize = new System.Drawing.Size(963, 635);
             this.Controls.Add(this.pbCapteurs);
             this.Controls.Add(this.pbVitesse);
             this.Controls.Add(this.lblKinectControlView);
             this.Controls.Add(this.pboxSIM);
             this.Controls.Add(this.cbxModeSimluation);
             this.Controls.Add(this.pbox_VUE_Autres);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "K-Driver";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
