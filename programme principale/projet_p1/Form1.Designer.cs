@@ -36,6 +36,14 @@
             this.lblKinectControlView = new System.Windows.Forms.Label();
             this.pbVitesse = new System.Windows.Forms.PictureBox();
             this.pbCapteurs = new System.Windows.Forms.PictureBox();
+            this.lblSTAT1 = new System.Windows.Forms.Label();
+            this.lblSTAT2 = new System.Windows.Forms.Label();
+            this.lblSTAT4 = new System.Windows.Forms.Label();
+            this.lblSTAT3 = new System.Windows.Forms.Label();
+            this.lblSTAT6 = new System.Windows.Forms.Label();
+            this.lblSTAT5 = new System.Windows.Forms.Label();
+            this.lblSTAT8 = new System.Windows.Forms.Label();
+            this.lblSTAT7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pboxSIM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_VUE_Autres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVitesse)).BeginInit();
@@ -119,12 +127,92 @@
             this.pbCapteurs.TabStop = false;
             this.pbCapteurs.Paint += new System.Windows.Forms.PaintEventHandler(this.pbCapteurs_Paint);
             // 
+            // lblSTAT1
+            // 
+            this.lblSTAT1.AutoSize = true;
+            this.lblSTAT1.Location = new System.Drawing.Point(749, 334);
+            this.lblSTAT1.Name = "lblSTAT1";
+            this.lblSTAT1.Size = new System.Drawing.Size(49, 13);
+            this.lblSTAT1.TabIndex = 33;
+            this.lblSTAT1.Text = "Moteur 1";
+            // 
+            // lblSTAT2
+            // 
+            this.lblSTAT2.AutoSize = true;
+            this.lblSTAT2.Location = new System.Drawing.Point(749, 359);
+            this.lblSTAT2.Name = "lblSTAT2";
+            this.lblSTAT2.Size = new System.Drawing.Size(49, 13);
+            this.lblSTAT2.TabIndex = 34;
+            this.lblSTAT2.Text = "Moteur 2";
+            // 
+            // lblSTAT4
+            // 
+            this.lblSTAT4.AutoSize = true;
+            this.lblSTAT4.Location = new System.Drawing.Point(749, 412);
+            this.lblSTAT4.Name = "lblSTAT4";
+            this.lblSTAT4.Size = new System.Drawing.Size(94, 13);
+            this.lblSTAT4.TabIndex = 36;
+            this.lblSTAT4.Text = "Capteur US arrière";
+            // 
+            // lblSTAT3
+            // 
+            this.lblSTAT3.AutoSize = true;
+            this.lblSTAT3.Location = new System.Drawing.Point(749, 387);
+            this.lblSTAT3.Name = "lblSTAT3";
+            this.lblSTAT3.Size = new System.Drawing.Size(92, 13);
+            this.lblSTAT3.TabIndex = 35;
+            this.lblSTAT3.Text = "Capteur US avant";
+            // 
+            // lblSTAT6
+            // 
+            this.lblSTAT6.AutoSize = true;
+            this.lblSTAT6.Location = new System.Drawing.Point(749, 463);
+            this.lblSTAT6.Name = "lblSTAT6";
+            this.lblSTAT6.Size = new System.Drawing.Size(109, 13);
+            this.lblSTAT6.TabIndex = 38;
+            this.lblSTAT6.Text = "Capteur US côté droit";
+            // 
+            // lblSTAT5
+            // 
+            this.lblSTAT5.AutoSize = true;
+            this.lblSTAT5.Location = new System.Drawing.Point(749, 438);
+            this.lblSTAT5.Name = "lblSTAT5";
+            this.lblSTAT5.Size = new System.Drawing.Size(125, 13);
+            this.lblSTAT5.TabIndex = 37;
+            this.lblSTAT5.Text = "Capteur US côté gauche";
+            // 
+            // lblSTAT8
+            // 
+            this.lblSTAT8.AutoSize = true;
+            this.lblSTAT8.Location = new System.Drawing.Point(749, 510);
+            this.lblSTAT8.Name = "lblSTAT8";
+            this.lblSTAT8.Size = new System.Drawing.Size(96, 13);
+            this.lblSTAT8.TabIndex = 40;
+            this.lblSTAT8.Text = "Servomoteur pince";
+            // 
+            // lblSTAT7
+            // 
+            this.lblSTAT7.AutoSize = true;
+            this.lblSTAT7.Location = new System.Drawing.Point(749, 487);
+            this.lblSTAT7.Name = "lblSTAT7";
+            this.lblSTAT7.Size = new System.Drawing.Size(90, 13);
+            this.lblSTAT7.TabIndex = 39;
+            this.lblSTAT7.Text = "Servomoteur bras";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(963, 635);
+            this.Controls.Add(this.lblSTAT8);
+            this.Controls.Add(this.lblSTAT7);
+            this.Controls.Add(this.lblSTAT6);
+            this.Controls.Add(this.lblSTAT5);
+            this.Controls.Add(this.lblSTAT4);
+            this.Controls.Add(this.lblSTAT3);
+            this.Controls.Add(this.lblSTAT2);
+            this.Controls.Add(this.lblSTAT1);
             this.Controls.Add(this.pbCapteurs);
             this.Controls.Add(this.pbVitesse);
             this.Controls.Add(this.lblKinectControlView);
@@ -152,6 +240,14 @@
         private System.Windows.Forms.Label lblKinectControlView;
         private System.Windows.Forms.PictureBox pbVitesse;
         private System.Windows.Forms.PictureBox pbCapteurs;
+        private System.Windows.Forms.Label lblSTAT1;
+        private System.Windows.Forms.Label lblSTAT2;
+        private System.Windows.Forms.Label lblSTAT4;
+        private System.Windows.Forms.Label lblSTAT3;
+        private System.Windows.Forms.Label lblSTAT6;
+        private System.Windows.Forms.Label lblSTAT5;
+        private System.Windows.Forms.Label lblSTAT8;
+        private System.Windows.Forms.Label lblSTAT7;
     }
 }
 

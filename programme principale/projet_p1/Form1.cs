@@ -19,7 +19,7 @@ namespace projet_p1
         int DetecObstacleArriere = 330;
         int DetecObstacleDroite = 420;
         int DetecObstacleGauche = 102;
-        int StatuVoiture = 0xFF;
+        int StatuVoiture = 0xEF;
 
         Rectangle rectVueAutre;
         Rectangle rectVitesse;
@@ -551,12 +551,28 @@ namespace projet_p1
                 Width += 800;
                 pboxSIM.Visible = true;
                 pbCapteurs.Visible = false;
+                lblSTAT1.Visible = false;
+                lblSTAT2.Visible = false;
+                lblSTAT3.Visible = false;
+                lblSTAT4.Visible = false;
+                lblSTAT5.Visible = false;
+                lblSTAT6.Visible = false;
+                lblSTAT7.Visible = false;
+                lblSTAT8.Visible = false;
             }
             else
             {
                 Width = 1075;
                 pbCapteurs.Visible = true;
                 pboxSIM.Visible = false;
+                lblSTAT1.Visible = true;
+                lblSTAT2.Visible = true;
+                lblSTAT3.Visible = true;
+                lblSTAT4.Visible = true;
+                lblSTAT5.Visible = true;
+                lblSTAT6.Visible = true;
+                lblSTAT7.Visible = true;
+                lblSTAT8.Visible = true;
             }
         }
         public static Bitmap RotateImage(Bitmap b, float angle, Graphics g)
