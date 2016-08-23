@@ -88,7 +88,7 @@ namespace projet_p1
             g.FillRectangle(brush, rectVitesse);
 
 
-            double facteur = 7;//p.Height / 20;
+            double facteur = 7;
 
             rectVitesse.X = 14;
             rectVitesse.Y = p.Height/2;
@@ -265,8 +265,6 @@ namespace projet_p1
                 rectVueAutre.Height = 30;
                 rectVueAutre.X = (int)(kinect.getHead().Z * 100) - 15;
                 rectVueAutre.Y = (p.Height / 2) + (int)(-kinect.getHead().X * 100) - 15;
-                //R.X = p.Width - R.X - R.Width;
-                //R = new Rectangle((int)(kinect.getHead().Z * 100), (p.Height/2)+(int)(kinect.getHead().X*100) ,40,40);
                 brush = BRBleuTurquoise;
 
                 g.FillEllipse(brush, rectVueAutre);
@@ -276,9 +274,6 @@ namespace projet_p1
                 rectVueAutre.Height = 20;
                 rectVueAutre.X = (int)(kinect.getLHand().Z * 100) - 10;
                 rectVueAutre.Y = (p.Height / 2) + (int)(-kinect.getLHand().X * 100) - 10;
-                //R.X = p.Width - R.X - R.Width;
-                //R.Y = p.Height - R.Y - R.Width;
-                //R = new Rectangle((int)(kinect.getLHand().Z * 100), (p.Height / 2) + (int)(kinect.getLHand().X * 100), 30, 30);
                 brush = BRRougeClair;
 
                 g.FillEllipse(brush, rectVueAutre);
@@ -288,9 +283,6 @@ namespace projet_p1
                 rectVueAutre.Height = 20;
                 rectVueAutre.X = (int)(kinect.getRHand().Z * 100) - 10;
                 rectVueAutre.Y = (p.Height / 2) + (int)(-kinect.getRHand().X * 100) - 10;
-                //R.X = p.Width - R.X - R.Width;
-                //R.Y = p.Height - R.Y - R.Width;
-                //R = new Rectangle((int)(kinect.getRHand().Z * 100), (p.Height / 2) + (int)(kinect.getRHand().X * 100), 30, 30);
 
                 g.FillEllipse(brush, rectVueAutre);
 
@@ -344,7 +336,6 @@ namespace projet_p1
                 rectVueAutre.Height = 20;
                 rectVueAutre.X = (int)((kinect.getHead().Z - ((kinect.getRHand().Z + kinect.getLHand().Z) / 2)) * 480) + 42;
                 rectVueAutre.Y = (int)((kinect.getHead().Y - ((kinect.getRHand().Y + kinect.getLHand().Y) / 2)) * 250) + 83;
-                //R = new Rectangle((int)(kinect.getLHand().Z * 100), (p.Height / 2) + (int)(kinect.getLHand().X * 100), 30, 30);
                 brush = BRRougeClair;
 
                 g.FillEllipse(brush, rectVueAutre);
