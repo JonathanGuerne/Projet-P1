@@ -33,10 +33,10 @@ namespace projet_p1
 
         double margeChangementMode = 0.12;
 
-        double margesPinceH = -0.15;
-        double margesPinceB = -0.6;
-        double margesPinceC = -0.25;
-        double margesPinceO = -0.43;
+        double margesPinceHaut = -0.15;
+        double margesPinceBas = -0.6;
+        double margesPinceClose = -0.25;
+        double margesPinceOpen = -0.43;
         int largeurConduite = 40;
 
         public double getVGLisse()
@@ -79,37 +79,37 @@ namespace projet_p1
         {
             return pinceOpenClose;
         }
-        public double getMargesPinceH()
+        public double getMargesPinceHaut()
         {
-            return margesPinceH;
+            return margesPinceHaut;
         }
-        public void setMargesPinceH(double A1)
+        public void setMargesPinceHaut(double A1)
         {
-            margesPinceH = A1;
+            margesPinceHaut = A1;
         }
-        public double getMargesPinceB()
+        public double getMargesPinceBas()
         {
-            return margesPinceB;
+            return margesPinceBas;
         }
-        public void setMargesPinceB(double A1)
+        public void setMargesPinceBas(double A1)
         {
-            margesPinceB = A1;
+            margesPinceBas = A1;
         }
-        public double getMargesPinceC()
+        public double getMargesPinceClose()
         {
-            return margesPinceC;
+            return margesPinceClose;
         }
-        public void setMargesPinceC(double A1)
+        public void setMargesPinceClose(double A1)
         {
-            margesPinceC = A1;
+            margesPinceClose = A1;
         }
-        public double getMargesPinceO()
+        public double getMargesPinceOpen()
         {
-            return margesPinceO;
+            return margesPinceOpen;
         }
-        public void setMargesPinceO(double A1)
+        public void setMargesPinceOpen(double A1)
         {
-            margesPinceO = A1;
+            margesPinceOpen = A1;
         }
         public int getLargeurConduite()
         {
@@ -188,14 +188,14 @@ namespace projet_p1
                 double MoyenneZ = (RHand.Z + LHand.Z) / 2;
 
                 //TEST JAUNE
-                if (MoyenneY > Head.Y + margesPinceH)
+                if (MoyenneY > Head.Y + margesPinceHaut)
                 {
                     //lblPINCEupdown.Text = "▲";
                     pinceUpDown = 1;
                 }
                 else
                 {
-                    if (MoyenneY < Head.Y + margesPinceB)
+                    if (MoyenneY < Head.Y + margesPinceBas)
                     {
                         //lblPINCEupdown.Text = "▼";
                         pinceUpDown = -1;
@@ -207,14 +207,14 @@ namespace projet_p1
                     }
                 }
                 //TEST ROUGE
-                if (MoyenneZ > Head.Z + margesPinceC)
+                if (MoyenneZ > Head.Z + margesPinceClose)
                 {
                     //lblPINCEopenclose.Text = "→←";
                     pinceOpenClose = -1;
                 }
                 else
                 {
-                    if (MoyenneZ < Head.Z + margesPinceO)
+                    if (MoyenneZ < Head.Z + margesPinceOpen)
                     {
                         //lblPINCEopenclose.Text = "←→";
                         pinceOpenClose = 1;

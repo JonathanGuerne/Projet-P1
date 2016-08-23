@@ -37,10 +37,10 @@ namespace projet_p1
         Brush BRBleuTransparent = new SolidBrush(Color.FromArgb(90, 0, 60, 250));
         Brush BRBleu = new SolidBrush(Color.FromArgb(255, 0, 60, 250));
 
-        Boolean changeH = false;
-        Boolean changeB = false;
-        Boolean changeC = false;
-        Boolean changeO = false;
+        Boolean changeHaut = false;
+        Boolean changeBas = false;
+        Boolean changeClose = false;
+        Boolean changeOpen = false;
         Boolean changeL = false;
         Boolean mouseDownYes = false;
 
@@ -152,55 +152,55 @@ namespace projet_p1
 
         private void panelKVueDessus_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Y-15 < 93 - (int)(kinect.getMargesPinceH() * 250))
+            if (e.Y-15 < 93 - (int)(kinect.getMargesPinceHaut() * 250))
             {
-                changeH = true;
+                changeHaut = true;
             }
             else
             {
-                changeH = false;
+                changeHaut = false;
             }
-            if (e.Y+15 > 93 - (int)(kinect.getMargesPinceB() * 250))
+            if (e.Y+15 > 93 - (int)(kinect.getMargesPinceBas() * 250))
             {
-                changeB = true;
-            }
-            else
-            {
-                changeB = false;
-            }
-            if (e.X-15 < 52 - (int)(kinect.getMargesPinceC() * 250))
-            {
-                changeC = true;
+                changeBas = true;
             }
             else
             {
-                changeC = false;
+                changeBas = false;
             }
-            if (e.X+15 > 52 - (int)(kinect.getMargesPinceO() * 250))
+            if (e.X-15 < 52 - (int)(kinect.getMargesPinceClose() * 250))
             {
-                changeO = true;
+                changeClose = true;
             }
             else
             {
-                changeO = false;
+                changeClose = false;
+            }
+            if (e.X+15 > 52 - (int)(kinect.getMargesPinceOpen() * 250))
+            {
+                changeOpen = true;
+            }
+            else
+            {
+                changeOpen = false;
             }
             if (mouseDownYes == true)
             {
-                if (changeH == true)
+                if (changeHaut == true)
                 {
-                    kinect.setMargesPinceH((-e.Y + 93.0) / 250);
+                    kinect.setMargesPinceHaut((-e.Y + 93.0) / 250);
                 }
-                if (changeB == true)
+                if (changeBas == true)
                 {
-                    kinect.setMargesPinceB((-e.Y + 93.0) / 250);
+                    kinect.setMargesPinceBas((-e.Y + 93.0) / 250);
                 }
-                if (changeC == true)
+                if (changeClose == true)
                 {
-                    kinect.setMargesPinceC((-e.X + 52.0) / 480);
+                    kinect.setMargesPinceClose((-e.X + 52.0) / 480);
                 }
-                if (changeO == true)
+                if (changeOpen == true)
                 {
-                    kinect.setMargesPinceO((-e.X + 52.0) / 480);
+                    kinect.setMargesPinceOpen((-e.X + 52.0) / 480);
                 }
             }
         }
@@ -212,10 +212,10 @@ namespace projet_p1
 
         private void panelKVueDessus_MouseLeave(object sender, EventArgs e)
         {
-            changeH = false;
-            changeB = false;
-            changeO = false;
-            changeC = false;
+            changeHaut = false;
+            changeBas = false;
+            changeOpen = false;
+            changeClose = false;
             changeL = false;
         }
 
@@ -352,15 +352,15 @@ namespace projet_p1
                 // HAUT
                 rectVueAutre.X = 0;
                 rectVueAutre.Y = 0;
-                rectVueAutre.Height = 93 - (int)(kinect.getMargesPinceH() * 250);
+                rectVueAutre.Height = 93 - (int)(kinect.getMargesPinceHaut() * 250);
                 rectVueAutre.Width = p.Width;
                 brush = BROrangeTransparent;
                 g.FillRectangle(brush, rectVueAutre);
 
                 // BAS
                 rectVueAutre.X = 0;
-                rectVueAutre.Y = 93 - (int)(kinect.getMargesPinceB() * 250);
-                rectVueAutre.Height = p.Height - (93 - (int)(kinect.getMargesPinceB() * 250));
+                rectVueAutre.Y = 93 - (int)(kinect.getMargesPinceBas() * 250);
+                rectVueAutre.Height = p.Height - (93 - (int)(kinect.getMargesPinceBas() * 250));
                 rectVueAutre.Width = p.Width;
                 g.FillRectangle(brush, rectVueAutre);
 
@@ -368,49 +368,49 @@ namespace projet_p1
                 rectVueAutre.X = 0;
                 rectVueAutre.Y = 0;
                 rectVueAutre.Height = p.Height;
-                rectVueAutre.Width = 52 - (int)(kinect.getMargesPinceC() * 480);
+                rectVueAutre.Width = 52 - (int)(kinect.getMargesPinceClose() * 480);
                 brush = BRBleuTransparent;
                 g.FillRectangle(brush, rectVueAutre);
 
                 // CLOSE
-                rectVueAutre.X = 52 - (int)(kinect.getMargesPinceO() * 480);
+                rectVueAutre.X = 52 - (int)(kinect.getMargesPinceOpen() * 480);
                 rectVueAutre.Y = 0;
                 rectVueAutre.Height = p.Height;
-                rectVueAutre.Width = p.Width - (52 - (int)(kinect.getMargesPinceO() * 480));
+                rectVueAutre.Width = p.Width - (52 - (int)(kinect.getMargesPinceOpen() * 480));
                 g.FillRectangle(brush, rectVueAutre);
 
-                if (changeH == true)
+                if (changeHaut == true)
                 {
                     rectVueAutre.X = 0;
-                    rectVueAutre.Y = 91 - (int)(kinect.getMargesPinceH() * 250);
+                    rectVueAutre.Y = 91 - (int)(kinect.getMargesPinceHaut() * 250);
                     rectVueAutre.Height = 4;
                     rectVueAutre.Width = p.Width;
                     brush = BROrange;
                     g.FillRectangle(brush, rectVueAutre);
                 }
-                if (changeB == true)
+                if (changeBas == true)
                 {
                     rectVueAutre.X = 0;
-                    rectVueAutre.Y = 91 - (int)(kinect.getMargesPinceB() * 250);
+                    rectVueAutre.Y = 91 - (int)(kinect.getMargesPinceBas() * 250);
                     rectVueAutre.Height = 4;
                     rectVueAutre.Width = p.Width;
                     brush = BROrange;
                     g.FillRectangle(brush, rectVueAutre);
                 }
-                if (changeC == true)
+                if (changeClose == true)
                 {
 
-                    rectVueAutre.X = 50 - (int)(kinect.getMargesPinceC() * 480);
+                    rectVueAutre.X = 50 - (int)(kinect.getMargesPinceClose() * 480);
                     rectVueAutre.Y = 0;
                     rectVueAutre.Height = p.Height;
                     rectVueAutre.Width = 4;
                     brush = BRBleu;
                     g.FillRectangle(brush, rectVueAutre);
                 }
-                if (changeO == true)
+                if (changeOpen == true)
                 {
 
-                    rectVueAutre.X = 50 - (int)(kinect.getMargesPinceO() * 480);
+                    rectVueAutre.X = 50 - (int)(kinect.getMargesPinceOpen() * 480);
                     rectVueAutre.Y = 0;
                     rectVueAutre.Height = p.Height;
                     rectVueAutre.Width = 4;
@@ -424,55 +424,55 @@ namespace projet_p1
         {
             if (kinect.getModePince() == true)
             {
-                if (e.Y - 15 < 93 - (int)(kinect.getMargesPinceH() * 250))
+                if (e.Y - 15 < 93 - (int)(kinect.getMargesPinceHaut() * 250))
                 {
-                    changeH = true;
+                    changeHaut = true;
                 }
                 else
                 {
-                    changeH = false;
+                    changeHaut = false;
                 }
-                if (e.Y + 15 > 93 - (int)(kinect.getMargesPinceB() * 250))
+                if (e.Y + 15 > 93 - (int)(kinect.getMargesPinceBas() * 250))
                 {
-                    changeB = true;
-                }
-                else
-                {
-                    changeB = false;
-                }
-                if (e.X - 15 < 52 - (int)(kinect.getMargesPinceC() * 480))
-                {
-                    changeC = true;
+                    changeBas = true;
                 }
                 else
                 {
-                    changeC = false;
+                    changeBas = false;
                 }
-                if (e.X + 15 > 52 - (int)(kinect.getMargesPinceO() * 480))
+                if (e.X - 15 < 52 - (int)(kinect.getMargesPinceClose() * 480))
                 {
-                    changeO = true;
+                    changeClose = true;
                 }
                 else
                 {
-                    changeO = false;
+                    changeClose = false;
+                }
+                if (e.X + 15 > 52 - (int)(kinect.getMargesPinceOpen() * 480))
+                {
+                    changeOpen = true;
+                }
+                else
+                {
+                    changeOpen = false;
                 }
                 if (mouseDownYes == true)
                 {
-                    if (changeH == true)
+                    if (changeHaut == true)
                     {
-                        kinect.setMargesPinceH((-e.Y + 93.0) / 250);
+                        kinect.setMargesPinceHaut((-e.Y + 93.0) / 250);
                     }
-                    if (changeB == true)
+                    if (changeBas == true)
                     {
-                        kinect.setMargesPinceB((-e.Y + 93.0) / 250);
+                        kinect.setMargesPinceBas((-e.Y + 93.0) / 250);
                     }
-                    if (changeC == true)
+                    if (changeClose == true)
                     {
-                        kinect.setMargesPinceC((-e.X + 52.0) / 480);
+                        kinect.setMargesPinceClose((-e.X + 52.0) / 480);
                     }
-                    if (changeO == true)
+                    if (changeOpen == true)
                     {
-                        kinect.setMargesPinceO((-e.X + 52.0) / 480);
+                        kinect.setMargesPinceOpen((-e.X + 52.0) / 480);
                     }
                 }
             }
@@ -508,10 +508,10 @@ namespace projet_p1
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
-            changeH = false;
-            changeB = false;
-            changeO = false;
-            changeC = false;
+            changeHaut = false;
+            changeBas = false;
+            changeOpen = false;
+            changeClose = false;
             changeL = false;
         }
 
