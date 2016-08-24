@@ -172,6 +172,18 @@
   <ItemGroup>
     <None Include="bin\Vu.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capBR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capDR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capGR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\capHR.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,11 +16,18 @@ namespace projet_p1
         Kinect kinect;
 
         Boolean VoitureConnection = true;
-        int DetecObstacleAvant = 450;
-        int DetecObstacleArriere = 330;
-        int DetecObstacleDroite = 420;
-        int DetecObstacleGauche = 102;
-        int StatuVoiture = 0xFF;
+        int DetecObstacleAvant = 500;
+        int DetecObstacleArriere = 80;
+        int DetecObstacleDroite = 270;
+        int DetecObstacleGauche = 500;
+        int StatuVoiture = 0xC0;
+        ColorMatrix cmx1 = new ColorMatrix();           // opacité
+        ImageAttributes ia = new ImageAttributes();     // opacité
+        Rectangle rectCapGauche = new Rectangle(90,90,80,80);
+        Rectangle rectCapDroit = new Rectangle(210, 90, 80, 80);
+        Rectangle rectCapHaut = new Rectangle(152, 20, 80, 80);
+        Rectangle rectCapBas = new Rectangle(152, 160, 80, 80);
+        Rectangle rectCapVoiture = new Rectangle(150, 80, 80, 100);
 
         Rectangle rectVueAutre;
         Rectangle rectVitesse;
@@ -172,6 +180,7 @@ namespace projet_p1
         {
             pbVitesse.Refresh();
             pbox_VUE_Autres.Refresh();
+            pbCapteurs.Refresh();
             pboxSIM.Refresh();
         }
 
@@ -647,29 +656,232 @@ namespace projet_p1
 
             if (VoitureConnection == true)
             {
-                // -- capteur gauche
-                Image IMGcapG;
+                // -- capteur gauche --
+                // --------------------
+                Image IMGcap;
                 if (DetecObstacleGauche > 400)
                 {
-                    IMGcapG = Properties.Resources.capG0;
+                    
+                    IMGcap = Properties.Resources.capG0;
+                    g.DrawImage(IMGcap, rectCapGauche);
+
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleGauche - 400)/100.0);
+                    IMGcap = Properties.Resources.capG1;
+
+                    
+                    ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    g.DrawImage(IMGcap, rectCapGauche, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
                 }
                 else if (DetecObstacleGauche > 300 && DetecObstacleGauche < 400)
                 {
-                    IMGcapG = Properties.Resources.capG1;
+                    IMGcap = Properties.Resources.capG1;
+                    g.DrawImage(IMGcap, rectCapGauche);
+
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleGauche - 300) / 100.0);
+                    IMGcap = Properties.Resources.capG2;
+
+
+                    ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    g.DrawImage(IMGcap, rectCapGauche, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
                 }
                 else if (DetecObstacleGauche > 200 && DetecObstacleGauche < 300)
                 {
-                    IMGcapG = Properties.Resources.capG2;
+                    IMGcap = Properties.Resources.capG2;
+                    g.DrawImage(IMGcap, rectCapGauche);
+
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleGauche - 200) / 100.0);
+                    IMGcap = Properties.Resources.capG3;
+
+
+                    ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    g.DrawImage(IMGcap, rectCapGauche, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
                 }
                 else if (DetecObstacleGauche > 100 && DetecObstacleGauche < 200)
                 {
-                    IMGcapG = Properties.Resources.capG3;
+                    IMGcap = Properties.Resources.capG3;
+                    g.DrawImage(IMGcap, rectCapGauche);
+
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleGauche - 100) / 100.0);
+                    IMGcap = Properties.Resources.capG4;
+
+
+                    ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    g.DrawImage(IMGcap, rectCapGauche, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
                 }
                 else
                 {
-                    IMGcapG = Properties.Resources.capG4;
+                    IMGcap = Properties.Resources.capGR;
+                    g.DrawImage(IMGcap, rectCapGauche);
                 }
-                g.DrawImage(IMGcapG, new Point(90, 90));
+                // -- capteur droite --
+                // --------------------
+                if (DetecObstacleDroite > 400)
+                {
+
+                    IMGcap = Properties.Resources.capD0;
+                    g.DrawImage(IMGcap, rectCapDroit);
+
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleDroite - 400) / 100.0);
+                    IMGcap = Properties.Resources.capD1;
+
+
+                    ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    g.DrawImage(IMGcap, rectCapDroit, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
+                }
+                else if (DetecObstacleDroite > 300 && DetecObstacleDroite < 400)
+                {
+                    IMGcap = Properties.Resources.capD1;
+                    g.DrawImage(IMGcap, rectCapDroit);
+
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleDroite - 300) / 100.0);
+                    IMGcap = Properties.Resources.capD2;
+
+
+                    ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    g.DrawImage(IMGcap, rectCapDroit, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
+                }
+                else if (DetecObstacleDroite > 200 && DetecObstacleDroite < 300)
+                {
+                    IMGcap = Properties.Resources.capD2;
+                    g.DrawImage(IMGcap, rectCapDroit);
+
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleDroite - 200) / 100.0);
+                    IMGcap = Properties.Resources.capD3;
+
+
+                    ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    g.DrawImage(IMGcap, rectCapDroit, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
+                }
+                else if (DetecObstacleDroite > 100 && DetecObstacleDroite < 200)
+                {
+                    IMGcap = Properties.Resources.capD3;
+                    g.DrawImage(IMGcap, rectCapDroit);
+
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleDroite - 100) / 100.0);
+                    IMGcap = Properties.Resources.capD4;
+
+
+                    ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    g.DrawImage(IMGcap, rectCapDroit, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
+                }
+                else
+                {
+                    IMGcap = Properties.Resources.capDR;
+                    g.DrawImage(IMGcap, rectCapDroit);
+                }
+                // -- capteur avant --
+                // --------------------
+                if (DetecObstacleAvant > 400)
+                {
+
+                    IMGcap = Properties.Resources.capH0;
+                    g.DrawImage(IMGcap, rectCapHaut);
+
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleAvant - 400) / 100.0);
+                    IMGcap = Properties.Resources.capH1;
+
+
+                    ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    g.DrawImage(IMGcap, rectCapHaut, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
+                }
+                else if (DetecObstacleAvant > 300 && DetecObstacleAvant < 400)
+                {
+                    IMGcap = Properties.Resources.capH1;
+                    g.DrawImage(IMGcap, rectCapHaut);
+
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleAvant - 300) / 100.0);
+                    IMGcap = Properties.Resources.capH2;
+
+
+                    ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    g.DrawImage(IMGcap, rectCapHaut, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
+                }
+                else if (DetecObstacleAvant > 200 && DetecObstacleAvant < 300)
+                {
+                    IMGcap = Properties.Resources.capH2;
+                    g.DrawImage(IMGcap, rectCapHaut);
+
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleAvant - 200) / 100.0);
+                    IMGcap = Properties.Resources.capH3;
+
+
+                    ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    g.DrawImage(IMGcap, rectCapHaut, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
+                }
+                else if (DetecObstacleAvant > 100 && DetecObstacleAvant < 200)
+                {
+                    IMGcap = Properties.Resources.capH3;
+                    g.DrawImage(IMGcap, rectCapHaut);
+
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleAvant - 100) / 100.0);
+                    IMGcap = Properties.Resources.capH4;
+
+
+                    ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    g.DrawImage(IMGcap, rectCapHaut, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
+                }
+                else
+                {
+                    IMGcap = Properties.Resources.capHR;
+                    g.DrawImage(IMGcap, rectCapHaut);
+                }
+                // -- capteur arriere --
+                // ---------------------
+                if (DetecObstacleArriere > 400)
+                {
+
+                    IMGcap = Properties.Resources.capB0;
+                    g.DrawImage(IMGcap, rectCapBas);
+
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleArriere - 400) / 100.0);
+                    IMGcap = Properties.Resources.capB1;
+
+
+                    ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    g.DrawImage(IMGcap, rectCapBas, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
+                }
+                else if (DetecObstacleArriere > 300 && DetecObstacleArriere < 400)
+                {
+                    IMGcap = Properties.Resources.capB1;
+                    g.DrawImage(IMGcap, rectCapBas);
+
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleArriere - 300) / 100.0);
+                    IMGcap = Properties.Resources.capB2;
+
+
+                    ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    g.DrawImage(IMGcap, rectCapBas, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
+                }
+                else if (DetecObstacleArriere > 200 && DetecObstacleArriere < 300)
+                {
+                    IMGcap = Properties.Resources.capB2;
+                    g.DrawImage(IMGcap, rectCapBas);
+
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleArriere - 200) / 100.0);
+                    IMGcap = Properties.Resources.capB3;
+
+
+                    ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    g.DrawImage(IMGcap, rectCapBas, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
+                }
+                else if (DetecObstacleArriere > 100 && DetecObstacleArriere < 200)
+                {
+                    IMGcap = Properties.Resources.capB3;
+                    g.DrawImage(IMGcap, rectCapBas);
+
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleArriere - 100) / 100.0);
+                    IMGcap = Properties.Resources.capB4;
+
+
+                    ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    g.DrawImage(IMGcap, rectCapBas, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
+                }
+                else
+                {
+                    IMGcap = Properties.Resources.capBR;
+                    g.DrawImage(IMGcap, rectCapBas);
+                }
+                /*
                 // -- capteur droite
                 Image IMGcapD;
                 if (DetecObstacleDroite > 400)
@@ -738,10 +950,10 @@ namespace projet_p1
                 {
                     IMGcapB = Properties.Resources.capB4;
                 }
-                g.DrawImage(IMGcapB, new Point(152, 177));
+                g.DrawImage(IMGcapB, new Point(152, 177));*/
                 Image Voiture;
                 Voiture = Properties.Resources.voiture;
-                g.DrawImage(Voiture, new Point(150, 80));
+                g.DrawImage(Voiture, rectCapVoiture);
                 // EXTRACTION DES BITS DE LA DONNEE POUR AFFICHER LES VUS
                 int E = StatuVoiture;
                 Image IMGvu;
@@ -831,6 +1043,22 @@ namespace projet_p1
         private void pbVitesse_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+        }
+
+        private void trackBar4_Scroll(object sender, EventArgs e)
+        {
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
         }
     }
 }
