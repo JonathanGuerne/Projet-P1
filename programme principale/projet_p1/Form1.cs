@@ -17,13 +17,13 @@ namespace projet_p1
 
         Boolean VoitureConnection = true;
         int DetecObstacleAvant = 500;
-        int DetecObstacleArriere = 80;
-        int DetecObstacleDroite = 270;
+        int DetecObstacleArriere = 500;
+        int DetecObstacleDroite = 500;
         int DetecObstacleGauche = 500;
         int StatuVoiture = 0xC0;
         ColorMatrix cmx1 = new ColorMatrix();           // opacité
         ImageAttributes ia = new ImageAttributes();     // opacité
-        Rectangle rectCapGauche = new Rectangle(90,90,80,80);
+        Rectangle rectCapGauche = new Rectangle(90, 90, 80, 80);
         Rectangle rectCapDroit = new Rectangle(210, 90, 80, 80);
         Rectangle rectCapHaut = new Rectangle(152, 20, 80, 80);
         Rectangle rectCapBas = new Rectangle(152, 160, 80, 80);
@@ -129,7 +129,7 @@ namespace projet_p1
 
             g.FillRectangle(brush, rectVitesse);
 
-            if(-(int)(kinect.getVDLisse() * facteur)>0)
+            if (-(int)(kinect.getVDLisse() * facteur) > 0)
             {
                 rectVitesse.Height = -(int)(kinect.getVDLisse() * facteur);
                 rectVitesse.Y = p.Height / 2;
@@ -661,14 +661,14 @@ namespace projet_p1
                 Image IMGcap;
                 if (DetecObstacleGauche > 400)
                 {
-                    
+
                     IMGcap = Properties.Resources.capG0;
                     g.DrawImage(IMGcap, rectCapGauche);
 
-                    cmx1.Matrix33 = (float)(1 - (DetecObstacleGauche - 400)/100.0);
+                    cmx1.Matrix33 = (float)(1 - (DetecObstacleGauche - 400) / 100.0);
                     IMGcap = Properties.Resources.capG1;
 
-                    
+
                     ia.SetColorMatrix(cmx1, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
                     g.DrawImage(IMGcap, rectCapGauche, 0, 0, IMGcap.Width, IMGcap.Height, GraphicsUnit.Pixel, ia);
                 }
@@ -881,184 +881,99 @@ namespace projet_p1
                     IMGcap = Properties.Resources.capBR;
                     g.DrawImage(IMGcap, rectCapBas);
                 }
-                /*
-                // -- capteur droite
-                Image IMGcapD;
-                if (DetecObstacleDroite > 400)
-                {
-                    IMGcapD = Properties.Resources.capD0;
-                }
-                else if (DetecObstacleDroite > 300 && DetecObstacleDroite < 400)
-                {
-                    IMGcapD = Properties.Resources.capD1;
-                }
-                else if (DetecObstacleDroite > 200 && DetecObstacleDroite < 300)
-                {
-                    IMGcapD = Properties.Resources.capD2;
-                }
-                else if (DetecObstacleDroite > 100 && DetecObstacleDroite < 200)
-                {
-                    IMGcapD = Properties.Resources.capD3;
-                }
-                else
-                {
-                    IMGcapD = Properties.Resources.capD4;
-                }
-                g.DrawImage(IMGcapD, new Point(215, 90));
-                // -- capteur haut
-                Image IMGcapH;
-                if (DetecObstacleAvant > 400)
-                {
-                    IMGcapH = Properties.Resources.capH0;
-                }
-                else if (DetecObstacleAvant > 300 && DetecObstacleAvant < 400)
-                {
-                    IMGcapH = Properties.Resources.capH1;
-                }
-                else if (DetecObstacleAvant > 200 && DetecObstacleAvant < 300)
-                {
-                    IMGcapH = Properties.Resources.capH2;
-                }
-                else if (DetecObstacleAvant > 100 && DetecObstacleAvant < 200)
-                {
-                    IMGcapH = Properties.Resources.capH3;
-                }
-                else
-                {
-                    IMGcapH = Properties.Resources.capH4;
-                }
-                g.DrawImage(IMGcapH, new Point(152, 7));
-                // -- capteur bas
-                Image IMGcapB;
-                if (DetecObstacleArriere >= 400)
-                {
-                    IMGcapB = Properties.Resources.capB0;
-                }
-                else if (DetecObstacleArriere >= 300 && DetecObstacleArriere < 400)
-                {
-                    IMGcapB = Properties.Resources.capB1;
-                }
-                else if (DetecObstacleArriere >= 200 && DetecObstacleArriere < 300)
-                {
-                    IMGcapB = Properties.Resources.capB2;
-                }
-                else if (DetecObstacleArriere >= 100 && DetecObstacleArriere < 200)
-                {
-                    IMGcapB = Properties.Resources.capB3;
-                }
-                else
-                {
-                    IMGcapB = Properties.Resources.capB4;
-                }
-                g.DrawImage(IMGcapB, new Point(152, 177));*/
                 Image Voiture;
                 Voiture = Properties.Resources.voiture;
                 g.DrawImage(Voiture, rectCapVoiture);
-                // EXTRACTION DES BITS DE LA DONNEE POUR AFFICHER LES VUS
-                int E = StatuVoiture;
-                Image IMGvu;
-                if (E % 2 == 1)
-                {
-                    IMGvu = Properties.Resources.nonVu;
-                    E -= 1;
-                }
-                else
-                {
-                    IMGvu = Properties.Resources.Vu;
-                }
-                g.DrawImageUnscaled(IMGvu, new Point(100, 300));
-                if (E % 4 == 2)
-                {
-                    IMGvu = Properties.Resources.nonVu;
-                    E -= 2;
-                }
-                else
-                {
-                    IMGvu = Properties.Resources.Vu;
-                }
-                g.DrawImageUnscaled(IMGvu, new Point(100, 325));
-                if (E % 8 == 4)
-                {
-                    IMGvu = Properties.Resources.nonVu;
-                    E -= 4;
-                }
-                else
-                {
-                    IMGvu = Properties.Resources.Vu;
-                }
-                g.DrawImageUnscaled(IMGvu, new Point(100, 350));
-                if (E % 16 == 8)
-                {
-                    IMGvu = Properties.Resources.nonVu;
-                    E -= 8;
-                }
-                else
-                {
-                    IMGvu = Properties.Resources.Vu;
-                }
-                g.DrawImageUnscaled(IMGvu, new Point(100, 375));
-                if (E % 32 == 16)
-                {
-                    IMGvu = Properties.Resources.nonVu;
-                    E -= 16;
-                }
-                else
-                {
-                    IMGvu = Properties.Resources.Vu;
-                }
-                g.DrawImageUnscaled(IMGvu, new Point(100, 400));
-                if (E % 64 == 32)
-                {
-                    IMGvu = Properties.Resources.nonVu;
-                    E -= 32;
-                }
-                else
-                {
-                    IMGvu = Properties.Resources.Vu;
-                }
-                g.DrawImageUnscaled(IMGvu, new Point(100, 425));
-                if (E % 128 == 64)
-                {
-                    IMGvu = Properties.Resources.nonVu;
-                    E -= 64;
-                }
-                else
-                {
-                    IMGvu = Properties.Resources.Vu;
-                }
-                g.DrawImageUnscaled(IMGvu, new Point(100, 450));
-                if (E % 256 == 128)
-                {
-                    IMGvu = Properties.Resources.nonVu;
-                    E -= 128;
-                }
-                else
-                {
-                    IMGvu = Properties.Resources.Vu;
-                }
-                g.DrawImageUnscaled(IMGvu, new Point(100, 475));
             }
+            // EXTRACTION DES BITS DE LA DONNEE POUR AFFICHER LES VUS
+            int E = StatuVoiture;
+            Image IMGvu;
+            if (E % 2 == 1)
+            {
+                IMGvu = Properties.Resources.nonVu;
+                E -= 1;
+            }
+            else
+            {
+                IMGvu = Properties.Resources.Vu;
+            }
+            g.DrawImageUnscaled(IMGvu, new Point(100, 300));
+            if (E % 4 == 2)
+            {
+                IMGvu = Properties.Resources.nonVu;
+                E -= 2;
+            }
+            else
+            {
+                IMGvu = Properties.Resources.Vu;
+            }
+            g.DrawImageUnscaled(IMGvu, new Point(100, 325));
+            if (E % 8 == 4)
+            {
+                IMGvu = Properties.Resources.nonVu;
+                E -= 4;
+            }
+            else
+            {
+                IMGvu = Properties.Resources.Vu;
+            }
+            g.DrawImageUnscaled(IMGvu, new Point(100, 350));
+            if (E % 16 == 8)
+            {
+                IMGvu = Properties.Resources.nonVu;
+                E -= 8;
+            }
+            else
+            {
+                IMGvu = Properties.Resources.Vu;
+            }
+            g.DrawImageUnscaled(IMGvu, new Point(100, 375));
+            if (E % 32 == 16)
+            {
+                IMGvu = Properties.Resources.nonVu;
+                E -= 16;
+            }
+            else
+            {
+                IMGvu = Properties.Resources.Vu;
+            }
+            g.DrawImageUnscaled(IMGvu, new Point(100, 400));
+            if (E % 64 == 32)
+            {
+                IMGvu = Properties.Resources.nonVu;
+                E -= 32;
+            }
+            else
+            {
+                IMGvu = Properties.Resources.Vu;
+            }
+            g.DrawImageUnscaled(IMGvu, new Point(100, 425));
+            if (E % 128 == 64)
+            {
+                IMGvu = Properties.Resources.nonVu;
+                E -= 64;
+            }
+            else
+            {
+                IMGvu = Properties.Resources.Vu;
+            }
+            g.DrawImageUnscaled(IMGvu, new Point(100, 450));
+            if (E % 256 == 128)
+            {
+                IMGvu = Properties.Resources.nonVu;
+                E -= 128;
+            }
+            else
+            {
+                IMGvu = Properties.Resources.Vu;
+            }
+            g.DrawImageUnscaled(IMGvu, new Point(100, 475));
+
         }
 
         private void pbVitesse_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void trackBar1_Scroll(object sender, EventArgs e)
-        {
-        }
-
-        private void trackBar2_Scroll(object sender, EventArgs e)
-        {
-        }
-
-        private void trackBar4_Scroll(object sender, EventArgs e)
-        {
-        }
-
-        private void trackBar3_Scroll(object sender, EventArgs e)
-        {
         }
     }
 }
