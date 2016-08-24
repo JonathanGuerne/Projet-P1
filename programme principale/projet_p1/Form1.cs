@@ -103,7 +103,7 @@ namespace projet_p1
             g.FillRectangle(brush, rectVitesse);
 
 
-            double facteur = 1;
+            double facteur = 3.02;
 
             rectVitesse.X = 14;
             if (-(int)(kinect.getVGLisse() * facteur) > 0)
@@ -118,9 +118,9 @@ namespace projet_p1
             }
             rectVitesse.Width = (p.Width / 2) - (2 * rectVitesse.X);
 
-            if ((int)(Math.Abs(kinect.getVGLisse()) * 255) / 50 < 255 && (int)((-Math.Abs(kinect.getVGLisse()) * 255) / 50) + 255 < 255)
+            if ((int)(Math.Abs(kinect.getVGLisse()) * 255) / 100 < 255 && (int)((-Math.Abs(kinect.getVGLisse()) * 255) / 100) + 255 < 255)
             {
-                brush = new SolidBrush(Color.FromArgb(255, 0, (int)((-Math.Abs(kinect.getVGLisse()) * 255) / 100) + 255, (int)(Math.Abs(kinect.getVGLisse()) * 255) / 50));
+                brush = new SolidBrush(Color.FromArgb(255, 0, (int)((-Math.Abs(kinect.getVGLisse()) * 255) / 200) + 255, (int)(Math.Abs(kinect.getVGLisse()) * 255) / 100));
             }
             else
             {
@@ -140,9 +140,9 @@ namespace projet_p1
                 rectVitesse.Y = p.Height / 2 - rectVitesse.Height;
             }
             rectVitesse.X += p.Width / 2;
-            if ((int)(Math.Abs(kinect.getVDLisse()) * 255) / 50 < 255 && (int)((-Math.Abs(kinect.getVDLisse()) * 255) / 50) + 255 < 255)
+            if ((int)(Math.Abs(kinect.getVDLisse()) * 255) / 100 < 255 && (int)((-Math.Abs(kinect.getVDLisse()) * 255) / 100) + 255 < 255)
             {
-                brush = new SolidBrush(Color.FromArgb(255, 0, (int)((-Math.Abs(kinect.getVDLisse()) * 255) / 100) + 255, (int)(Math.Abs(kinect.getVDLisse()) * 255) / 50));
+                brush = new SolidBrush(Color.FromArgb(255, 0, (int)((-Math.Abs(kinect.getVDLisse()) * 255) / 200) + 255, (int)(Math.Abs(kinect.getVDLisse()) * 255) / 100));
             }
             else
             {
