@@ -241,6 +241,7 @@
             this.Controls.Add(this.pboxSIM);
             this.Controls.Add(this.cbxModeSimluation);
             this.Controls.Add(this.pbox_VUE_Autres);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "K-Driver";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);

@@ -103,7 +103,7 @@ namespace projet_p1
             g.FillRectangle(brush, rectVitesse);
 
 
-            double facteur = 7;
+            double facteur = 1;
 
             rectVitesse.X = 14;
             if (-(int)(kinect.getVGLisse() * facteur) > 0)
@@ -968,6 +968,8 @@ namespace projet_p1
                 IMGvu = Properties.Resources.Vu;
             }
             g.DrawImageUnscaled(IMGvu, new Point(100, 475));
+            lblSTAT1.Text = kinect.getVDLisse().ToString();
+            lblSTAT2.Text = kinect.getVGLisse().ToString();
 
         }
 
