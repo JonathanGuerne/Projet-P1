@@ -27,7 +27,7 @@ namespace ZigBee
         private int brasPinces = 0;
         private int ouverturePinces = 0;
         //Valeur reçu
-        private string[] tabHex; 
+        private string[] tabHex = {"00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "FF"}; 
 
 
         public OptionForm()
@@ -244,7 +244,15 @@ namespace ZigBee
                 byte[] dataHex = new byte[serialPortXBEE.BytesToRead];
                 for (int i = 0; i < serialPortXBEE.BytesToRead; i++)
                 {
-                    sp.Read(dataHex, 0, serialPortXBEE.BytesToRead);
+                    try
+                    {
+                        serialPortXBEE.Read(dataHex, 0, serialPortXBEE.BytesToRead);
+                    }
+                    catch (System.ArgumentException)
+                    {
+
+                    }
+                    
                 }
 
                 string data = "";
@@ -260,7 +268,8 @@ namespace ZigBee
                 }
 
                 string[] tabHex_loc = data.Split(' ');
-                if (tabHex_loc[3].Equals("90", StringComparison.Ordinal){
+                if (tabHex_loc[3].Equals("90", StringComparison.Ordinal))
+                {
                     tabHex = tabHex_loc;
                 }               
             }
@@ -268,36 +277,37 @@ namespace ZigBee
 
         public int getCapAvDroit()
         {           
-            string loc = "0x"+tabHex[15] + tabHex[16];
-            int data = int.Parse(loc);
+            string loc = tabHex[15] + tabHex[16];
+            int data = Convert.ToInt32(loc,16);
+
             return data;
         }
 
         public int getCapAvGauche()
         {
-            string loc = "0x" + tabHex[17] + tabHex[18];
-            int data = int.Parse(loc);
+            string loc = tabHex[17] + tabHex[18];
+            int data = Convert.ToInt32(loc,16);
             return data;
         }
 
         public int getCapArrDroite()
         {
-            string loc = "0x" + tabHex[19] + tabHex[20];
-            int data = int.Parse(loc);
+            string loc = tabHex[19] + tabHex[20];
+            int data = Convert.ToInt32(loc,16);
             return data;
         }
 
         public int getCapArrGauche()
         {
-            string loc = "0x" + tabHex[21] + tabHex[22];
-            int data = int.Parse(loc);
+            string loc = tabHex[21] + tabHex[22];
+            int data = Convert.ToInt32(loc,16);
             return data;
         }
 
         public int status()
         {
-            string loc = "0x" + tabHex[23];
-            int data = int.Parse(loc);
+            string loc = tabHex[23];
+            int data = Convert.ToInt32(loc,16);
             return data;
         }
 

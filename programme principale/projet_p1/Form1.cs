@@ -194,6 +194,11 @@ namespace projet_p1
             zigbeeSettings.setVitesseRouesGauches((int)kinect.getVGLisse());
             zigbeeSettings.setBrasPinces((int)kinect.getPinceUpDown());
             zigbeeSettings.setOuverturePinces((int)kinect.getPinceOpenClose());
+            DetecObstacleAvant = zigbeeSettings.getCapAvDroit();
+            DetecObstacleArriere = zigbeeSettings.getCapAvGauche();
+            DetecObstacleDroite = zigbeeSettings.getCapArrGauche();
+            DetecObstacleGauche = zigbeeSettings.getCapArrDroite();
+            StatuVoiture = zigbeeSettings.status();
         }
 
         private void panelKVueDessus_MouseMove(object sender, MouseEventArgs e)
