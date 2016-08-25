@@ -14,7 +14,7 @@ namespace ZigBee
 {
     public partial class OptionForm : Form
     {
-        //Variables
+        //Variables  trololol
         //Controle
         bool start = false;
         //Config
