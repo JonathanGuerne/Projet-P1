@@ -201,20 +201,20 @@ namespace projet_p1
                 //TEST JAUNE
                 if (MoyenneY > Head.Y + margesPinceHaut && pinceUpDown < 100)
                 {
-                    pinceUpDown += 2;
+                    pinceUpDown -= 2;
                 }
                 else if (MoyenneY < Head.Y + margesPinceBas && pinceUpDown > 0)
                 {
-                    pinceUpDown -= 2;
+                    pinceUpDown += 2;
                 }
                 //TEST ROUGE
                 if (MoyenneZ > Head.Z + margesPinceClose && pinceOpenClose > 0)
                 {
-                    pinceOpenClose -= 5;
+                    pinceOpenClose += 5;
                 }
                 else if (MoyenneZ < Head.Z + margesPinceOpen && pinceOpenClose < 100)
                 {
-                    pinceOpenClose += 5;
+                    pinceOpenClose -= 5;
                 }
             }
             // stabilisation
