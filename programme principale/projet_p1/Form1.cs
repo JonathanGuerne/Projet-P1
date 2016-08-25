@@ -23,11 +23,11 @@ namespace projet_p1
         int StatuVoiture = 0xC0;
         ColorMatrix cmx1 = new ColorMatrix();           // opacité
         ImageAttributes ia = new ImageAttributes();     // opacité
-        Rectangle rectCapGauche = new Rectangle(90, 90, 80, 80);
-        Rectangle rectCapDroit = new Rectangle(210, 90, 80, 80);
-        Rectangle rectCapHaut = new Rectangle(152, 20, 80, 80);
-        Rectangle rectCapBas = new Rectangle(152, 160, 80, 80);
-        Rectangle rectCapVoiture = new Rectangle(150, 80, 80, 100);
+        Rectangle rectCapGauche = new Rectangle(170, 130, 80, 80);
+        Rectangle rectCapDroit = new Rectangle(100, 130, 80, 80);
+        Rectangle rectCapHaut = new Rectangle(170, 20, 80, 80);
+        Rectangle rectCapBas = new Rectangle(100, 20, 80, 80);
+        Rectangle rectCapVoiture = new Rectangle(133, 60, 80, 100);
 
         Rectangle rectVueAutre;
         Rectangle rectVitesse;
