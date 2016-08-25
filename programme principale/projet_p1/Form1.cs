@@ -980,9 +980,6 @@ namespace projet_p1
                 IMGvu = Properties.Resources.Vu;
             }
             g.DrawImageUnscaled(IMGvu, new Point(100, 475));
-            lblSTAT1.Text = kinect.getVDLisse().ToString();
-            lblSTAT2.Text = kinect.getVGLisse().ToString();
-
         }
 
         private void pbVitesse_Click(object sender, EventArgs e)
