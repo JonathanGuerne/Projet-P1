@@ -17,6 +17,8 @@ namespace projet_p1
         private KinectSensor sensor;
         public Form1 form;
 
+        double FacteurVitesse = 2;
+
         SkeletonPoint Head;
         SkeletonPoint RHand;
         SkeletonPoint LHand;
@@ -41,7 +43,12 @@ namespace projet_p1
 
         public double getVGLisse()
         {
-            return vGLisse;
+            double Vg = vGLisse * FacteurVitesse;
+            if(vGLisse * FacteurVitesse > 100)
+            {
+                Vg = 100;
+            }
+            return Vg;
         }
         public double getReferenceDroite()
         {
@@ -53,7 +60,12 @@ namespace projet_p1
         }
         public double getVDLisse()
         {
-            return vDLisse;
+            double Vd = vDLisse * FacteurVitesse;
+            if (vDLisse * FacteurVitesse > 100)
+            {
+                Vd = 100;
+            }
+            return Vd;
         }
         public SkeletonPoint getHead()
         {
@@ -175,11 +187,10 @@ namespace projet_p1
 
                 //lblPINCEopenclose.Text = "-";
                 //lblPINCEupdown.Text = "-";
-                pinceOpenClose = 0;
+                //pinceOpenClose = 0;
             }
             else
             {
-                modePince = true;
                 refDroite = 0;
                 refGauche = 0;
                 vDroite = 0;
@@ -188,42 +199,22 @@ namespace projet_p1
                 double MoyenneZ = (RHand.Z + LHand.Z) / 2;
 
                 //TEST JAUNE
-                if (MoyenneY > Head.Y + margesPinceHaut)
+                if (MoyenneY > Head.Y + margesPinceHaut && pinceUpDown < 100)
                 {
-                    //lblPINCEupdown.Text = "▲";
-                    pinceUpDown = 1;
+                    pinceUpDown += 2;
                 }
-                else
+                else if (MoyenneY < Head.Y + margesPinceBas && pinceUpDown > 0)
                 {
-                    if (MoyenneY < Head.Y + margesPinceBas)
-                    {
-                        //lblPINCEupdown.Text = "▼";
-                        pinceUpDown = -1;
-                    }
-                    else
-                    {
-                        //lblPINCEupdown.Text = "○";
-                        pinceUpDown = 0;
-                    }
+                    pinceUpDown -= 2;
                 }
                 //TEST ROUGE
-                if (MoyenneZ > Head.Z + margesPinceClose)
+                if (MoyenneZ > Head.Z + margesPinceClose && pinceOpenClose > 0)
                 {
-                    //lblPINCEopenclose.Text = "→←";
-                    pinceOpenClose = -1;
+                    pinceOpenClose -= 5;
                 }
-                else
+                else if (MoyenneZ < Head.Z + margesPinceOpen && pinceOpenClose < 100)
                 {
-                    if (MoyenneZ < Head.Z + margesPinceOpen)
-                    {
-                        //lblPINCEopenclose.Text = "←→";
-                        pinceOpenClose = 1;
-                    }
-                    else
-                    {
-                        //lblPINCEopenclose.Text = "○";
-                        pinceOpenClose = 0;
-                    }
+                    pinceOpenClose += 5;
                 }
             }
             // stabilisation
