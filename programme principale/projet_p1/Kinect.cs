@@ -199,16 +199,16 @@ namespace projet_p1
                 double MoyenneZ = (RHand.Z + LHand.Z) / 2;
 
                 //TEST JAUNE
-                if (MoyenneY > Head.Y + margesPinceHaut && pinceUpDown > 20)
+                if (MoyenneY > Head.Y + margesPinceHaut && pinceUpDown > 0)
                 {
                     pinceUpDown -= 1;
                 }
-                else if (MoyenneY < Head.Y + margesPinceBas && pinceUpDown < 100)
+                else if (MoyenneY < Head.Y + margesPinceBas && pinceUpDown < 70)
                 {
                     pinceUpDown += 1;
                 }
                 //TEST ROUGE
-                if (MoyenneZ > Head.Z + margesPinceClose && pinceOpenClose < 100)
+                if (MoyenneZ > Head.Z + margesPinceClose && pinceOpenClose < 70)
                 {
                     pinceOpenClose += 5;
                 }
