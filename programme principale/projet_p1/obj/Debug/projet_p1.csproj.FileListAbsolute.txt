@@ -84,3 +84,15 @@ C:\Users\pedro.costa\Desktop\Projet-P1-finalisationCapteurs\programme principale
 C:\Users\pedro.costa\Desktop\Projet-P1-finalisationCapteurs\programme principale\projet_p1\obj\Debug\projet_p1.Form_test_dessin.resources
 C:\Users\pedro.costa\Desktop\Projet-P1-finalisationCapteurs\programme principale\projet_p1\obj\Debug\projet_p1.Properties.Resources.resources
 C:\Users\pedro.costa\Desktop\Projet-P1-finalisationCapteurs\programme principale\projet_p1\obj\Debug\projet_p1.csproj.GenerateResource.Cache
+C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\bin\Debug\projet_p1.exe.config
+C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\obj\Debug\projet_p1.exe
+C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\obj\Debug\projet_p1.pdb
+C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\bin\Debug\projet_p1.exe
+C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\bin\Debug\projet_p1.pdb
+C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\bin\Debug\Microsoft.Kinect.dll
+C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\bin\Debug\Microsoft.Kinect.xml
+C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\obj\Debug\projet_p1.csprojResolveAssemblyReference.cache
+C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\obj\Debug\projet_p1.Form1.resources
+C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\obj\Debug\projet_p1.Form_test_dessin.resources
+C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\obj\Debug\projet_p1.Properties.Resources.resources
+C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\obj\Debug\projet_p1.csproj.GenerateResource.Cache
