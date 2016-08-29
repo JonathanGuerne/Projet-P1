@@ -39,6 +39,7 @@ namespace projet_p1
         double margesPinceBas = -0.536;
         double margesPinceClose = -0.225;
         double margesPinceOpen = -0.543;
+
         int largeurConduite = 40;
 
         public double getVGLisse()
@@ -203,11 +204,15 @@ namespace projet_p1
                 {
                     if (MoyenneY > Head.Y + margesPinceHaut && pinceUpDown > 0)
                     {
-                        pinceUpDown -= 10;
+                        pinceUpDown -= 25;
+                        if (pinceUpDown < 0)
+                            pinceUpDown = 0;
                     }
                     else if (MoyenneY < Head.Y + margesPinceBas && pinceUpDown < 70)
                     {
-                        pinceUpDown += 10;
+                        pinceUpDown += 25;
+                        if (pinceUpDown > 70)
+                            pinceUpDown = 70;
                     }
                 }
                 //TEST ROUGE
