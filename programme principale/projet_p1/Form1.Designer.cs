@@ -48,6 +48,7 @@
             this.pbVitesse = new System.Windows.Forms.PictureBox();
             this.pboxSIM = new System.Windows.Forms.PictureBox();
             this.pbox_VUE_Autres = new System.Windows.Forms.PictureBox();
+            this.cbxSafetyMode = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCapteurs)).BeginInit();
@@ -65,7 +66,7 @@
             // 
             this.cbxModeSimluation.AutoSize = true;
             this.cbxModeSimluation.Location = new System.Drawing.Point(825, 10);
-            this.cbxModeSimluation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxModeSimluation.Margin = new System.Windows.Forms.Padding(4);
             this.cbxModeSimluation.Name = "cbxModeSimluation";
             this.cbxModeSimluation.Size = new System.Drawing.Size(134, 21);
             this.cbxModeSimluation.TabIndex = 28;
@@ -169,7 +170,7 @@
             // btnSettingsZigBEE
             // 
             this.btnSettingsZigBEE.Location = new System.Drawing.Point(972, 5);
-            this.btnSettingsZigBEE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSettingsZigBEE.Margin = new System.Windows.Forms.Padding(4);
             this.btnSettingsZigBEE.Name = "btnSettingsZigBEE";
             this.btnSettingsZigBEE.Size = new System.Drawing.Size(147, 27);
             this.btnSettingsZigBEE.TabIndex = 41;
@@ -180,7 +181,7 @@
             // btnConnect
             // 
             this.btnConnect.Location = new System.Drawing.Point(1127, 5);
-            this.btnConnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConnect.Margin = new System.Windows.Forms.Padding(4);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(141, 27);
             this.btnConnect.TabIndex = 42;
@@ -199,9 +200,9 @@
             // pbLogo
             // 
             this.pbLogo.ErrorImage = global::projet_p1.Properties.Resources.Icon;
-            this.pbLogo.Location = new System.Drawing.Point(16, 12);
+            this.pbLogo.Location = new System.Drawing.Point(16, 59);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(573, 366);
+            this.pbLogo.Size = new System.Drawing.Size(515, 319);
             this.pbLogo.TabIndex = 43;
             this.pbLogo.TabStop = false;
             this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
@@ -258,12 +259,25 @@
             this.pbox_VUE_Autres.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pbox_VUE_Autres.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
+            // cbxSafetyMode
+            // 
+            this.cbxSafetyMode.AutoSize = true;
+            this.cbxSafetyMode.Checked = true;
+            this.cbxSafetyMode.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxSafetyMode.Location = new System.Drawing.Point(16, 23);
+            this.cbxSafetyMode.Name = "cbxSafetyMode";
+            this.cbxSafetyMode.Size = new System.Drawing.Size(122, 21);
+            this.cbxSafetyMode.TabIndex = 45;
+            this.cbxSafetyMode.Text = "Mode sécurisé";
+            this.cbxSafetyMode.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1284, 782);
+            this.Controls.Add(this.cbxSafetyMode);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.btnConnect);
@@ -283,7 +297,7 @@
             this.Controls.Add(this.cbxModeSimluation);
             this.Controls.Add(this.pbox_VUE_Autres);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "K-Driver";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
@@ -319,6 +333,7 @@
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox cbxSafetyMode;
     }
 }
 

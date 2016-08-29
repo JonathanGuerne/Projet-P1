@@ -196,7 +196,7 @@ namespace projet_p1
         private void sendZigBee()
         {
             //Envoie des données au modules zigbee
-            if(cbxSafetyMode.Checked = true)
+            if(cbxSafetyMode.Checked == true)
             {
                 if(zigbeeSettings.getCapArrDroite() <= 100 || zigbeeSettings.getCapArrGauche() <= 100)
                 {
