@@ -199,6 +199,7 @@ namespace projet_p1
             DetecObstacleDroite = zigbeeSettings.getCapArrGauche();
             DetecObstacleGauche = zigbeeSettings.getCapArrDroite();
             StatuVoiture = zigbeeSettings.status();
+
         }
 
         private void panelKVueDessus_MouseMove(object sender, MouseEventArgs e)

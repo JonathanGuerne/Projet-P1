@@ -36,9 +36,9 @@ namespace projet_p1
         double margeChangementMode = 0.12;
 
         double margesPinceHaut = -0.15;
-        double margesPinceBas = -0.6;
-        double margesPinceClose = -0.25;
-        double margesPinceOpen = -0.43;
+        double margesPinceBas = -0.536;
+        double margesPinceClose = -0.225;
+        double margesPinceOpen = -0.543;
         int largeurConduite = 40;
 
         public double getVGLisse()
@@ -199,23 +199,27 @@ namespace projet_p1
                 double MoyenneZ = (RHand.Z + LHand.Z) / 2;
 
                 //TEST JAUNE
-                if (MoyenneY > Head.Y + margesPinceHaut && pinceUpDown > 0)
+                if (MoyenneZ < Head.Z + margesPinceClose && MoyenneZ > Head.Z + margesPinceOpen)
                 {
-                    pinceUpDown -= 1;
-                }
-                else if (MoyenneY < Head.Y + margesPinceBas && pinceUpDown < 70)
-                {
-                    pinceUpDown += 1;
+                    if (MoyenneY > Head.Y + margesPinceHaut && pinceUpDown > 0)
+                    {
+                        pinceUpDown -= 10;
+                    }
+                    else if (MoyenneY < Head.Y + margesPinceBas && pinceUpDown < 70)
+                    {
+                        pinceUpDown += 10;
+                    }
                 }
                 //TEST ROUGE
-                if (MoyenneZ > Head.Z + margesPinceClose && pinceOpenClose < 70)
+
+                if (MoyenneZ > Head.Z + margesPinceClose && pinceOpenClose < 100)
                 {
                     pinceOpenClose += 5;
                 }
                 else if (MoyenneZ < Head.Z + margesPinceOpen && pinceOpenClose > 0)
                 {
                     pinceOpenClose -= 5;
-                }
+                }               
             }
             // stabilisation
             if (vDLisse == 0)
