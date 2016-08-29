@@ -1058,5 +1058,25 @@ namespace projet_p1
         {
             zigbeeSettings.startTrans();
         }
+
+        private void pbLogo_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void pbLogo_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox p = sender as PictureBox;
+            Graphics g = e.Graphics;
+
+            Image logo;
+            logo = Properties.Resources.Icon;
+
+            double facteurTaille = (double) p.Height/logo.Height;
+
+            g.DrawImage(logo,new Rectangle(0,0,(int)(logo.Width*facteurTaille),(int)(logo.Height*facteurTaille)));
+            
+        }
     }
 }
