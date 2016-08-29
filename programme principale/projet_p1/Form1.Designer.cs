@@ -46,6 +46,7 @@
             this.pbVitesse = new System.Windows.Forms.PictureBox();
             this.pboxSIM = new System.Windows.Forms.PictureBox();
             this.pbox_VUE_Autres = new System.Windows.Forms.PictureBox();
+            this.cbxSafetyMode = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCapteurs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVitesse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxSIM)).BeginInit();
@@ -221,12 +222,23 @@
             this.pbox_VUE_Autres.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pbox_VUE_Autres.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
+            // cbxSafetyMode
+            // 
+            this.cbxSafetyMode.AutoSize = true;
+            this.cbxSafetyMode.Location = new System.Drawing.Point(12, 12);
+            this.cbxSafetyMode.Name = "cbxSafetyMode";
+            this.cbxSafetyMode.Size = new System.Drawing.Size(95, 17);
+            this.cbxSafetyMode.TabIndex = 43;
+            this.cbxSafetyMode.Text = "Mode securisé";
+            this.cbxSafetyMode.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(963, 635);
+            this.Controls.Add(this.cbxSafetyMode);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.btnSettingsZigBEE);
             this.Controls.Add(this.lblSTAT8);
@@ -275,6 +287,7 @@
         private System.Windows.Forms.Label lblSTAT7;
         private System.Windows.Forms.Button btnSettingsZigBEE;
         private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.CheckBox cbxSafetyMode;
     }
 }
 

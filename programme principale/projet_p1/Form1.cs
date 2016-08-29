@@ -189,9 +189,66 @@ namespace projet_p1
             pbCapteurs.Refresh();
             pboxSIM.Refresh();
 
+            sendZigBee();
+            
+
+        }
+        private void sendZigBee()
+        {
             //Envoie des données au modules zigbee
-            zigbeeSettings.setVitesseRouesDroites((int)kinect.getVDLisse());
-            zigbeeSettings.setVitesseRouesGauches((int)kinect.getVGLisse());
+            if(cbxSafetyMode.Checked = true)
+            {
+                if(zigbeeSettings.getCapArrDroite() <= 100 || zigbeeSettings.getCapArrGauche() <= 100)
+                {
+                    if(kinect.getVDLisse() > 0)
+                    {
+                        zigbeeSettings.setVitesseRouesDroites((int)kinect.getVDLisse());
+                    }
+                    else
+                    {
+                        zigbeeSettings.setVitesseRouesDroites(0);
+                    }
+                    if(kinect.getVGLisse() > 0)
+                    {
+                        zigbeeSettings.setVitesseRouesGauches((int)kinect.getVGLisse());
+                    }
+                    else
+                    {
+                        zigbeeSettings.setVitesseRouesGauches(0);
+                    }
+                }
+                else if (zigbeeSettings.getCapAvDroit() <= 100 || zigbeeSettings.getCapAvGauche() <= 100)
+                {
+                    if (kinect.getVDLisse() < 0)
+                    {
+                        zigbeeSettings.setVitesseRouesDroites((int)kinect.getVDLisse());
+                    }
+                    else
+                    {
+                        zigbeeSettings.setVitesseRouesDroites(0);
+                    }
+                    if (kinect.getVGLisse() < 0)
+                    {
+                        zigbeeSettings.setVitesseRouesGauches((int)kinect.getVGLisse());
+                    }
+                    else
+                    {
+                        zigbeeSettings.setVitesseRouesGauches(0);
+                    }
+                }
+                else
+                {
+                    zigbeeSettings.setVitesseRouesDroites((int)kinect.getVDLisse());
+                    zigbeeSettings.setVitesseRouesGauches((int)kinect.getVGLisse());
+                }
+            }
+            else
+            {
+                zigbeeSettings.setVitesseRouesDroites((int)kinect.getVDLisse());
+                zigbeeSettings.setVitesseRouesGauches((int)kinect.getVGLisse());
+            }
+            
+            
             zigbeeSettings.setBrasPinces((int)kinect.getPinceUpDown());
             zigbeeSettings.setOuverturePinces((int)kinect.getPinceOpenClose());
             DetecObstacleAvant = zigbeeSettings.getCapAvDroit();
@@ -199,7 +256,6 @@ namespace projet_p1
             DetecObstacleDroite = zigbeeSettings.getCapArrGauche();
             DetecObstacleGauche = zigbeeSettings.getCapArrDroite();
             StatuVoiture = zigbeeSettings.status();
-
         }
 
         private void panelKVueDessus_MouseMove(object sender, MouseEventArgs e)
