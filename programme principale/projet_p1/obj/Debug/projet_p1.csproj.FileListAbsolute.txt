@@ -96,3 +96,4 @@ C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-final
 C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\obj\Debug\projet_p1.Form_test_dessin.resources
 C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\obj\Debug\projet_p1.Properties.Resources.resources
 C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\obj\Debug\projet_p1.csproj.GenerateResource.Cache
+C:\Users\jonathan.guerne\Documents\projet p1\Projet-P1\programme principale\projet_p1\obj\Debug\ZigBee.OptionForm.resources

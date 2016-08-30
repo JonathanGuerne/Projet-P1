@@ -213,21 +213,21 @@ namespace projet_p1
                     {
                         if (MoyenneY > Head.Y + margesPinceHaut && pinceUpDown > 0)
                         {
-                            pinceUpDown -= 25;
+                            pinceUpDown -= 15;
                             if (pinceUpDown < 0)
                                 pinceUpDown = 0;
 
                             flagPallierPince = true;
-                            WaitAndChangeFlag(500);
+                            WaitAndChangeFlag(750);
                         }
                         else if (MoyenneY < Head.Y + margesPinceBas && pinceUpDown < 70)
                         {
-                            pinceUpDown += 25;
-                            if (pinceUpDown > 70)
-                                pinceUpDown = 70;
+                            pinceUpDown += 15;
+                            if (pinceUpDown > 50)
+                                pinceUpDown = 50;
 
                             flagPallierPince = true;
-                            WaitAndChangeFlag(500);
+                            WaitAndChangeFlag(750);
                         }
                     }
                 }
