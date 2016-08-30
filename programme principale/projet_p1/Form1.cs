@@ -189,6 +189,8 @@ namespace projet_p1
             pbCapteurs.Refresh();
             pboxSIM.Refresh();
 
+            lblDebug.Text = kinect.getFlagPallier()+"";
+
             sendZigBee();
             
 

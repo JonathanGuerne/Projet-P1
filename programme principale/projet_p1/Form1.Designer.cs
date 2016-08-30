@@ -49,6 +49,7 @@
             this.pboxSIM = new System.Windows.Forms.PictureBox();
             this.pbox_VUE_Autres = new System.Windows.Forms.PictureBox();
             this.cbxSafetyMode = new System.Windows.Forms.CheckBox();
+            this.lblDebug = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCapteurs)).BeginInit();
@@ -271,12 +272,24 @@
             this.cbxSafetyMode.Text = "Mode sécurisé";
             this.cbxSafetyMode.UseVisualStyleBackColor = true;
             // 
+            // lblDebug
+            // 
+            this.lblDebug.AutoSize = true;
+            this.lblDebug.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDebug.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblDebug.Location = new System.Drawing.Point(160, 23);
+            this.lblDebug.Name = "lblDebug";
+            this.lblDebug.Size = new System.Drawing.Size(95, 36);
+            this.lblDebug.TabIndex = 46;
+            this.lblDebug.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1284, 782);
+            this.Controls.Add(this.lblDebug);
             this.Controls.Add(this.cbxSafetyMode);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbLogo);
@@ -334,6 +347,7 @@
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox cbxSafetyMode;
+        private System.Windows.Forms.Label lblDebug;
     }
 }
 

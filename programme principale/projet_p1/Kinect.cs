@@ -134,6 +134,11 @@ namespace projet_p1
         {
             largeurConduite = A1;
         }
+
+        public bool getFlagPallier()
+        {
+            return flagPallierPince;
+        }
         public void refreshAccAB(Skeleton sk)
         {
 
