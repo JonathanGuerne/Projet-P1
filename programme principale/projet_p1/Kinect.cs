@@ -40,6 +40,8 @@ namespace projet_p1
         double margesPinceClose = -0.225;
         double margesPinceOpen = -0.543;
 
+        bool flagPallierPince=false;
+
         int largeurConduite = 40;
 
         public double getVGLisse()
@@ -202,17 +204,26 @@ namespace projet_p1
                 //TEST JAUNE
                 if (MoyenneZ < Head.Z + margesPinceClose && MoyenneZ > Head.Z + margesPinceOpen)
                 {
-                    if (MoyenneY > Head.Y + margesPinceHaut && pinceUpDown > 0)
+                    if (!flagPallierPince)
                     {
-                        pinceUpDown -= 25;
-                        if (pinceUpDown < 0)
-                            pinceUpDown = 0;
-                    }
-                    else if (MoyenneY < Head.Y + margesPinceBas && pinceUpDown < 70)
-                    {
-                        pinceUpDown += 25;
-                        if (pinceUpDown > 70)
-                            pinceUpDown = 70;
+                        if (MoyenneY > Head.Y + margesPinceHaut && pinceUpDown > 0)
+                        {
+                            pinceUpDown -= 25;
+                            if (pinceUpDown < 0)
+                                pinceUpDown = 0;
+
+                            flagPallierPince = true;
+                            WaitAndChangeFlag(2000);
+                        }
+                        else if (MoyenneY < Head.Y + margesPinceBas && pinceUpDown < 70)
+                        {
+                            pinceUpDown += 25;
+                            if (pinceUpDown > 70)
+                                pinceUpDown = 70;
+
+                            flagPallierPince = true;
+                            WaitAndChangeFlag(2000);
+                        }
                     }
                 }
                 //TEST ROUGE
@@ -286,6 +297,12 @@ namespace projet_p1
                     break;
                 }
             }
+        }
+
+        public async void WaitAndChangeFlag(int timeoutInMilliseconds)
+        {
+            await Task.Delay(timeoutInMilliseconds);
+            flagPallierPince = false;
         }
 
         public void launch()
