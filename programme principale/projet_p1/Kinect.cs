@@ -218,7 +218,7 @@ namespace projet_p1
                                 pinceUpDown = 0;
 
                             flagPallierPince = true;
-                            WaitAndChangeFlag(2000);
+                            WaitAndChangeFlag(500);
                         }
                         else if (MoyenneY < Head.Y + margesPinceBas && pinceUpDown < 70)
                         {
@@ -227,7 +227,7 @@ namespace projet_p1
                                 pinceUpDown = 70;
 
                             flagPallierPince = true;
-                            WaitAndChangeFlag(2000);
+                            WaitAndChangeFlag(500);
                         }
                     }
                 }
