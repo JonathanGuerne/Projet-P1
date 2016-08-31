@@ -97,3 +97,16 @@ C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-final
 C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\obj\Debug\projet_p1.Properties.Resources.resources
 C:\Users\anthony.fleury\Downloads\Projet-P1-finalisationCapteurs\Projet-P1-finalisationCapteurs\programme principale\projet_p1\obj\Debug\projet_p1.csproj.GenerateResource.Cache
 C:\Users\jonathan.guerne\Documents\projet p1\Projet-P1\programme principale\projet_p1\obj\Debug\ZigBee.OptionForm.resources
+C:\Users\christop.hirschi\Documents\GitHub\Projet P1\Projet-P1\programme principale\projet_p1\bin\Debug\projet_p1.exe.config
+C:\Users\christop.hirschi\Documents\GitHub\Projet P1\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.exe
+C:\Users\christop.hirschi\Documents\GitHub\Projet P1\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.pdb
+C:\Users\christop.hirschi\Documents\GitHub\Projet P1\Projet-P1\programme principale\projet_p1\bin\Debug\projet_p1.exe
+C:\Users\christop.hirschi\Documents\GitHub\Projet P1\Projet-P1\programme principale\projet_p1\bin\Debug\projet_p1.pdb
+C:\Users\christop.hirschi\Documents\GitHub\Projet P1\Projet-P1\programme principale\projet_p1\bin\Debug\Microsoft.Kinect.dll
+C:\Users\christop.hirschi\Documents\GitHub\Projet P1\Projet-P1\programme principale\projet_p1\bin\Debug\Microsoft.Kinect.xml
+C:\Users\christop.hirschi\Documents\GitHub\Projet P1\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.csprojResolveAssemblyReference.cache
+C:\Users\christop.hirschi\Documents\GitHub\Projet P1\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.Form1.resources
+C:\Users\christop.hirschi\Documents\GitHub\Projet P1\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.Form_test_dessin.resources
+C:\Users\christop.hirschi\Documents\GitHub\Projet P1\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.Properties.Resources.resources
+C:\Users\christop.hirschi\Documents\GitHub\Projet P1\Projet-P1\programme principale\projet_p1\obj\Debug\ZigBee.OptionForm.resources
+C:\Users\christop.hirschi\Documents\GitHub\Projet P1\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.csproj.GenerateResource.Cache

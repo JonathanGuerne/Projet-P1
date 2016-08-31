@@ -121,12 +121,6 @@
   <data name="capG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="capD21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\capD2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BG12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\BG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="capB0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capB0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,14 +145,11 @@
   <data name="BGBarresVitesses" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\BGBarresVitesses.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="capG4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\capG4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BG12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\BG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="capD31" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capD3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="capD4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\capD4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\BG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,8 +160,8 @@
   <data name="capG3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capG3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="capH4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\capH4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="capHR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\capHR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="capG41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capG4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,26 +169,32 @@
   <data name="capD11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capD1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="capHR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\capHR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TANK2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="TANK1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\TANK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="capB1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\capB1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="voiture1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\voiture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="capB11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\capB1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="capG01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\capG0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BG22" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\BG2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="capB21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\capB2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="nonVu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\nonVu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="capB3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capB3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BG11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\BG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="capD3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capD3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,11 +211,11 @@
   <data name="TANK" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\TANK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BGBarresVitesses2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\BGBarresVitesses.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="capB31" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capB3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="capH2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\capH2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Vu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Vu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,20 +223,26 @@
   <data name="capG31" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capG3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="capB01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\capB0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BG22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\BG2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="capH01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capH0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="capB1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\capB1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BGBarresVitesses2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\BGBarresVitesses.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="capH41" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\capH4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="capD2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\capD2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="capD01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capD0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Vu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Vu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="capH1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\capH1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BGBarresVitesses1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\BGBarresVitesses.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -250,26 +253,26 @@
   <data name="capGR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capGR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="capH1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\capH1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="capG21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\capG2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BG11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\BG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Vu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Vu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="capB41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capB4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="capD2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="capB01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\capB0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="capB11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\capB1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="capD4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\capD4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="capD21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capD2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="capB21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\capB2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="capH2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\capH2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="capH4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\capH4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="capH0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capH0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -283,14 +286,14 @@
   <data name="capH3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capH3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="capG01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\capG0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TANK2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\TANK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="capH11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capH1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="capH41" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\capH4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="capG21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\capG2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="capBR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capBR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -298,13 +301,13 @@
   <data name="capD41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capD4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TANK1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\TANK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="capG4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\capG4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="capH31" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\capH3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconT1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -1071,7 +1071,7 @@ namespace projet_p1
             Graphics g = e.Graphics;
 
             Image logo;
-            logo = Properties.Resources.Icon;
+            logo = Properties.Resources.IconT;
 
             double facteurTaille = (double) p.Height/logo.Height;
 
