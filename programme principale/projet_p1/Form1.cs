@@ -631,7 +631,6 @@ namespace projet_p1
         {
             if (cbxModeSimluation.Checked == true)
             {
-                Width += 800;
                 pboxSIM.Visible = true;
                 pbCapteurs.Visible = false;
                 lblSTAT1.Visible = false;
@@ -645,7 +644,6 @@ namespace projet_p1
             }
             else
             {
-                Width = 1075;
                 pbCapteurs.Visible = true;
                 pboxSIM.Visible = false;
                 lblSTAT1.Visible = true;
