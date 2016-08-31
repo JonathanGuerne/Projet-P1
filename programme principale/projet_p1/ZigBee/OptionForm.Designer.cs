@@ -44,64 +44,71 @@
             // 
             // Timer
             // 
-            this.Timer.Interval = 10;
+            this.Timer.Interval = 200;
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(16, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.Size = new System.Drawing.Size(42, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Port :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 42);
+            this.label2.Location = new System.Drawing.Point(16, 52);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "MAC :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 68);
+            this.label3.Location = new System.Drawing.Point(16, 84);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.Size = new System.Drawing.Size(54, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "BAUD :";
             // 
             // cmbCOMPort
             // 
             this.cmbCOMPort.FormattingEnabled = true;
-            this.cmbCOMPort.Location = new System.Drawing.Point(53, 12);
+            this.cmbCOMPort.Location = new System.Drawing.Point(71, 15);
+            this.cmbCOMPort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbCOMPort.Name = "cmbCOMPort";
-            this.cmbCOMPort.Size = new System.Drawing.Size(259, 21);
+            this.cmbCOMPort.Size = new System.Drawing.Size(344, 24);
             this.cmbCOMPort.TabIndex = 8;
             this.cmbCOMPort.SelectedIndexChanged += new System.EventHandler(this.cmbCOMPort_SelectedIndexChanged);
             // 
             // tB_MAC
             // 
-            this.tB_MAC.Location = new System.Drawing.Point(53, 39);
+            this.tB_MAC.Location = new System.Drawing.Point(71, 48);
+            this.tB_MAC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tB_MAC.Name = "tB_MAC";
-            this.tB_MAC.Size = new System.Drawing.Size(259, 20);
+            this.tB_MAC.Size = new System.Drawing.Size(344, 22);
             this.tB_MAC.TabIndex = 9;
             // 
             // tB_BAUD
             // 
-            this.tB_BAUD.Location = new System.Drawing.Point(53, 65);
+            this.tB_BAUD.Location = new System.Drawing.Point(71, 80);
+            this.tB_BAUD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tB_BAUD.Name = "tB_BAUD";
-            this.tB_BAUD.Size = new System.Drawing.Size(259, 20);
+            this.tB_BAUD.Size = new System.Drawing.Size(344, 22);
             this.tB_BAUD.TabIndex = 10;
             // 
             // btn_atcmd
             // 
-            this.btn_atcmd.Location = new System.Drawing.Point(15, 97);
+            this.btn_atcmd.Location = new System.Drawing.Point(20, 119);
+            this.btn_atcmd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_atcmd.Name = "btn_atcmd";
-            this.btn_atcmd.Size = new System.Drawing.Size(75, 23);
+            this.btn_atcmd.Size = new System.Drawing.Size(100, 28);
             this.btn_atcmd.TabIndex = 11;
             this.btn_atcmd.Text = "AT CMD";
             this.btn_atcmd.UseVisualStyleBackColor = true;
@@ -109,9 +116,10 @@
             // 
             // btn_annuler
             // 
-            this.btn_annuler.Location = new System.Drawing.Point(237, 97);
+            this.btn_annuler.Location = new System.Drawing.Point(316, 119);
+            this.btn_annuler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_annuler.Name = "btn_annuler";
-            this.btn_annuler.Size = new System.Drawing.Size(75, 23);
+            this.btn_annuler.Size = new System.Drawing.Size(100, 28);
             this.btn_annuler.TabIndex = 12;
             this.btn_annuler.Text = "Annuler";
             this.btn_annuler.UseVisualStyleBackColor = true;
@@ -119,9 +127,10 @@
             // 
             // btn_ok
             // 
-            this.btn_ok.Location = new System.Drawing.Point(156, 97);
+            this.btn_ok.Location = new System.Drawing.Point(208, 119);
+            this.btn_ok.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_ok.Name = "btn_ok";
-            this.btn_ok.Size = new System.Drawing.Size(75, 23);
+            this.btn_ok.Size = new System.Drawing.Size(100, 28);
             this.btn_ok.TabIndex = 13;
             this.btn_ok.Text = "OK";
             this.btn_ok.UseVisualStyleBackColor = true;
@@ -129,9 +138,9 @@
             // 
             // OptionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 132);
+            this.ClientSize = new System.Drawing.Size(432, 162);
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.btn_annuler);
             this.Controls.Add(this.btn_atcmd);
@@ -142,6 +151,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "OptionForm";

@@ -36,9 +36,12 @@ namespace projet_p1
         double margeChangementMode = 0.12;
 
         double margesPinceHaut = -0.15;
-        double margesPinceBas = -0.6;
-        double margesPinceClose = -0.25;
-        double margesPinceOpen = -0.43;
+        double margesPinceBas = -0.536;
+        double margesPinceClose = -0.225;
+        double margesPinceOpen = -0.543;
+
+        bool flagPallierPince=false;
+
         int largeurConduite = 40;
 
         public double getVGLisse()
@@ -131,6 +134,11 @@ namespace projet_p1
         {
             largeurConduite = A1;
         }
+
+        public bool getFlagPallier()
+        {
+            return flagPallierPince;
+        }
         public void refreshAccAB(Skeleton sk)
         {
 
@@ -199,23 +207,40 @@ namespace projet_p1
                 double MoyenneZ = (RHand.Z + LHand.Z) / 2;
 
                 //TEST JAUNE
-                if (MoyenneY > Head.Y + margesPinceHaut && pinceUpDown < 100)
+                if (MoyenneZ < Head.Z + margesPinceClose && MoyenneZ > Head.Z + margesPinceOpen)
                 {
-                    pinceUpDown += 2;
-                }
-                else if (MoyenneY < Head.Y + margesPinceBas && pinceUpDown > 0)
-                {
-                    pinceUpDown -= 2;
+                    if (!flagPallierPince)
+                    {
+                        if (MoyenneY > Head.Y + margesPinceHaut && pinceUpDown > 0)
+                        {
+                            pinceUpDown -= 15;
+                            if (pinceUpDown < 0)
+                                pinceUpDown = 0;
+
+                            flagPallierPince = true;
+                            WaitAndChangeFlag(750);
+                        }
+                        else if (MoyenneY < Head.Y + margesPinceBas && pinceUpDown < 70)
+                        {
+                            pinceUpDown += 15;
+                            if (pinceUpDown > 50)
+                                pinceUpDown = 50;
+
+                            flagPallierPince = true;
+                            WaitAndChangeFlag(750);
+                        }
+                    }
                 }
                 //TEST ROUGE
-                if (MoyenneZ > Head.Z + margesPinceClose && pinceOpenClose > 0)
-                {
-                    pinceOpenClose -= 5;
-                }
-                else if (MoyenneZ < Head.Z + margesPinceOpen && pinceOpenClose < 100)
+
+                if (MoyenneZ > Head.Z + margesPinceClose && pinceOpenClose < 100)
                 {
                     pinceOpenClose += 5;
                 }
+                else if (MoyenneZ < Head.Z + margesPinceOpen && pinceOpenClose > 0)
+                {
+                    pinceOpenClose -= 5;
+                }               
             }
             // stabilisation
             if (vDLisse == 0)
@@ -277,6 +302,12 @@ namespace projet_p1
                     break;
                 }
             }
+        }
+
+        public async void WaitAndChangeFlag(int timeoutInMilliseconds)
+        {
+            await Task.Delay(timeoutInMilliseconds);
+            flagPallierPince = false;
         }
 
         public void launch()

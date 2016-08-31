@@ -27,7 +27,7 @@ namespace ZigBee
         private int brasPinces = 0;
         private int ouverturePinces = 0;
         //Valeur reçu
-        private string[] tabHex; 
+        private static string[] tabHex = {"00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "00", "FF"}; 
 
 
         public OptionForm()
@@ -50,7 +50,6 @@ namespace ZigBee
                 //Envoie continue
                 makePacket();
                 sendData();
-                getData();
             }
         }
 
@@ -79,8 +78,31 @@ namespace ZigBee
                 }
 
                 //TO DO : Try catch 
+                serialPortXBEE.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
                 serialPortXBEE.Open();
             }
+        }
+
+        private static void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
+        {
+            SerialPort sp = (SerialPort)sender;
+            byte[] dataHex = new byte[sp.BytesToRead];
+            for (int i = 0; i < sp.BytesToRead; i++)
+            {
+                sp.Read(dataHex, 0, sp.BytesToRead);
+            }
+
+            string data = "";
+            foreach (byte b in dataHex)
+            {
+                data += b.ToString("X2")+" ";//7E00058801415402DF
+            }
+
+            string[] tabHex_loc = data.Split(' ');
+            if (tabHex_loc.Length == 28 && tabHex_loc[3].Equals("90",StringComparison.Ordinal))
+            {
+                tabHex = tabHex_loc;
+            }            
         }
 
         //Ferme les fenetre
@@ -241,10 +263,10 @@ namespace ZigBee
             if (serialPortXBEE.BytesToRead != 0)
             {
                 SerialPort sp = serialPortXBEE;
-                byte[] dataHex = new byte[serialPortXBEE.BytesToRead];
-                for (int i = 0; i < serialPortXBEE.BytesToRead; i++)
+                byte[] dataHex = new byte[sp.BytesToRead];
+                for (int i = 0; i < sp.BytesToRead; i++)
                 {
-                    sp.Read(dataHex, 0, serialPortXBEE.BytesToRead);
+                        sp.Read(dataHex, 0, sp.BytesToRead);                    
                 }
 
                 string data = "";
@@ -257,47 +279,54 @@ namespace ZigBee
                     {
                         data += " ";
                     }
+                   
                 }
-
+                //Console.WriteLine(data);
                 string[] tabHex_loc = data.Split(' ');
-                if (tabHex_loc[3].Equals("90", StringComparison.Ordinal){
-                    tabHex = tabHex_loc;
-                }               
+               if (tabHex_loc.Length >= 23 )
+               {
+                    tabHex = data.Split(' ');
+                    foreach (string s in tabHex){
+                    }
+                    
+              }               
             }
         }
 
         public int getCapAvDroit()
         {           
-            string loc = "0x"+tabHex[15] + tabHex[16];
-            int data = int.Parse(loc);
+            string loc = tabHex[15] + tabHex[16];               
+
+            int data = Convert.ToInt32(loc,16);
+
             return data;
         }
 
         public int getCapAvGauche()
         {
-            string loc = "0x" + tabHex[17] + tabHex[18];
-            int data = int.Parse(loc);
+            string loc = tabHex[17] + tabHex[18];
+            int data = Convert.ToInt32(loc,16);
             return data;
         }
 
         public int getCapArrDroite()
         {
-            string loc = "0x" + tabHex[19] + tabHex[20];
-            int data = int.Parse(loc);
+            string loc = tabHex[19] + tabHex[20];
+            int data = Convert.ToInt32(loc,16);
             return data;
         }
 
         public int getCapArrGauche()
         {
-            string loc = "0x" + tabHex[21] + tabHex[22];
-            int data = int.Parse(loc);
+            string loc = tabHex[21] + tabHex[22];
+            int data = Convert.ToInt32(loc,16);
             return data;
         }
 
         public int status()
         {
-            string loc = "0x" + tabHex[23];
-            int data = int.Parse(loc);
+            string loc = tabHex[23];
+            int data = Convert.ToInt32(loc,16);
             return data;
         }
 
