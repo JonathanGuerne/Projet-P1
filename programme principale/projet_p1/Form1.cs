@@ -23,11 +23,11 @@ namespace projet_p1
         int StatuVoiture = 0xC0;
         ColorMatrix cmx1 = new ColorMatrix();           // opacité
         ImageAttributes ia = new ImageAttributes();     // opacité
-        Rectangle rectCapGauche = new Rectangle(170, 130, 80, 80);
-        Rectangle rectCapDroit = new Rectangle(100, 130, 80, 80);
-        Rectangle rectCapHaut = new Rectangle(170, 20, 80, 80);
-        Rectangle rectCapBas = new Rectangle(100, 20, 80, 80);
-        Rectangle rectCapVoiture = new Rectangle(133, 60, 80, 100);
+        Rectangle rectCapGauche = new Rectangle(170, 160, 80, 80);
+        Rectangle rectCapDroit = new Rectangle(100, 160, 80, 80);
+        Rectangle rectCapHaut = new Rectangle(170, 50, 80, 80);
+        Rectangle rectCapBas = new Rectangle(100, 50, 80, 80);
+        Rectangle rectCapVoiture = new Rectangle(133, 90, 80, 100);
 
         Rectangle rectVueAutre;
         Rectangle rectVitesse;
@@ -51,6 +51,7 @@ namespace projet_p1
         Brush BROrange = new SolidBrush(Color.FromArgb(255, 250, 150, 0));
         Brush BRBleuTransparent = new SolidBrush(Color.FromArgb(90, 0, 60, 250));
         Brush BRBleu = new SolidBrush(Color.FromArgb(255, 0, 60, 250));
+        Brush BRBox = new SolidBrush(Color.FromArgb(255, 85, 85, 85));
 
         Boolean changeHaut = false;
         Boolean changeBas = false;
@@ -641,6 +642,8 @@ namespace projet_p1
                 lblSTAT6.Visible = false;
                 lblSTAT7.Visible = false;
                 lblSTAT8.Visible = false;
+                lblSTATUtitre.Visible = false;
+                lblDonneesMoteur.Visible = false;
             }
             else
             {
@@ -654,6 +657,8 @@ namespace projet_p1
                 lblSTAT6.Visible = true;
                 lblSTAT7.Visible = true;
                 lblSTAT8.Visible = true;
+                lblSTATUtitre.Visible = true;
+                lblDonneesMoteur.Visible = true;
             }
         }
         public static Bitmap RotateImage(Bitmap b, float angle, Graphics g)
@@ -725,9 +730,21 @@ namespace projet_p1
             Graphics g = e.Graphics;
             Brush brush;
             Rectangle R1 = new Rectangle();
+            R1.X = 0;
+            R1.Y = 0;
+            R1.Width = 335;
+            R1.Height = 260;
+
+            g.FillRectangle(BRBox,R1);
+            
+            R1.Y = 270;
+            R1.Height = 260;
+
+            g.FillRectangle(BRBox, R1);
 
             if (VoitureConnection == true)
             {
+                
                 // -- capteur gauche --
                 // --------------------
                 Image IMGcap;
@@ -969,7 +986,7 @@ namespace projet_p1
             {
                 IMGvu = Properties.Resources.Vu;
             }
-            g.DrawImageUnscaled(IMGvu, new Point(100, 300));
+            g.DrawImageUnscaled(IMGvu, new Point(50, 320));
             if (E % 4 == 2)
             {
                 IMGvu = Properties.Resources.nonVu;
@@ -979,7 +996,7 @@ namespace projet_p1
             {
                 IMGvu = Properties.Resources.Vu;
             }
-            g.DrawImageUnscaled(IMGvu, new Point(100, 325));
+            g.DrawImageUnscaled(IMGvu, new Point(50, 345));
             if (E % 8 == 4)
             {
                 IMGvu = Properties.Resources.nonVu;
@@ -989,7 +1006,7 @@ namespace projet_p1
             {
                 IMGvu = Properties.Resources.Vu;
             }
-            g.DrawImageUnscaled(IMGvu, new Point(100, 350));
+            g.DrawImageUnscaled(IMGvu, new Point(50, 370));
             if (E % 16 == 8)
             {
                 IMGvu = Properties.Resources.nonVu;
@@ -999,7 +1016,7 @@ namespace projet_p1
             {
                 IMGvu = Properties.Resources.Vu;
             }
-            g.DrawImageUnscaled(IMGvu, new Point(100, 375));
+            g.DrawImageUnscaled(IMGvu, new Point(50, 395));
             if (E % 32 == 16)
             {
                 IMGvu = Properties.Resources.nonVu;
@@ -1009,7 +1026,7 @@ namespace projet_p1
             {
                 IMGvu = Properties.Resources.Vu;
             }
-            g.DrawImageUnscaled(IMGvu, new Point(100, 400));
+            g.DrawImageUnscaled(IMGvu, new Point(50, 420));
             if (E % 64 == 32)
             {
                 IMGvu = Properties.Resources.nonVu;
@@ -1019,7 +1036,7 @@ namespace projet_p1
             {
                 IMGvu = Properties.Resources.Vu;
             }
-            g.DrawImageUnscaled(IMGvu, new Point(100, 425));
+            g.DrawImageUnscaled(IMGvu, new Point(50, 445));
             if (E % 128 == 64)
             {
                 IMGvu = Properties.Resources.nonVu;
@@ -1029,7 +1046,7 @@ namespace projet_p1
             {
                 IMGvu = Properties.Resources.Vu;
             }
-            g.DrawImageUnscaled(IMGvu, new Point(100, 450));
+            g.DrawImageUnscaled(IMGvu, new Point(50, 470));
             if (E % 256 == 128)
             {
                 IMGvu = Properties.Resources.nonVu;
@@ -1039,7 +1056,7 @@ namespace projet_p1
             {
                 IMGvu = Properties.Resources.Vu;
             }
-            g.DrawImageUnscaled(IMGvu, new Point(100, 475));
+            g.DrawImageUnscaled(IMGvu, new Point(50, 495));
         }
 
         private void pbVitesse_Click(object sender, EventArgs e)
@@ -1075,6 +1092,20 @@ namespace projet_p1
 
             g.DrawImage(logo,new Rectangle(0,0,(int)(logo.Width*facteurTaille),(int)(logo.Height*facteurTaille)));
             
+        }
+
+        private void Options_Paint(object sender, PaintEventArgs e)
+        {
+            GroupBox box = (GroupBox)sender;
+            e.Graphics.Clear(Color.FromArgb(255,85,85,85));
+            e.Graphics.DrawString(box.Text, box.Font, Brushes.White , 0, 0);
+        }
+
+        private void groupBox1_Paint(object sender, PaintEventArgs e)
+        {
+            GroupBox box = (GroupBox)sender;
+            e.Graphics.Clear(Color.FromArgb(255, 85, 85, 85));
+            e.Graphics.DrawString(box.Text, box.Font, Brushes.White, 0, 0);
         }
     }
 }
