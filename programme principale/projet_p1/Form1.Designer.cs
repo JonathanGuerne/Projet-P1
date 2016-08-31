@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.cbxModeSimluation = new System.Windows.Forms.CheckBox();
-            this.lblKinectControlView = new System.Windows.Forms.Label();
             this.lblSTAT1 = new System.Windows.Forms.Label();
             this.lblSTAT2 = new System.Windows.Forms.Label();
             this.lblSTAT4 = new System.Windows.Forms.Label();
@@ -74,21 +73,9 @@
             this.cbxModeSimluation.UseVisualStyleBackColor = true;
             this.cbxModeSimluation.CheckedChanged += new System.EventHandler(this.cbxModeSimluation_CheckedChanged);
             // 
-            // lblKinectControlView
-            // 
-            this.lblKinectControlView.AutoSize = true;
-            this.lblKinectControlView.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKinectControlView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.lblKinectControlView.Location = new System.Drawing.Point(155, 385);
-            this.lblKinectControlView.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblKinectControlView.Name = "lblKinectControlView";
-            this.lblKinectControlView.Size = new System.Drawing.Size(272, 29);
-            this.lblKinectControlView.TabIndex = 30;
-            this.lblKinectControlView.Text = "Vue du dessus - mode conduite";
-            this.lblKinectControlView.Visible = false;
-            // 
             // lblSTAT1
             // 
+            this.lblSTAT1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblSTAT1.AutoSize = true;
             this.lblSTAT1.Location = new System.Drawing.Point(999, 411);
             this.lblSTAT1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -99,6 +86,7 @@
             // 
             // lblSTAT2
             // 
+            this.lblSTAT2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblSTAT2.AutoSize = true;
             this.lblSTAT2.Location = new System.Drawing.Point(999, 442);
             this.lblSTAT2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -109,6 +97,7 @@
             // 
             // lblSTAT4
             // 
+            this.lblSTAT4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblSTAT4.AutoSize = true;
             this.lblSTAT4.Location = new System.Drawing.Point(999, 507);
             this.lblSTAT4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -119,6 +108,7 @@
             // 
             // lblSTAT3
             // 
+            this.lblSTAT3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblSTAT3.AutoSize = true;
             this.lblSTAT3.Location = new System.Drawing.Point(999, 476);
             this.lblSTAT3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -129,6 +119,7 @@
             // 
             // lblSTAT6
             // 
+            this.lblSTAT6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblSTAT6.AutoSize = true;
             this.lblSTAT6.Location = new System.Drawing.Point(999, 570);
             this.lblSTAT6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -139,6 +130,7 @@
             // 
             // lblSTAT5
             // 
+            this.lblSTAT5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblSTAT5.AutoSize = true;
             this.lblSTAT5.Location = new System.Drawing.Point(999, 539);
             this.lblSTAT5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -149,6 +141,7 @@
             // 
             // lblSTAT8
             // 
+            this.lblSTAT8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblSTAT8.AutoSize = true;
             this.lblSTAT8.Location = new System.Drawing.Point(999, 628);
             this.lblSTAT8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -159,6 +152,7 @@
             // 
             // lblSTAT7
             // 
+            this.lblSTAT7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblSTAT7.AutoSize = true;
             this.lblSTAT7.Location = new System.Drawing.Point(999, 599);
             this.lblSTAT7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -169,6 +163,7 @@
             // 
             // btnSettingsZigBEE
             // 
+            this.btnSettingsZigBEE.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSettingsZigBEE.Location = new System.Drawing.Point(972, 5);
             this.btnSettingsZigBEE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSettingsZigBEE.Name = "btnSettingsZigBEE";
@@ -180,6 +175,7 @@
             // 
             // btnConnect
             // 
+            this.btnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConnect.Location = new System.Drawing.Point(1127, 5);
             this.btnConnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConnect.Name = "btnConnect";
@@ -222,6 +218,7 @@
             // 
             // pbCapteurs
             // 
+            this.pbCapteurs.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pbCapteurs.ErrorImage = global::projet_p1.Properties.Resources.BGBarresVitesses2;
             this.pbCapteurs.Location = new System.Drawing.Point(825, 38);
             this.pbCapteurs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -233,6 +230,7 @@
             // 
             // pbVitesse
             // 
+            this.pbVitesse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pbVitesse.Location = new System.Drawing.Point(596, 12);
             this.pbVitesse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbVitesse.Name = "pbVitesse";
@@ -256,12 +254,13 @@
             // 
             // pbox_VUE_Autres
             // 
+            this.pbox_VUE_Autres.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pbox_VUE_Autres.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pbox_VUE_Autres.BackgroundImage = global::projet_p1.Properties.Resources.BG1;
             this.pbox_VUE_Autres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbox_VUE_Autres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbox_VUE_Autres.Location = new System.Drawing.Point(16, 385);
-            this.pbox_VUE_Autres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbox_VUE_Autres.Margin = new System.Windows.Forms.Padding(4);
             this.pbox_VUE_Autres.Name = "pbox_VUE_Autres";
             this.pbox_VUE_Autres.Size = new System.Drawing.Size(573, 381);
             this.pbox_VUE_Autres.TabIndex = 27;
@@ -293,7 +292,6 @@
             this.Controls.Add(this.lblSTAT1);
             this.Controls.Add(this.pbCapteurs);
             this.Controls.Add(this.pbVitesse);
-            this.Controls.Add(this.lblKinectControlView);
             this.Controls.Add(this.pboxSIM);
             this.Controls.Add(this.cbxModeSimluation);
             this.Controls.Add(this.pbox_VUE_Autres);
@@ -320,7 +318,6 @@
         private System.Windows.Forms.PictureBox pbox_VUE_Autres;
         private System.Windows.Forms.CheckBox cbxModeSimluation;
         private System.Windows.Forms.PictureBox pboxSIM;
-        private System.Windows.Forms.Label lblKinectControlView;
         private System.Windows.Forms.PictureBox pbVitesse;
         private System.Windows.Forms.PictureBox pbCapteurs;
         private System.Windows.Forms.Label lblSTAT1;
