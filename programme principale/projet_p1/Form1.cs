@@ -1107,5 +1107,10 @@ namespace projet_p1
             e.Graphics.Clear(Color.FromArgb(255, 85, 85, 85));
             e.Graphics.DrawString(box.Text, box.Font, Brushes.White, 0, 0);
         }
+
+        private void tbChangementVitesse_ValueChanged(object sender, EventArgs e)
+        {
+            kinect.setFacteurVitesse((double)tbChangementVitesse.Value/10);
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace projet_p1
         private KinectSensor sensor;
         public Form1 form;
 
-        double FacteurVitesse = 2;
+        double FacteurVitesse = 1;
 
         SkeletonPoint Head;
         SkeletonPoint RHand;
@@ -74,6 +74,12 @@ namespace projet_p1
         {
             return Head;
         }
+
+        public void setFacteurVitesse(double facteur)
+        {
+            FacteurVitesse = facteur;
+        }
+
         public SkeletonPoint getLHand()
         {
             return LHand;
