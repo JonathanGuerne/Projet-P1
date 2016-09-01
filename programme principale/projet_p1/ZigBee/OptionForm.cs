@@ -166,7 +166,7 @@ namespace ZigBee
             else
             {
                 vitesseRouesGauches = 0;
-                hexRD = Convert.ToByte(vitesseRouesGauches);
+                hexRG = Convert.ToByte(vitesseRouesGauches);
             }
 
             byte hexBras = Convert.ToByte(brasPinces);
