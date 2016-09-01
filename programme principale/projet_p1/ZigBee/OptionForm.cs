@@ -380,6 +380,13 @@ namespace ZigBee
         }
 
         /// <summary>
+        /// donne l'état de la transmission (true = start) (false=stop)
+        /// </summary>
+        public bool getTransStatus()
+        {
+            return start;
+        }
+        /// <summary>
         /// Vitesse pour les roues droites à envoyer
         /// </summary>
         /// <param name="vrd"></param>

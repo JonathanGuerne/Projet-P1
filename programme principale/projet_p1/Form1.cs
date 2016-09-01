@@ -191,17 +191,17 @@ namespace projet_p1
             pboxSIM.Refresh();
 
             sendZigBee();
-            
+
 
         }
         private void sendZigBee()
         {
             //Envoie des données au modules zigbee
-            if(cbxSafetyMode.Checked == true)
+            if (cbxSafetyMode.Checked == true)
             {
-                if(zigbeeSettings.getCapArrDroite() <= 100 || zigbeeSettings.getCapArrGauche() <= 100)
+                if (zigbeeSettings.getCapArrDroite() <= 100 || zigbeeSettings.getCapArrGauche() <= 100)
                 {
-                    if(kinect.getVDLisse() > 0)
+                    if (kinect.getVDLisse() > 0)
                     {
                         zigbeeSettings.setVitesseRouesDroites((int)kinect.getVDLisse());
                     }
@@ -209,7 +209,7 @@ namespace projet_p1
                     {
                         zigbeeSettings.setVitesseRouesDroites(0);
                     }
-                    if(kinect.getVGLisse() > 0)
+                    if (kinect.getVGLisse() > 0)
                     {
                         zigbeeSettings.setVitesseRouesGauches((int)kinect.getVGLisse());
                     }
@@ -248,8 +248,8 @@ namespace projet_p1
                 zigbeeSettings.setVitesseRouesDroites((int)kinect.getVDLisse());
                 zigbeeSettings.setVitesseRouesGauches((int)kinect.getVGLisse());
             }
-            
-            
+
+
             zigbeeSettings.setBrasPinces((int)kinect.getPinceUpDown());
             zigbeeSettings.setOuverturePinces((int)kinect.getPinceOpenClose());
             DetecObstacleAvant = zigbeeSettings.getCapAvDroit();
@@ -735,8 +735,8 @@ namespace projet_p1
             R1.Width = 335;
             R1.Height = 260;
 
-            g.FillRectangle(BRBox,R1);
-            
+            g.FillRectangle(BRBox, R1);
+
             R1.Y = 270;
             R1.Height = 260;
 
@@ -744,7 +744,7 @@ namespace projet_p1
 
             if (VoitureConnection == true)
             {
-                
+
                 // -- capteur gauche --
                 // --------------------
                 Image IMGcap;
@@ -1071,7 +1071,18 @@ namespace projet_p1
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            zigbeeSettings.startTrans();
+            if (!zigbeeSettings.getTransStatus())
+            {
+                zigbeeSettings.startTrans();
+                btnConnect.BackColor=Color.FromArgb(255,255, 50, 50);
+                btnConnect.Text = "Stop";
+            }
+            else
+            {
+                zigbeeSettings.stopTrand();
+                btnConnect.BackColor = Color.FromArgb(255, 73, 157, 45);
+                btnConnect.Text = "Connecter";
+            }
         }
 
         private void pbLogo_Click(object sender, EventArgs e)
@@ -1088,17 +1099,17 @@ namespace projet_p1
             Image logo;
             logo = Properties.Resources.IconT;
 
-            double facteurTaille = (double) p.Height/logo.Height;
+            double facteurTaille = (double)p.Height / logo.Height;
 
-            g.DrawImage(logo,new Rectangle(0,0,(int)(logo.Width*facteurTaille),(int)(logo.Height*facteurTaille)));
-            
+            g.DrawImage(logo, new Rectangle(0, 0, (int)(logo.Width * facteurTaille), (int)(logo.Height * facteurTaille)));
+
         }
 
         private void Options_Paint(object sender, PaintEventArgs e)
         {
             GroupBox box = (GroupBox)sender;
-            e.Graphics.Clear(Color.FromArgb(255,85,85,85));
-            e.Graphics.DrawString(box.Text, box.Font, Brushes.White , 0, 0);
+            e.Graphics.Clear(Color.FromArgb(255, 85, 85, 85));
+            e.Graphics.DrawString(box.Text, box.Font, Brushes.White, 0, 0);
         }
 
         private void groupBox1_Paint(object sender, PaintEventArgs e)
@@ -1110,7 +1121,7 @@ namespace projet_p1
 
         private void tbChangementVitesse_ValueChanged(object sender, EventArgs e)
         {
-            kinect.setFacteurVitesse((double)tbChangementVitesse.Value/10);
+            kinect.setFacteurVitesse((double)tbChangementVitesse.Value / 10);
         }
     }
 }
