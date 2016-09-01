@@ -129,32 +129,46 @@ namespace ZigBee
             byte hexRG;
             byte hexRD;
             byte mask = 0xFF;
-            if (vitesseRouesDroites < 0)
-            {                
-                hexRD = Convert.ToByte(Math.Abs(vitesseRouesDroites));
-                hexRD = (byte)(hexRD ^ mask);
-                mask = 0x01;
-                hexRD = (byte)(hexRD + mask);
+            if (vitesseRouesDroites >= -128 && vitesseRouesDroites <= 127) {
+                if (vitesseRouesDroites < 0)
+                {
+                    hexRD = Convert.ToByte(Math.Abs(vitesseRouesDroites));
+                    hexRD = (byte)(hexRD ^ mask);
+                    mask = 0x01;
+                    hexRD = (byte)(hexRD + mask);
+                }
+                else
+                {
+                    hexRD = Convert.ToByte(vitesseRouesDroites);
+                }
             }
             else
             {
+                vitesseRouesDroites = 0;
                 hexRD = Convert.ToByte(vitesseRouesDroites);
             }
 
-            if (vitesseRouesGauches < 0)
+            if (vitesseRouesGauches >= -128 && vitesseRouesGauches <= 127)
             {
-                mask = 0xFF;
-                hexRG = Convert.ToByte(Math.Abs(vitesseRouesGauches));
-                hexRG = (byte)(hexRG ^ mask);
-                mask = 0x01;
-                hexRG = (byte)(hexRG + mask);
+                if (vitesseRouesGauches < 0)
+                {
+                    mask = 0xFF;
+                    hexRG = Convert.ToByte(Math.Abs(vitesseRouesGauches));
+                    hexRG = (byte)(hexRG ^ mask);
+                    mask = 0x01;
+                    hexRG = (byte)(hexRG + mask);
+                }
+                else
+                {
+                    hexRG = Convert.ToByte(vitesseRouesGauches);
+                }
             }
             else
             {
-                hexRG = Convert.ToByte(vitesseRouesGauches);
+                vitesseRouesGauches = 0;
+                hexRD = Convert.ToByte(vitesseRouesGauches);
             }
-            
-            
+
             byte hexBras = Convert.ToByte(brasPinces);
             byte hexPince = Convert.ToByte(ouverturePinces);
             byte[] hex = { hexRG, hexRD, hexBras, hexPince, 0x81 };
