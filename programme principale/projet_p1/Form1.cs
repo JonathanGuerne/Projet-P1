@@ -1073,6 +1073,7 @@ namespace projet_p1
         {
             if (!zigbeeSettings.getTransStatus())
             {
+                //
                 zigbeeSettings.startTrans();
                 btnConnect.BackColor=Color.FromArgb(255,255, 50, 50);
                 btnConnect.Text = "Stop";
