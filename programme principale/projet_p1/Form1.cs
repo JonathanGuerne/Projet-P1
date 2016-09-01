@@ -1112,5 +1112,10 @@ namespace projet_p1
         {
             kinect.setFacteurVitesse((double)tbChangementVitesse.Value/10);
         }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

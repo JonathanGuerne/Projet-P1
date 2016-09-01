@@ -73,10 +73,10 @@
             // cbxModeSimluation
             // 
             this.cbxModeSimluation.AutoSize = true;
-            this.cbxModeSimluation.Location = new System.Drawing.Point(308, 53);
-            this.cbxModeSimluation.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxModeSimluation.Location = new System.Drawing.Point(346, 66);
+            this.cbxModeSimluation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxModeSimluation.Name = "cbxModeSimluation";
-            this.cbxModeSimluation.Size = new System.Drawing.Size(222, 32);
+            this.cbxModeSimluation.Size = new System.Drawing.Size(265, 36);
             this.cbxModeSimluation.TabIndex = 28;
             this.cbxModeSimluation.Text = "Mode simulation";
             this.cbxModeSimluation.UseVisualStyleBackColor = true;
@@ -89,10 +89,10 @@
             this.lblSTAT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.lblSTAT1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
             this.lblSTAT1.ForeColor = System.Drawing.Color.White;
-            this.lblSTAT1.Location = new System.Drawing.Point(940, 620);
+            this.lblSTAT1.Location = new System.Drawing.Point(1058, 775);
             this.lblSTAT1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSTAT1.Name = "lblSTAT1";
-            this.lblSTAT1.Size = new System.Drawing.Size(113, 28);
+            this.lblSTAT1.Size = new System.Drawing.Size(135, 32);
             this.lblSTAT1.TabIndex = 33;
             this.lblSTAT1.Text = "Moteur 1";
             // 
@@ -103,10 +103,10 @@
             this.lblSTAT2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.lblSTAT2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
             this.lblSTAT2.ForeColor = System.Drawing.Color.White;
-            this.lblSTAT2.Location = new System.Drawing.Point(940, 650);
+            this.lblSTAT2.Location = new System.Drawing.Point(1058, 812);
             this.lblSTAT2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSTAT2.Name = "lblSTAT2";
-            this.lblSTAT2.Size = new System.Drawing.Size(113, 28);
+            this.lblSTAT2.Size = new System.Drawing.Size(135, 32);
             this.lblSTAT2.TabIndex = 34;
             this.lblSTAT2.Text = "Moteur 2";
             // 
@@ -117,10 +117,10 @@
             this.lblSTAT4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.lblSTAT4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
             this.lblSTAT4.ForeColor = System.Drawing.Color.White;
-            this.lblSTAT4.Location = new System.Drawing.Point(940, 716);
+            this.lblSTAT4.Location = new System.Drawing.Point(1058, 895);
             this.lblSTAT4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSTAT4.Name = "lblSTAT4";
-            this.lblSTAT4.Size = new System.Drawing.Size(234, 28);
+            this.lblSTAT4.Size = new System.Drawing.Size(276, 32);
             this.lblSTAT4.TabIndex = 36;
             this.lblSTAT4.Text = "Capteur US arrière";
             // 
@@ -131,10 +131,10 @@
             this.lblSTAT3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.lblSTAT3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
             this.lblSTAT3.ForeColor = System.Drawing.Color.White;
-            this.lblSTAT3.Location = new System.Drawing.Point(940, 685);
+            this.lblSTAT3.Location = new System.Drawing.Point(1058, 856);
             this.lblSTAT3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSTAT3.Name = "lblSTAT3";
-            this.lblSTAT3.Size = new System.Drawing.Size(215, 28);
+            this.lblSTAT3.Size = new System.Drawing.Size(257, 32);
             this.lblSTAT3.TabIndex = 35;
             this.lblSTAT3.Text = "Capteur US avant";
             // 
@@ -145,10 +145,10 @@
             this.lblSTAT6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.lblSTAT6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
             this.lblSTAT6.ForeColor = System.Drawing.Color.White;
-            this.lblSTAT6.Location = new System.Drawing.Point(940, 778);
+            this.lblSTAT6.Location = new System.Drawing.Point(1058, 972);
             this.lblSTAT6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSTAT6.Name = "lblSTAT6";
-            this.lblSTAT6.Size = new System.Drawing.Size(263, 28);
+            this.lblSTAT6.Size = new System.Drawing.Size(314, 32);
             this.lblSTAT6.TabIndex = 38;
             this.lblSTAT6.Text = "Capteur US côté droit";
             // 
@@ -159,10 +159,10 @@
             this.lblSTAT5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.lblSTAT5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
             this.lblSTAT5.ForeColor = System.Drawing.Color.White;
-            this.lblSTAT5.Location = new System.Drawing.Point(940, 748);
+            this.lblSTAT5.Location = new System.Drawing.Point(1058, 935);
             this.lblSTAT5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSTAT5.Name = "lblSTAT5";
-            this.lblSTAT5.Size = new System.Drawing.Size(293, 28);
+            this.lblSTAT5.Size = new System.Drawing.Size(352, 32);
             this.lblSTAT5.TabIndex = 37;
             this.lblSTAT5.Text = "Capteur US côté gauche";
             // 
@@ -173,10 +173,10 @@
             this.lblSTAT8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.lblSTAT8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
             this.lblSTAT8.ForeColor = System.Drawing.Color.White;
-            this.lblSTAT8.Location = new System.Drawing.Point(940, 836);
+            this.lblSTAT8.Location = new System.Drawing.Point(1058, 1045);
             this.lblSTAT8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSTAT8.Name = "lblSTAT8";
-            this.lblSTAT8.Size = new System.Drawing.Size(232, 28);
+            this.lblSTAT8.Size = new System.Drawing.Size(277, 32);
             this.lblSTAT8.TabIndex = 40;
             this.lblSTAT8.Text = "Servomoteur pince";
             // 
@@ -187,10 +187,10 @@
             this.lblSTAT7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.lblSTAT7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
             this.lblSTAT7.ForeColor = System.Drawing.Color.White;
-            this.lblSTAT7.Location = new System.Drawing.Point(940, 808);
+            this.lblSTAT7.Location = new System.Drawing.Point(1058, 1010);
             this.lblSTAT7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSTAT7.Name = "lblSTAT7";
-            this.lblSTAT7.Size = new System.Drawing.Size(221, 28);
+            this.lblSTAT7.Size = new System.Drawing.Size(262, 32);
             this.lblSTAT7.TabIndex = 39;
             this.lblSTAT7.Text = "Servomoteur bras";
             // 
@@ -199,10 +199,10 @@
             this.btnSettingsZigBEE.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSettingsZigBEE.ForeColor = System.Drawing.Color.Black;
             this.btnSettingsZigBEE.Image = ((System.Drawing.Image)(resources.GetObject("btnSettingsZigBEE.Image")));
-            this.btnSettingsZigBEE.Location = new System.Drawing.Point(425, 181);
-            this.btnSettingsZigBEE.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSettingsZigBEE.Location = new System.Drawing.Point(478, 226);
+            this.btnSettingsZigBEE.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSettingsZigBEE.Name = "btnSettingsZigBEE";
-            this.btnSettingsZigBEE.Size = new System.Drawing.Size(99, 99);
+            this.btnSettingsZigBEE.Size = new System.Drawing.Size(111, 124);
             this.btnSettingsZigBEE.TabIndex = 41;
             this.btnSettingsZigBEE.UseVisualStyleBackColor = true;
             this.btnSettingsZigBEE.Click += new System.EventHandler(this.btnSettingsZigBEE_Click);
@@ -211,10 +211,10 @@
             // 
             this.btnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConnect.ForeColor = System.Drawing.Color.Black;
-            this.btnConnect.Location = new System.Drawing.Point(31, 181);
-            this.btnConnect.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConnect.Location = new System.Drawing.Point(35, 226);
+            this.btnConnect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(386, 99);
+            this.btnConnect.Size = new System.Drawing.Size(434, 124);
             this.btnConnect.TabIndex = 42;
             this.btnConnect.Text = "Connecter";
             this.btnConnect.UseVisualStyleBackColor = true;
@@ -225,10 +225,10 @@
             this.cbxSafetyMode.AutoSize = true;
             this.cbxSafetyMode.Checked = true;
             this.cbxSafetyMode.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxSafetyMode.Location = new System.Drawing.Point(31, 53);
+            this.cbxSafetyMode.Location = new System.Drawing.Point(35, 66);
             this.cbxSafetyMode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxSafetyMode.Name = "cbxSafetyMode";
-            this.cbxSafetyMode.Size = new System.Drawing.Size(203, 32);
+            this.cbxSafetyMode.Size = new System.Drawing.Size(241, 36);
             this.cbxSafetyMode.TabIndex = 45;
             this.cbxSafetyMode.Text = "Mode sécurisé";
             this.cbxSafetyMode.UseVisualStyleBackColor = true;
@@ -244,11 +244,11 @@
             this.Options.Controls.Add(this.btnSettingsZigBEE);
             this.Options.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Options.ForeColor = System.Drawing.Color.White;
-            this.Options.Location = new System.Drawing.Point(16, 225);
+            this.Options.Location = new System.Drawing.Point(18, 281);
             this.Options.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Options.Name = "Options";
             this.Options.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Options.Size = new System.Drawing.Size(573, 322);
+            this.Options.Size = new System.Drawing.Size(645, 402);
             this.Options.TabIndex = 46;
             this.Options.TabStop = false;
             this.Options.Text = "Commandes et options";
@@ -256,20 +256,21 @@
             // 
             // tbChangementVitesse
             // 
-            this.tbChangementVitesse.Location = new System.Drawing.Point(31, 107);
+            this.tbChangementVitesse.Location = new System.Drawing.Point(35, 134);
+            this.tbChangementVitesse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbChangementVitesse.Maximum = 20;
             this.tbChangementVitesse.Name = "tbChangementVitesse";
-            this.tbChangementVitesse.Size = new System.Drawing.Size(499, 56);
+            this.tbChangementVitesse.Size = new System.Drawing.Size(561, 69);
             this.tbChangementVitesse.TabIndex = 50;
             this.tbChangementVitesse.Value = 10;
             this.tbChangementVitesse.ValueChanged += new System.EventHandler(this.tbChangementVitesse_ValueChanged);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(373, 31);
+            this.pictureBox1.Location = new System.Drawing.Point(420, 39);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(8, 7);
+            this.pictureBox1.Size = new System.Drawing.Size(9, 9);
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
             // 
@@ -279,10 +280,10 @@
             this.pbox_VUE_Autres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.pbox_VUE_Autres.BackgroundImage = global::projet_p1.Properties.Resources.BG1;
             this.pbox_VUE_Autres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pbox_VUE_Autres.Location = new System.Drawing.Point(7, 59);
-            this.pbox_VUE_Autres.Margin = new System.Windows.Forms.Padding(4);
+            this.pbox_VUE_Autres.Location = new System.Drawing.Point(7, 40);
+            this.pbox_VUE_Autres.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbox_VUE_Autres.Name = "pbox_VUE_Autres";
-            this.pbox_VUE_Autres.Size = new System.Drawing.Size(563, 349);
+            this.pbox_VUE_Autres.Size = new System.Drawing.Size(633, 520);
             this.pbox_VUE_Autres.TabIndex = 27;
             this.pbox_VUE_Autres.TabStop = false;
             this.pbox_VUE_Autres.Paint += new System.Windows.Forms.PaintEventHandler(this.pbVueAutrePaint);
@@ -298,12 +299,12 @@
             this.lblDonneesMoteur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.lblDonneesMoteur.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
             this.lblDonneesMoteur.ForeColor = System.Drawing.Color.White;
-            this.lblDonneesMoteur.Location = new System.Drawing.Point(844, 229);
+            this.lblDonneesMoteur.Location = new System.Drawing.Point(950, 286);
             this.lblDonneesMoteur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDonneesMoteur.Name = "lblDonneesMoteur";
-            this.lblDonneesMoteur.Size = new System.Drawing.Size(404, 28);
+            this.lblDonneesMoteur.Size = new System.Drawing.Size(321, 32);
             this.lblDonneesMoteur.TabIndex = 48;
-            this.lblDonneesMoteur.Text = "Capteurs de proximité & Connexion";
+            this.lblDonneesMoteur.Text = "Capteurs de proximité";
             // 
             // lblSTATUtitre
             // 
@@ -312,20 +313,20 @@
             this.lblSTATUtitre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.lblSTATUtitre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
             this.lblSTATUtitre.ForeColor = System.Drawing.Color.White;
-            this.lblSTATUtitre.Location = new System.Drawing.Point(844, 564);
+            this.lblSTATUtitre.Location = new System.Drawing.Point(950, 705);
             this.lblSTATUtitre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSTATUtitre.Name = "lblSTATUtitre";
-            this.lblSTATUtitre.Size = new System.Drawing.Size(271, 28);
+            this.lblSTATUtitre.Size = new System.Drawing.Size(326, 32);
             this.lblSTATUtitre.TabIndex = 49;
             this.lblSTATUtitre.Text = "Status de la connexion";
             // 
             // pbLogo
             // 
             this.pbLogo.ErrorImage = global::projet_p1.Properties.Resources.IconT;
-            this.pbLogo.Location = new System.Drawing.Point(16, 12);
+            this.pbLogo.Location = new System.Drawing.Point(18, 15);
             this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(207, 185);
+            this.pbLogo.Size = new System.Drawing.Size(233, 231);
             this.pbLogo.TabIndex = 43;
             this.pbLogo.TabStop = false;
             this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
@@ -335,10 +336,10 @@
             // 
             this.pbCapteurs.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pbCapteurs.ErrorImage = global::projet_p1.Properties.Resources.BGBarresVitesses2;
-            this.pbCapteurs.Location = new System.Drawing.Point(825, 217);
+            this.pbCapteurs.Location = new System.Drawing.Point(928, 271);
             this.pbCapteurs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbCapteurs.Name = "pbCapteurs";
-            this.pbCapteurs.Size = new System.Drawing.Size(595, 729);
+            this.pbCapteurs.Size = new System.Drawing.Size(669, 911);
             this.pbCapteurs.TabIndex = 32;
             this.pbCapteurs.TabStop = false;
             this.pbCapteurs.Paint += new System.Windows.Forms.PaintEventHandler(this.pbCapteurs_Paint);
@@ -346,10 +347,10 @@
             // pbVitesse
             // 
             this.pbVitesse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pbVitesse.Location = new System.Drawing.Point(596, 12);
+            this.pbVitesse.Location = new System.Drawing.Point(670, 15);
             this.pbVitesse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbVitesse.Name = "pbVitesse";
-            this.pbVitesse.Size = new System.Drawing.Size(221, 1113);
+            this.pbVitesse.Size = new System.Drawing.Size(249, 1391);
             this.pbVitesse.TabIndex = 31;
             this.pbVitesse.TabStop = false;
             this.pbVitesse.Click += new System.EventHandler(this.pbVitesse_Click);
@@ -359,10 +360,10 @@
             // 
             this.pboxSIM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pboxSIM.BackColor = System.Drawing.Color.White;
-            this.pboxSIM.Location = new System.Drawing.Point(600, 38);
-            this.pboxSIM.Margin = new System.Windows.Forms.Padding(4);
+            this.pboxSIM.Location = new System.Drawing.Point(675, 48);
+            this.pboxSIM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pboxSIM.Name = "pboxSIM";
-            this.pboxSIM.Size = new System.Drawing.Size(600, 601);
+            this.pboxSIM.Size = new System.Drawing.Size(675, 751);
             this.pboxSIM.TabIndex = 29;
             this.pboxSIM.TabStop = false;
             this.pboxSIM.Visible = false;
@@ -374,11 +375,11 @@
             this.groupBox1.Controls.Add(this.pbox_VUE_Autres);
             this.groupBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(18, 564);
+            this.groupBox1.Location = new System.Drawing.Point(20, 705);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(571, 416);
+            this.groupBox1.Size = new System.Drawing.Size(642, 567);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Position du pilote";
@@ -386,10 +387,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1284, 1045);
+            this.ClientSize = new System.Drawing.Size(1444, 1306);
             this.Controls.Add(this.lblSTATUtitre);
             this.Controls.Add(this.lblDonneesMoteur);
             this.Controls.Add(this.Options);
@@ -406,10 +407,12 @@
             this.Controls.Add(this.pbVitesse);
             this.Controls.Add(this.pboxSIM);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "K-Driver";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.Options.ResumeLayout(false);
