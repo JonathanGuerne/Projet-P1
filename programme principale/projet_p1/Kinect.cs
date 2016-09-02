@@ -44,8 +44,8 @@ namespace projet_p1
 
         int largeurConduite = 40;
 
-        double margeVitInf = 0.8;
-        double margeVitSup = 1.2;
+        double margeVitInf = 0.95;
+        double margeVitSup = 1.05;
 
         public double getVGLisse()
         {
