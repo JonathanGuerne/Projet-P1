@@ -114,3 +114,6 @@ C:\Users\deni.gahlinge\Documents\ProjetP1\ProjetP1git\GitHub\Projet-P1\programme
 C:\Users\anthony.fleury\Desktop\XBEECOM\Projet-P1\programme principale\projet_p1\bin\Debug\projet_p1.exe.config
 C:\Users\anthony.fleury\Desktop\XBEECOM\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.exe
 C:\Users\anthony.fleury\Desktop\XBEECOM\Projet-P1\programme principale\projet_p1\obj\Debug\projet_p1.pdb
+C:\Users\pedro.costa\Desktop\Projet-P1-finInterface\programme principale\projet_p1\bin\Debug\projet_p1.exe.config
+C:\Users\pedro.costa\Desktop\Projet-P1-finInterface\programme principale\projet_p1\obj\Debug\projet_p1.exe
+C:\Users\pedro.costa\Desktop\Projet-P1-finInterface\programme principale\projet_p1\obj\Debug\projet_p1.pdb
