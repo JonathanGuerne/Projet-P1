@@ -201,6 +201,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Icon.png" />
+    <Content Include="bin\IconT.png" />
+    <Content Include="Resources\IconT.png" />
+    <None Include="Resources\IconT1.png" />
     <None Include="Resources\Icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

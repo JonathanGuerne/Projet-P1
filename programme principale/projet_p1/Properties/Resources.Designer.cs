@@ -603,6 +603,16 @@ namespace projet_p1.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IconT {
+            get {
+                object obj = ResourceManager.GetObject("IconT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nonVu {
             get {
                 object obj = ResourceManager.GetObject("nonVu", resourceCulture);

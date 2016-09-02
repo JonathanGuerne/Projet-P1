@@ -17,7 +17,7 @@ namespace projet_p1
         private KinectSensor sensor;
         public Form1 form;
 
-        double FacteurVitesse = 2;
+        double FacteurVitesse = 1;
 
         SkeletonPoint Head;
         SkeletonPoint RHand;
@@ -43,6 +43,9 @@ namespace projet_p1
         bool flagPallierPince=false;
 
         int largeurConduite = 40;
+
+        double margeVitInf = 0.8;
+        double margeVitSup = 1.2;
 
         public double getVGLisse()
         {
@@ -74,6 +77,12 @@ namespace projet_p1
         {
             return Head;
         }
+
+        public void setFacteurVitesse(double facteur)
+        {
+            FacteurVitesse = facteur;
+        }
+
         public SkeletonPoint getLHand()
         {
             return LHand;
@@ -271,6 +280,15 @@ namespace projet_p1
                 else
                 {
                     vGLisse = (5 * vGLisse + vGauche) / 6;
+                }
+            }
+            
+            if (((vGLisse > 0 && vDLisse > 0) || (vGLisse < 0 && vDLisse < 0)) && vGLisse != 0 && vDLisse != 0)
+            {
+                double rapportVitesse = Math.Abs(vGLisse / vDLisse);
+                if (rapportVitesse > margeVitInf && rapportVitesse < margeVitSup)
+                {
+                    vGLisse = vDLisse;
                 }
             }
         }
