@@ -33,7 +33,7 @@ namespace projet_p1
         int pinceUpDown = 0;
         int pinceOpenClose = 0;
 
-        double vitesseMinConduite = 1;
+        double vitesseMinConduite = 14;
 
         double margeChangementMode = 0.12;
 
