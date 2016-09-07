@@ -46,6 +46,9 @@ namespace projet_p1
 
         int largeurConduite = 40;
 
+        double margeVitInf = 0.95;
+        double margeVitSup = 1.05;
+
         public double getVGLisse()
         {
             double Vg = vGLisse * FacteurVitesse;
@@ -289,6 +292,15 @@ namespace projet_p1
                 else
                 {
                     vGLisse = (5 * vGLisse + vGauche) / 6;
+                }
+            }
+            
+            if (((vGLisse > 0 && vDLisse > 0) || (vGLisse < 0 && vDLisse < 0)) && vGLisse != 0 && vDLisse != 0)
+            {
+                double rapportVitesse = Math.Abs(vGLisse / vDLisse);
+                if (rapportVitesse > margeVitInf && rapportVitesse < margeVitSup)
+                {
+                    vGLisse = vDLisse;
                 }
             }
         }
