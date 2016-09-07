@@ -33,6 +33,8 @@ namespace projet_p1
         int pinceUpDown = 0;
         int pinceOpenClose = 0;
 
+        double vitesseMinConduite = 0.1;
+
         double margeChangementMode = 0.12;
 
         double margesPinceHaut = -0.15;
@@ -173,6 +175,10 @@ namespace projet_p1
                         refDroite = RHand.Z * 100;   // redéfini la référence)
                     }
                     vDroite = refDroite - RHand.Z * 100;     // redéfini la vitesse par rapport à la référence
+                    if (vDroite == 0)
+                    {
+                        vDroite = vitesseMinConduite;
+                    }
                 }
                 else
                 {
@@ -190,6 +196,10 @@ namespace projet_p1
                         refGauche = LHand.Z * 100;
                     }
                     vGauche = refGauche - LHand.Z * 100;
+                    if (vGauche == 0)
+                    {
+                        vGauche = vitesseMinConduite;
+                    }
                 }
                 else
                 {
@@ -197,6 +207,8 @@ namespace projet_p1
                     vGLisse = 0;
                     refGauche = 0;
                 }
+
+
 
 
                 //lblPINCEopenclose.Text = "-";
