@@ -33,7 +33,7 @@ namespace projet_p1
         int pinceUpDown = 0;
         int pinceOpenClose = 0;
 
-        double vitesseMinConduite = 0.1;
+        double vitesseMinConduite = 1;
 
         double margeChangementMode = 0.12;
 
@@ -45,9 +45,6 @@ namespace projet_p1
         bool flagPallierPince=false;
 
         int largeurConduite = 40;
-
-        double margeVitInf = 0.95;
-        double margeVitSup = 1.05;
 
         public double getVGLisse()
         {
@@ -292,15 +289,6 @@ namespace projet_p1
                 else
                 {
                     vGLisse = (5 * vGLisse + vGauche) / 6;
-                }
-            }
-            
-            if (((vGLisse > 0 && vDLisse > 0) || (vGLisse < 0 && vDLisse < 0)) && vGLisse != 0 && vDLisse != 0)
-            {
-                double rapportVitesse = Math.Abs(vGLisse / vDLisse);
-                if (rapportVitesse > margeVitInf && rapportVitesse < margeVitSup)
-                {
-                    vGLisse = vDLisse;
                 }
             }
         }
